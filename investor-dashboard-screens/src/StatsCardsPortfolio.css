@@ -1,0 +1,105 @@
+/* Container */
+.portstats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+
+}
+
+/* Card */
+.portstats-card {
+  position: relative;
+  width: 15rem;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+/* Icon Block */
+.portstats-icon-block {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.portstats-blue { background: #3D7BFF; }
+.portstats-green { background: #1CBF69; }
+.portstats-purple { background: #7A4DFF; }
+.portstats-orange { background: #FF8A34; }
+
+.portstats-icon-block svg {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+}
+
+/* Tag */
+.portstats-tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  opacity: 0.9;
+}
+
+.portstats-blue-tag { background: #3D7BFF; }
+.portstats-green-tag { background: #1CBF69; }
+.portstats-purple-tag { background: #7A4DFF; }
+.portstats-orange-tag { background: #FF8A34; }
+
+/* Text */
+.portstats-label {
+  font-size: 15px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.portstats-value {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* Soft background circle */
+.portstats-bg-shape {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  opacity: 0.18;
+}
+
+.portstats-blue-shape { background: #3D7BFF; }
+.portstats-green-shape { background: #1CBF69; }
+.portstats-purple-shape { background: #7A4DFF; }
+.portstats-orange-shape { background: #FF8A34; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .portstats-container {
+    flex-wrap: wrap;
+  }
+  .portstats-card {
+    width: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  .portstats-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,24 @@
+/* Disable all horizontal scrolling globally */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* Hide scrollbar in Firefox & Edge */
+.no-horizontal-scroll {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* Hide scrollbar in Chrome, Safari, Brave, Opera */
+.no-horizontal-scroll::-webkit-scrollbar {
+  display: none !important;
+}
+body {
+  width: 100% !important;
+  overflow-x: clip !important;   /* prevents ANY horizontal scroll and removes sticky bar */
+}
+
+.no-horizontal-scroll {
+  overflow-x: clip !important;   /* stronger than hidden */
+}

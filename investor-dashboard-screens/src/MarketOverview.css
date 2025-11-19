@@ -1,0 +1,211 @@
+.market-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* TITLE */
+.market-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.market-subtitle {
+  color: #6f6f6f;
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+/* FILTERS ROW */
+.market-filters {
+  margin-top: 22px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+/* FILTER BUTTONS */
+.filter-btn {
+  padding: 12px 18px;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #e1e1e1;
+  font-size: 15px;
+  color: #3a3a3a;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #f0f0f0;
+}
+
+/* SEARCH BOX */
+.search-box {
+  margin-left: auto;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  width: 380px;
+  height: 48px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  width: 100%;
+  font-size: 15px;
+  color: #333;
+  background: transparent;
+}
+
+.search-box input::placeholder {
+  color: #969696;
+}
+
+.search-icon {
+  font-size: 18px;
+  color: #7d7d7d;
+}
+
+/* TABLE CONTAINER */
+.market-table {
+  margin-top: 26px;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 14px 0;
+  color: #707070;
+  font-weight: 600;
+  border-bottom: 1px solid #ececec;
+  font-size: 14.5px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 20px 0;
+  align-items: center;
+  border-bottom: 1px solid #f3f3f3;
+  font-size: 15px;
+}
+
+/* NAME COLUMN */
+.table-name {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.token-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.ticker {
+  margin-top: 2px;
+  font-size: 13px;
+  color: #999;
+}
+
+/* PRICE & CHANGE */
+.price,
+.change,
+.marketcap {
+  font-weight: 600;
+}
+
+.change.red {
+  color: #e74c3c;
+}
+
+.change.green {
+  color: #1ca44b;
+}
+
+/* TRADE BUTTON */
+.trade-btn {
+  background: #ffe6c9;
+  color: #cc7a17;
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.trade-btn:hover {
+  background: #ffd7b0;
+}
+
+/* PAGINATION */
+.pagination-bar {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Showing text */
+.showing {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Pagination buttons */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  background: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.page-btn:hover {
+  background: #f3f3f3;
+}
+
+.page-btn.active {
+  background: #111827;
+  color: white;
+  border: none;
+}
+
+.dots {
+  color: #7d7d7d;
+  font-size: 15px;
+}
+
+/* FOOTER */
+.market-footer {
+  margin-top: 26px;
+  font-size: 13px;
+  text-align: center;
+  color: #858585;
+}

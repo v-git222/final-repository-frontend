@@ -1,0 +1,39 @@
+.subtitle {
+  position: relative;
+  width: fit-content;
+  max-width: 470px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 24px;
+  left: 2rem;
+  top: 2rem;
+
+  color: #717182;
+  background: transparent;     /* ✅ ensures no flash/box when theme toggles */
+  border: none;                /* ✅ avoids border artifacts */
+  box-shadow: none;            /* ✅ removes inherited shadows */
+  transition: color 0.3s ease; /* ✅ smooth transition */
+  user-select: none;           /* ✅ no accidental text highlight */
+}
+
+/* Light Theme */
+.subtitle.light {
+  color: #717182;
+}
+
+/* Dark Theme */
+.subtitle.dark {
+  color: white; /* ✅ soft gray for dark mode, easy on eyes */
+}
+
+/* Responsive tweak */
+@media (max-width: 600px) {
+  .subtitle {
+    font-size: 14px;
+    line-height: 22px;
+    left: 1.2rem; /* ✅ less offset for mobile */
+    top: 1.2rem;
+  }
+}

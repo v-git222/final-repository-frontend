@@ -1,0 +1,191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+/* Import DM Sans font */
+/* ==========================================================
+   PURPLE OVERLAY — Above the grid, top-right corner
+   ========================================================== */
+.purple-overlay-container {
+  position: absolute;
+  top: -100px; /* Moves box above the grid area */
+  right: 60px; /* Adjust horizontally as needed */
+  z-index: 1000;
+  pointer-events: none;
+}
+/* Force positions — put at the end of your CSS file for immediate effect */
+.purple-overlay-container {
+  position: absolute !important;
+  top: -120px !important;    /* change value to whatever you want */
+  right: 60px !important;    /* change value to whatever you want */
+  z-index: 99999 !important;
+}
+.yellow-overlay-container {
+  position: absolute !important;
+  bottom: 230px !important; /* change value to whatever you want */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 99999 !important;
+}
+/* Purple Tooltip Box */
+.purple-tooltip-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  width: 270px;
+  height: 96px;
+  background: #8B5DF7;
+  box-shadow: 0px 15px 25px rgba(82, 90, 102, 0.3);
+  border-radius: 12px;
+  position: relative;
+  z-index: 1002;
+}
+.purple-tooltip-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.purple-arrow-pointer {
+  position: absolute;
+  top: 20px;       /* vertical placement */
+  right: 230px;     /* horizontal placement */
+  width: 60px;      /* controls arrow size */
+  height: 40px;     /* controls arrow size */
+  background-image: url('/assets/purple-arrow.png');
+  background-size: contain;  /* scale image to fit box */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1001;
+}
+/* Force the actual image element to a small size (most robust) */
+.purple-arrow-pointer,
+.purple-arrow-pointer img {
+  width: 156px !important;       /* final arrow width you want */
+  height: 140px !important;      /* final arrow height you want */
+  max-width: 100% !important;
+  max-height: 100% !important;
+  display: block !important;
+  object-fit: contain !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;  /* remove any big shadow if it makes it look larger */
+}
+/* ==========================================================
+   YELLOW OVERLAY — Below the grid, centered horizontally
+   ========================================================== */
+.yellow-overlay-container {
+  position: absolute;
+  bottom: -120px; /* Moves below grid area */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Yellow Tooltip Box */
+.yellow-tooltip-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  width: 266px;
+  height: 96px;
+  background: linear-gradient(180deg, #FDD56A, #FDC700);
+  box-shadow: 0px 15px 25px rgba(82, 90, 102, 0.3);
+  border-radius: 12px;
+  position: relative;
+  z-index: 1002;
+  margin-bottom: 10px;
+}
+.yellow-tooltip-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #423300;
+  width: 218px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Yellow Arrow */
+.yellow-arrow-pointer {
+  position: relative;
+  width: 130px;
+  height: 80px;
+  left: 370px;
+  bottom: 70px;
+  ;
+  background-image: url('/assets/yellow-arrow.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1001;
+}
+.yellow-arrow-pointer,
+.yellow-arrow-pointer img {
+  width: 450px !important;        /* adjust width */
+  height: 100px !important;       /* adjust height */
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  object-fit: contain !important;
+  display: block !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+/* ==========================================================
+   Responsive Adjustments — Clean + Predictable
+   ========================================================== */
+@media (max-width: 1400px) {
+  .purple-overlay-container {
+    right: 40px;
+    top: -70px;
+  }
+
+  .yellow-overlay-container {
+    bottom: -100px;
+  }
+}
+@media (max-width: 768px) {
+  .purple-tooltip-box,
+  .yellow-tooltip-box {
+    width: 240px;
+    padding: 20px;
+  }
+
+  .purple-tooltip-text,
+  .yellow-tooltip-text {
+    font-size: 14px;
+    line-height: 20px;
+    width: 200px;
+  }
+
+  .purple-overlay-container {
+    top: -60px;
+    right: 20px;
+  }
+
+  .yellow-overlay-container {
+    bottom: -80px;
+  }
+
+  .purple-arrow-pointer,
+  .yellow-arrow-pointer {
+    width: 90px;
+    height: 60px;
+  }
+}

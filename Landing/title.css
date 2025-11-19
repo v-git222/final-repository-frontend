@@ -1,0 +1,80 @@
+/* 🎯 Base Wrapper */
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem; /* 24px */
+  width: 100%;
+  max-width: 60rem; /* 960px */
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 1rem; /* 16px horizontal padding for small screens */
+}
+
+/* 🧱 Title Styling */
+.hero-title {
+  font-family: "URW Geometric", "Inter", system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 5rem; /* 80px */
+  line-height: 1.05; /* relative ratio */
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2f2f33;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 60rem; /* 960px */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 🪄 Subtitle */
+.hero-subtitle {
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.4;
+  text-align: center;
+  color: #43536d;
+  margin: 0;
+  padding: 0;
+  max-width: 45rem; /* 720px */
+  width: 100%;
+}
+
+/* 💻 Medium screens (tablets, smaller laptops) */
+@media (max-width: 75em) { /* 1200px */
+  .hero-title {
+    font-size: 4rem; /* 64px */
+  }
+}
+
+/* 📱 Tablets */
+@media (max-width: 56.25em) { /* 900px */
+  .hero-title {
+    font-size: 3rem; /* 48px */
+    line-height: 1.1;
+  }
+  .hero-subtitle {
+    font-size: 1.125rem; /* 18px */
+    max-width: 85%;
+  }
+}
+
+/* 📱 Phones */
+@media (max-width: 37.5em) { /* 600px */
+  .hero-title {
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 1rem; /* 16px */
+    line-height: 1.4;
+    max-width: 90%;
+  }
+}

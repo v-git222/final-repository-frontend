@@ -1,0 +1,305 @@
+:root {
+  --primary: #152B5A;
+  --muted: #43536D;
+  --title-color: #2F2F33;
+  --search-border-alt: #F5E18A; /* yellow border */
+  --bg: #f9fbfd;
+  --button-bg: #FFFFFF;
+  --button-text: #2F2F33;
+  --button-border: #E4E7EC;
+  --button-blue-bg: #152B5A;
+  --button-blue-text: #FFFFFF;
+  --button-blue-border: #FFFFFF;
+}
+
+/* Page container */
+.hero {
+  min-width: 0;
+  padding: 28px 24px 48px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* ← Adjust this value for spacing between buttons */
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  margin-top: 32px; /* optional: add space above row */
+}
+/* Controls wrapper */
+.hero__controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* spacing between buttons and search bar */
+}
+
+/* ====== Buttons: consistent sizes, shadows, and smooth inversion ====== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 28px;
+  height: 44px;
+  border-radius: 12px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 220ms ease, color 220ms ease, box-shadow 220ms ease, transform 120ms ease;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+
+/* variables (fallback) */
+:root{
+  --blue: #152B5A;
+  --blue-dark-hover: #163059;
+  --white: #ffffff;
+  --muted-border: #E6EAF0; /* subtle light-gray border like screenshot */
+  --text-dark: #111827;
+}
+
+/* ==== Blue filled button (left) ==== */
+.btn.btn--blue {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+  box-shadow: 0 3px 10px rgba(21, 43, 90, 0.10);
+  font-weight: 600;
+}
+
+/* icon in blue button should use currentColor (or CSS fallback) */
+.btn.btn--blue .btn__icon svg { 
+  width: 18px; height: 18px;
+  stroke: currentColor; fill: none; 
+  transition: stroke 220ms ease, fill 220ms ease;
+}
+
+/* Hover: invert blue -> white bg / blue text */
+.btn.btn--blue:hover,
+.btn.btn--blue:focus {
+  background: var(--white);
+  color: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0 6px 18px rgba(21,43,90,0.08);
+  transform: translateY(-1px);
+}
+
+/* ensure icon color flips on hover (uses currentColor so no extra rules needed),
+   but include explicit rule if your SVG doesn't use currentColor */
+.btn.btn--blue:hover .btn__icon svg { stroke: var(--blue) !important; fill: var(--blue) !important; }
+
+/* ==== Toggle / Outline button (right) ==== */
+/* Matches screenshot: white bg, subtle border, bold dark text */
+.btn.btn--toggle {
+  background: var(--white);
+  color: var(--text-dark);
+  border-color: var(--muted-border);
+  box-shadow: 0 3px 10px rgba(44,63,96,0.04);
+  font-weight: 600;
+}
+
+/* icon in toggle uses currentColor */
+.btn.btn--toggle .btn__icon svg { 
+  width: 18px; height: 18px; 
+  stroke: currentColor; fill: none; 
+  transition: stroke 220ms ease, fill 220ms ease;
+}
+
+/* Hover: invert white -> blue bg / white text (same animation) */
+.btn.btn--toggle:hover,
+.btn.btn--toggle:focus {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+  box-shadow: 0 6px 18px rgba(21,43,90,0.12);
+  transform: translateY(-1px);
+}
+
+/* ensure icon flips on hover */
+.btn.btn--toggle:hover .btn__icon svg { stroke: var(--white) !important; fill: var(--white) !important; }
+
+/* Active/selected state for toggle remains blue (persisted) */
+.btn.btn--toggle.active,
+.btn.btn--toggle.is-active {
+  background: var(--blue) !important;
+  color: var(--white) !important;
+  border-color: var(--blue) !important;
+  box-shadow: 0 8px 26px rgba(21,43,90,0.16) !important;
+}
+
+/* Focus ring accessibility */
+.btn:focus {
+  outline: 3px solid rgba(21,43,90,0.12);
+  outline-offset: 2px;
+}
+
+/* Small responsive tweak so both buttons remain same height visually */
+.btn .btn__icon { display:inline-flex; align-items:center; justify-content:center; }
+
+
+/* --- Search Bar --- */
+.hero__searchbar-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.searchbar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 16px;
+  width: 960px;
+  height: 80px;
+  background: #FFFFFF;
+  border: 8px solid var(--search-border-alt);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(67, 83, 96, 0.06);
+  position: relative; /* for proper z-index stacking of children */
+}
+
+/* Left: search icon + input */
+.searchbar__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.searchbar__magnify {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(44, 63, 96, 0.04);
+}
+
+.searchbar__input {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #2C3A50;
+  width: 100%;
+  outline: none;
+}
+
+/* Right side: dropdown + search button */
+.searchbar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Dropdown styling — force white background and rounded corners inside yellow search frame */
+.searchbar .dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 105px;
+  height: 36px;
+  box-sizing: border-box;
+  z-index: 4; /* ensure it sits above the thick searchbar border */
+}
+
+.dropdown__label {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 4;
+}
+
+/* Make the select look like a standalone white control inside the searchbar */
+.searchbar .dropdown__select {
+  width: 100%;
+  height: 36px;
+  padding: 8px 36px 8px 12px; /* extra right padding for the arrow */
+  border-radius: 12px;
+  background: #fff !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--button-border) !important;
+  font-size: 14px;
+  font-weight: 500;
+  appearance: none;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(44, 63, 96, 0.06);
+}
+
+/* Custom pseudo arrow (your previous arrow) */
+.searchbar .dropdown__label::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid rgba(47, 47, 51, 0.7);
+  border-bottom: 2px solid rgba(47, 47, 51, 0.7);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Remove the native dropdown arrow in some browsers */
+.searchbar .dropdown__select::-ms-expand { display: none; }
+
+/* Focus state for select */
+.searchbar .dropdown__select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(21,43,90,0.08);
+}
+
+/* --- Search button (blue) --- */
+.btn--search {
+  padding: 10px 20px;
+  height: 40px;
+  min-width: 84px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid var(--primary);
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(44, 63, 96, 0.06);
+}
+.btn--search:hover {
+  background: #1b3578;
+  border-color: #1b3578;
+  box-shadow: 0 5px 14px rgba(44, 63, 96, 0.08);
+}
+/* Fix: ensure active (blue) button text is visible */
+
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .searchbar { width: calc(100% - 48px); }
+}
+
+@media (max-width: 480px) {
+  .searchbar {
+    padding: 12px;
+    flex-direction: column;
+    gap: 12px;
+    height: auto;
+  }
+  .searchbar__right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .searchbar .dropdown__select { width: 100%; }
+}
+

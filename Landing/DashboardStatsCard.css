@@ -1,0 +1,149 @@
+.stats-wrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ========== GLOBAL CARD STYLE ========= */
+.stat-card {
+  width: 20rem;      /* fixed width */
+  height: 20rem;     /* fixed height */
+  border-radius: 1.8rem;
+  background: #fff;
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;  /* prevent anything from overflowing */
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.05),
+    0 20px 40px rgba(0,0,0,0.06);
+}
+
+/* ========== YELLOW CARD ========= */
+.yellow-card {
+  background: linear-gradient(180deg, #f9c600, #f7a800);
+  width: 20rem !important;
+  height: 20rem !important;
+}
+
+.icon-circle {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  top: -1rem;
+  left: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle img {
+  width: 2rem;
+  filter: invert(100%);
+}
+
+.yellow-content h3 {
+  margin-top: 4rem;
+  font-size: 1.2rem;
+}
+
+.yellow-content h1 {
+  font-size: 2.8rem;
+  margin: 0.4rem 0;
+  font-weight: 700;
+}
+
+.yellow-content p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* ========== DARK CARD ========= */
+.dark-card {
+  background: radial-gradient(circle at 70% 30%, #2d3748, #1a2233);
+  color: white;
+}
+
+.big-title {
+  font-size: 3.2rem;
+  margin-top: 0.5rem;
+}
+
+.plus {
+  color: #ffcc00;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  max-width: 12rem;
+  margin-top: 0.4rem;
+  line-height: 1.3;
+}
+
+.avatar-row {
+  position: absolute;
+  bottom: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.avatar {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1a2233;
+}
+
+.add-avatar {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  background: white;
+  color: #1a2233;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ========== WHITE CARD ========= */
+.white-card {
+  background: #ffffff;
+}
+
+.label {
+  font-size: 1rem;
+  color: #555;
+}
+
+.value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.tag {
+  background: #e5f0ff;
+  color: #0066ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.6rem;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* FIXED: Chart overflow issue */
+.chart-area {
+  width: 100%;
+  height: 7rem;               /* fits inside 20rem card */
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #9dc9ff, #e7f2ff);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.05);
+  overflow: hidden;
+}

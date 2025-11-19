@@ -1,0 +1,455 @@
+.profile-wrapper {
+  font-family: "DM Sans", sans-serif;
+  padding: 2rem;
+  background: var(--profile-bg);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.page.light .profile-wrapper {
+  --profile-bg: #f8f9fb;
+  --card-bg: #ffffff;
+  --text-primary: #121212;
+  --text-secondary: #717182;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --accent: #ffc300;
+}
+
+.page.dark .profile-wrapper {
+  --profile-bg: #0d0d0d;
+  --card-bg: #121212;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a0a0a0;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent: #ffc300;
+}
+
+/* HEADER */
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg);
+  padding: 1.4rem 1.8rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-avatar img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.profile-info {
+  flex: 1;
+  margin-left: 1.2rem;
+}
+
+.profile-info h2 {
+  font-family: "URW Geometric", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.tag {
+  background: rgba(255, 195, 0, 0.15);
+  color: var(--accent);
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #121212;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+/* TABS */
+.profile-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  color: var(--accent);
+}
+
+.tab.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* CONTENT */
+.profile-content {
+  margin-top: 1.8rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-content .desc {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* INFO GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.info-grid h4 {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.info-grid p {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* DETAILS */
+.details {
+  margin-top: 2rem;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* TEAM GRID */
+.team-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.team-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-align: center;
+  padding: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.team-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid var(--accent);
+}
+
+.team-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.team-role {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .profile-wrapper {
+    padding: 1.2rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .profile-info {
+    margin-left: 0;
+  }
+
+  .profile-tabs {
+    justify-content: center;
+  }
+}
+/* === Business Card Header === */
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  padding: 1.6rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Left section (avatar + info) */
+.profile-card-left {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Avatar */
+.profile-card-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.profile-card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Company Info */
+.profile-card-info h2 {
+  font-family: "URW Geometric", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.profile-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.tag {
+  background: rgba(255, 195, 0, 0.2);
+  color: #b68c00;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.dot {
+  opacity: 0.6;
+}
+
+.profile-tagline {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  line-height: 1.4;
+  max-width: 380px;
+}
+/* ✏️ Edit Pencil Button */
+.edit-btn {
+  background: var(--accent);
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #121212;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.edit-btn:hover {
+  background: #ffcf33;
+  transform: translateY(-2px);
+}
+
+.pencil-icon {
+  pointer-events: none;
+}
+
+/* In dark mode */
+.page.dark .edit-btn {
+  color: #000;
+  background: var(--accent);
+}
+
+/* Hover Animation */
+.profile-card-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .profile-card-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .profile-card-left {
+    flex-direction: column;
+  }
+
+  .edit-btn {
+    width: 100%;
+  }
+
+  .profile-tagline {
+    max-width: none;
+  }
+}
+/* === Accordion Layout === */
+.accordion {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion-item {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  transition: all 0.3s ease;
+}
+
+/* === Accordion Tab Buttons (Business Yellow Style) === */
+.accordion-tab {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.9rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border-radius: 10px;
+}
+
+.accordion-tab img,
+.accordion-tab svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  color: inherit;
+}
+
+Hover state
+.accordion-tab:hover {
+  background: rgba(255, 195, 0, 0.15);
+  color: var(--text-primary);
+}
+
+/* Active (Selected) Yellow Box */
+.accordion-tab.active {
+  background: #ffc300;
+  color: #121212;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  font-weight: 500;
+}
+
+/* Optional subtle lift */
+    /* .accordion-tab.active:hover {
+    transform: translateY(-2px);
+    } */
+
+/* Expandable Content */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  background: var(--card-bg);
+  transition: all 0.4s ease;
+  opacity: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.accordion-content.open {
+  padding: 1.5rem;
+  max-height: 600px;
+  opacity: 1;
+}
+
+/* Smooth Shadow on Hover */
+.accordion-item:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile-friendly */
+@media (max-width: 768px) {
+  .accordion-tab {
+    font-size: 14px;
+    padding: 0.9rem 1rem;
+  }
+
+  .accordion-content.open {
+    padding: 1.2rem;
+  }
+}

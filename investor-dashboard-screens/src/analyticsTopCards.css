@@ -1,0 +1,102 @@
+/* ===================================
+   ALL CARDS IN ONE ROW — NO X SCROLL
+   =================================== */
+.analytics-cards-container {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+  flex-wrap: nowrap;     /* keep cards in one row */
+  overflow-x: hidden;    /* ❗ no horizontal scroll */
+  overflow-y: visible;
+}
+
+/* ===================================
+   CARD BASE STYLE
+   =================================== */
+.analytics-card {
+  position: relative;
+  flex: 1 1 0;          /* 🔥 shrink & share space evenly */
+  min-width: 0;         /* ❗ allow shrinking to avoid overflow */
+  padding: 28px 26px;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgb(255, 255, 255);
+  border: 1px solid rgba(255,255,255,0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: white;
+  box-sizing: border-box;
+  overflow: hidden;     /* keep inside clean */
+}
+
+/* ===================================
+   FLOATING BADGE
+   =================================== */
+.analytics-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 12px;
+  color: #1e293b;
+  backdrop-filter: blur(4px);
+}
+
+/* ===================================
+   ICON
+   =================================== */
+.analytics-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+/* ===================================
+   TEXT
+   =================================== */
+.analytics-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #475569;
+  margin: 0;
+  margin-top: 4px;
+}
+
+.analytics-value {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: -2px;
+}
+
+.analytics-sub {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* ===================================
+   MOBILE — stack instead of scroll
+   =================================== */
+@media (max-width: 780px) {
+  .analytics-cards-container {
+    flex-wrap: wrap;      /* allow stacking on small screens */
+  }
+
+  .analytics-card {
+    flex: 1 1 calc(50% - 18px);
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-card {
+    flex: 1 1 100%;
+  }
+}

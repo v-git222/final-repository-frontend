@@ -1,0 +1,81 @@
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  margin-top: 1rem;
+}
+
+.stats-card {
+  flex: 1;
+  min-width: 220px;
+  max-width: 280px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stats-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stats-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.stats-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.stats-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.stats-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 0.6rem;
+  margin-top: auto;
+}
+
+/* 🌙 Dark Mode */
+.stats-container.dark .stats-card {
+  background: #121212;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.stats-container.dark .stats-title {
+  color: #aaa;
+}
+
+.stats-container.dark .stats-value {
+  color: #f5f5f5;
+}
+
+.stats-container.dark .stats-subtitle {
+  color: #888;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}

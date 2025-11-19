@@ -1,0 +1,179 @@
+/* 🌟 Funding Container — Holds 4 Cards Side-by-Side */
+.funding-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  position: relative;
+  top: 3rem;
+  gap: 24px;
+  width: 63rem;
+  max-width: 1128px;
+  height: 140px;
+  margin-top: 1.5rem;
+  font-family: "DM Sans", "Inter", "Segoe UI", sans-serif;
+}
+
+/* 🧩 Funding Card — Common Base */
+.funding-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px;
+  gap: 10px;
+  width: 264px;
+  height: 140px;
+  border-radius: 14px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  isolation: isolate;
+  position: relative;
+}
+
+.funding-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ✨ Individual Gradient Styles */
+.funding-card.blue {
+  background: linear-gradient(135deg, #155dfc 0%, #1447e6 100%);
+  box-shadow: 0px 10px 15px -3px rgba(43, 127, 255, 0.1),
+    0px 4px 6px -4px rgba(43, 127, 255, 0.1);
+}
+
+.funding-card.purple {
+  background: linear-gradient(135deg, #9810fa 0%, #8200db 100%);
+  box-shadow: 0px 10px 15px -3px rgba(173, 70, 255, 0.1),
+    0px 4px 6px -4px rgba(173, 70, 255, 0.1);
+}
+
+.funding-card.green {
+  background: linear-gradient(135deg, #00a63e 0%, #007a55 100%);
+  box-shadow: 0px 10px 15px -3px rgba(0, 201, 80, 0.1),
+    0px 4px 6px -4px rgba(0, 201, 80, 0.1);
+}
+
+.funding-card.orange {
+  background: linear-gradient(135deg, #fe9a00 0%, #ff6900 100%);
+  box-shadow: 0px 10px 15px -3px rgba(255, 105, 0, 0.1),
+    0px 4px 6px -4px rgba(255, 105, 0, 0.1);
+}
+
+/* 🧱 Inner Layouts */
+.funding-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+.funding-title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.funding-value {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.funding-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  opacity: 0.9;
+  position: relative;
+}
+
+.funding-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🪶 Subtle Glow Overlay Circle */
+.funding-card::after {
+  content: "";
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  right: 20px;
+  top: -64px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* 🎨 Text Color per Gradient Theme */
+.funding-card.blue .funding-title,
+.funding-card.blue .funding-footer {
+  color: #dbeafe;
+}
+
+.funding-card.purple .funding-title,
+.funding-card.purple .funding-footer {
+  color: #f3e8ff;
+}
+
+.funding-card.green .funding-title,
+.funding-card.green .funding-footer {
+  color: #dcfce7;
+}
+
+.funding-card.orange .funding-title,
+.funding-card.orange .funding-footer {
+  color: #ffedd4;
+}
+
+/* 🌙 Dark Mode — Uses Dashboard Palette */
+.funding-container.dark .funding-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+.funding-container.dark .funding-title {
+  color: var(--text-secondary);
+}
+
+.funding-container.dark .funding-value {
+  color: var(--accent);
+}
+
+.funding-container.dark .funding-footer {
+  color: var(--text-secondary);
+}
+
+/* 📱 Responsive — Stack on Small Screens */
+@media (max-width: 1100px) {
+  .funding-container {
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+  }
+  .funding-card {
+    flex: 1 1 45%;
+    height: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .funding-card {
+    flex: 1 1 100%;
+  }
+}

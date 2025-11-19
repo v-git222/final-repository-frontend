@@ -1,0 +1,265 @@
+/* ========== APPLE-LIKE MINIMAL THEME (SMALLER VERSION) ========== */
+
+:root{
+  --bg: #ffffff;
+  --muted: #7b7b88;
+  --card: #ffffff;
+  --soft-shadow: 0 12px 40px rgba(20,20,40,0.08);
+  --soft-surface: #f6f7fb;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --accent: #0a1f4d;
+  --muted-2: #9aa0a6;
+}
+
+/* wrapper */
+.ci-wrapper {
+  background: var(--bg);
+  color: #111;
+  padding: 70px 54px;
+  display: flex;
+  justify-content: center;
+}
+
+/* center column */
+.ci-inner {
+  width: 100%;
+  max-width: 1040px;
+  text-align: center;
+  padding: 30px;
+}
+
+/* pill */
+.ci-pill {
+  display: inline-block;
+  padding: 10px 22px;
+  background: #eef6ff;
+  color: #2b6ef6;
+  font-weight: 600;
+  border-radius: 999px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* title */
+.ci-title {
+  font-size: 62px;
+  font-weight: 700;
+  margin: 12px 0 18px;
+  letter-spacing: -0.02em;
+}
+
+/* subtitle */
+.ci-sub {
+  margin: 0 auto 42px;
+  max-width: 660px;
+  color: var(--muted);
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+/* metrics */
+.ci-metrics {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-bottom: 50px;
+}
+
+.metric-value {
+  font-size: 42px;
+  font-weight: 700;
+  color: #f6b32b;
+}
+
+.metric-label {
+  color: var(--muted-2);
+  font-size: 20px;
+}
+
+/* dashboard card */
+.dashboard {
+  background: linear-gradient(180deg, #fff 0%, #fbfdff 100%);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--soft-shadow);
+  border: 2px solid rgba(15,20,40,0.04);
+  margin-top: 42px;
+}
+
+/* top row */
+.dashboard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.dashboard-title {
+  font-weight: 600;
+  font-size: 24px;
+  color: #333;
+}
+
+.dashboard-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--muted-2);
+}
+.icon-btn:hover { background: rgba(15,20,40,0.04); }
+
+/* search */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f4f6f9;
+  padding: 12px 16px;
+  border-radius: 16px;
+  color: var(--muted-2);
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  min-width: 180px;
+  font-size: 20px;
+}
+
+/* mini cards */
+.mini-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.mini-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 12px 32px rgba(20,20,40,0.06);
+  border: 2px solid rgba(15,20,40,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 18rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.mini-card * {
+  transform: scale(0.78);
+  transform-origin: top left;
+}
+
+/* mini top */
+.mini-top { display:flex; align-items:center; gap:18px; }
+
+.coin-badge {
+  width:58px; height:58px; border-radius:16px;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:22px; color:#222;
+}
+
+.coin-name .name { font-weight:700; font-size:22px; }
+.coin-name .code { font-size:18px; color:var(--muted-2); }
+
+.small-badge {
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 18px;
+}
+
+.mini-price { font-weight:700; font-size:28px; }
+
+/* graph */
+.mini-graph {
+  height:58px;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.mini-graph.up polyline { stroke:#1db954; stroke-width:4px; }
+.mini-graph.down polyline { stroke:#ff4d4d; stroke-width:4px; }
+
+/* footer */
+.mini-footer {
+  display:flex;
+  justify-content:space-between;
+  font-size:18px;
+  color:var(--muted-2);
+}
+
+/* table */
+.table-wrap {
+  margin-top: 18px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 12px;
+  border: 2px solid rgba(15,20,40,0.04);
+  box-shadow: 0 12px 32px rgba(20,20,40,0.04);
+}
+
+.market-table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:20px;
+}
+
+.market-table thead th {
+  padding:18px 20px;
+  color:var(--muted-2);
+  font-weight:600;
+  font-size:20px;
+}
+
+.market-table tbody td {
+  padding:20px;
+  font-size:18px;
+}
+
+/* row */
+.row-icon {
+  width:56px; height:56px; border-radius:12px;
+  background:#f3f6fa; color:var(--muted-2);
+  display:flex; align-items:center; justify-content:center;
+}
+
+.row-title { font-size:22px; font-weight:700; }
+.row-sub { font-size:18px; color:var(--muted-2); }
+
+.trend { font-size:20px; font-weight:600; }
+
+/* trade button */
+.trade-btn {
+  background:#0a1f4d;
+  color:white;
+  padding:10px 16px;
+  border-radius:12px;
+  border:none;
+  font-size:18px;
+}
+
+.dashboard-note {
+  margin-top:18px;
+  font-size:18px;
+  color:var(--muted-2);
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .ci-inner { padding: 0 24px; }
+  .mini-cards { grid-template-columns: 1fr; }
+  .ci-metrics { gap: 40px; flex-wrap:wrap; justify-content:center; }
+}

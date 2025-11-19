@@ -1,0 +1,166 @@
+/* ========================================= */
+/* COMPANY SUMMARY – FINTECH PROFESSIONAL    */
+/* ========================================= */
+
+.company-summary {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 28px;
+  font-weight: 500;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-thin);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Inter", "SF Pro Display", "DM Sans", sans-serif;
+  margin-top: 2rem;
+}
+
+/* Header */
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.summary-header h2 {
+  font-size: 1.32rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.complete-btn {
+  padding: 6px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--border-thin);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  letter-spacing: -0.2px;
+  transition: all 0.25s ease;
+}
+
+.complete-btn:hover {
+  background: linear-gradient(135deg, var(--accent) 0%, #ffe07d 100%);
+  color: #121212;
+  border-color: transparent;
+  box-shadow: 0 3px 16px rgba(255, 213, 66, 0.45);
+}
+
+/* GRID */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* CARD */
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-soft);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ICON */
+.summary-icon {
+  flex-shrink: 0;
+  font-size: 1.7rem;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--icon-bg);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--border-light);
+}
+
+/* TEXT */
+.summary-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 3px;
+  letter-spacing: -0.2px;
+}
+
+.summary-value {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.4px;
+}
+
+/* ========================================= */
+/* LIGHT THEME – PREMIUM FINTECH             */
+/* ========================================= */
+
+.page.light .company-summary {
+  --bg: #ffffffed;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --icon-bg: rgba(255, 255, 255, 0.6);
+  --accent: #ffc300;
+  --accent-soft: rgba(255, 195, 0, 0.4);
+  --text-primary: #111;
+  --text-secondary: #555;
+  --border-thin: rgba(0, 0, 0, 0.065);
+  --border-light: rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 3px 14px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================= */
+/* DARK THEME – PREMIUM FINTECH              */
+/* ========================================= */
+
+.page.dark .company-summary {
+  --bg: rgba(10, 10, 10, 0.9);
+  --card-bg: rgba(255, 255, 255, 0.035);
+  --icon-bg: rgba(255, 255, 255, 0.06);
+  --accent: #ffd54a;
+  --accent-soft: rgba(255, 213, 74, 0.35);
+  --text-primary: #f5f5f5;
+  --text-secondary: #b2b2b2;
+  --border-thin: rgba(255, 255, 255, 0.06);
+  --border-light: rgba(255, 255, 255, 0.09);
+  --shadow-soft: 0 3px 14px rgba(255, 255, 255, 0.03);
+  --shadow-card: 0 2px 12px rgba(255, 255, 255, 0.05);
+  --shadow-hover: 0 8px 24px rgba(255, 255, 255, 0.09);
+}
+
+/* ========================================= */
+/* RESPONSIVE                                */
+/* ========================================= */
+
+@media (max-width: 768px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .complete-btn {
+    align-self: flex-end;
+  }
+}

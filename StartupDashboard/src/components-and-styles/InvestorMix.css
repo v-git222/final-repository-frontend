@@ -1,0 +1,125 @@
+.investor-mix-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: space-between;
+  font-family: "URW Geometric", sans-serif;
+  margin-bottom: 3rem;
+}
+
+/* Header */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  
+}
+
+.chart-title h3 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 600;
+}
+
+.chart-title p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 4px 0 0;
+}
+
+/* Buttons */
+.chart-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.chart-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.chart-btn:hover {
+  background: var(--border-color);
+}
+
+/* Chart area */
+.chart-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.3s ease;
+}
+
+/* Legend */
+.chart-legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 10px 20px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-value {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* === THEME VARIABLES === */
+.investor-mix-card.light {
+  --card-bg: #ffffff;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --border-color: #e5e7eb;
+  --tooltip-bg: #ffffff;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.investor-mix-card.dark {
+  --card-bg: #0f0f0f;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b5b5b5;
+  --border-color: #333333;
+  --tooltip-bg: #1e1e1e;
+  --shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .investor-mix-card {
+    padding: 16px;
+  }
+  .chart-legend {
+    font-size: 0.8rem;
+    gap: 8px 14px;
+  }
+}

@@ -1,0 +1,236 @@
+/* portfolioPerformance.css */
+
+/* CARD WRAPPER */
+.pp-card{
+  width: 100%;
+  max-width: 1100px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 26px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.06);
+  border: 1px solid rgba(15,23,42,0.03);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #111827;
+}
+
+/* HEADER AREA */
+.pp-header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+/* left block (title + value) */
+.pp-header > div:first-child{
+  min-width: 0;
+}
+
+.pp-header h2{
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  font-size: 22px;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pp-header .sub{
+  margin: 0 0 12px 0;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* huge value */
+.value{
+  font-size: 46px;
+  line-height: 1;
+  margin: 6px 0 6px 0;
+  font-weight: 700;
+  color: #0b1220;
+}
+
+/* gain tag */
+.gain-tag{
+  display: inline-block;
+  margin-left: 12px;
+  background: rgba(16,185,129,0.12); /* soft green */
+  color: #059669;
+  padding: 6px 10px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+/* small current label */
+.current{
+  margin: 6px 0 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* RANGE BUTTONS (right side) */
+.range-buttons{
+  display:flex;
+  gap: 8px;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.range-buttons button{
+  background: #f3f4f6;
+  border: none;
+  color: #374151;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all .15s ease;
+  box-shadow: none;
+}
+
+.range-buttons button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+}
+
+.range-buttons button.active{
+  background: #ffffff;
+  border: 1px solid rgba(15,23,42,0.06);
+  box-shadow: 0 6px 18px rgba(168,85,247,0.08);
+  color: #0b1220;
+}
+
+/* CHART AREA */
+.chart-box{
+  margin-top: 18px;
+  position: relative;
+  overflow: visible;
+  padding-left: 24px; /* space for y-axis labels area */
+}
+
+/* dotted horizontal grid using pseudo element so it sits behind SVG */
+.chart-box::before{
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 54px;   /* adjusts top alignment of first horizontal guide */
+  bottom: 24px;
+  background-image:
+    linear-gradient(to bottom, rgba(111, 119, 143, 0.12) 1px, transparent 1px);
+  background-size: 100% 54px; /* spacing between horizontal guides; tweak to match design */
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* keep svg responsive */
+.chart-box svg{
+  width: 100%;
+  height: 260px;
+  display: block;
+}
+
+/* style polyline and shaded polygon (works with the inline attributes in component) */
+.chart-box polyline{
+  filter: drop-shadow(0 2px 6px rgba(168,85,247,0.18));
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* dots (circles) already have fill via inline props, give pointer cursor */
+.chart-box circle{
+  cursor: pointer;
+  transition: r .12s ease, transform .12s ease;
+}
+.chart-box circle:hover{
+  transform: scale(1.15);
+}
+
+/* TOOLTIP style — absolute element positioned with JS coords */
+.tooltip{
+  position: absolute;
+  transform: translate(-50%, -110%); /* center horizontally and push above the point */
+  pointer-events: none;
+  min-width: 150px;
+  background: #111827; /* dark black */
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-weight: 600;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.45);
+  z-index: 40;
+  text-align: left;
+  font-size: 13px;
+}
+
+/* small date text inside tooltip */
+.tooltip p{
+  margin: 0 0 6px 0;
+  font-weight: 500;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* big currency text */
+.tooltip h4{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* vertical dotted guide (optional) — drawn as a small pseudo element under tooltip */
+.tooltip::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 2px;
+  height: 8px;
+  background: transparent;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 880px){
+  .pp-header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .range-buttons{
+    width: 100%;
+    order: 2;
+  }
+  .value{
+    font-size: 36px;
+  }
+}
+
+/* small polish: axis label style (if you render labels outside svg) */
+.y-axis-label {
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* subtle baseline under chart */
+.chart-box::after{
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 12px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(15,23,42,0.04), rgba(15,23,42,0.03));
+  pointer-events: none;
+  border-radius: 2px;
+}

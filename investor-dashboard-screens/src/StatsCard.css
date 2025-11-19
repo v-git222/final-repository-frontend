@@ -1,0 +1,99 @@
+/* ================================ */
+/* CARD ROW                         */
+/* ================================ */
+.stats-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+/* ================================ */
+/* CARD CONTAINER                   */
+/* ================================ */
+.stat-card {
+  flex: 1;
+  padding: 28px;
+  width: 15rem;
+  border-radius: 28px;
+  background: white;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+}
+
+/* Gradient tones */
+.blue-card { background: linear-gradient(135deg, #edf5ff, #f4f8ff); }
+.purple-card { background: linear-gradient(135deg, #f3eaff, #faf5ff); }
+.green-card { background: linear-gradient(135deg, #e9f9f0, #f3fcf8); }
+.orange-card { background: linear-gradient(135deg, #fff3e7, #fff8f0); }
+
+/* ================================ */
+/* CARD TOP ROW                     */
+/* ================================ */
+.stat-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================================ */
+/* ICON BOX                         */
+/* ================================ */
+.icon-box {
+  height: 54px;
+  width: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Colors */
+.blue-icon { background: #2f80ff; }
+.purple-icon { background: #9b51e0; }
+.green-icon { background: #27ae60; }
+.orange-icon { background: #f2994a; }
+
+/* ================================ */
+/* GROWTH TAG                       */
+/* ================================ */
+.growth-tag {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background: white;
+  border: 1px solid #eee;
+}
+
+.blue-growth { color: #2f80ff; }
+.purple-growth { color: #9b51e0; }
+.green-growth { color: #27ae60; }
+.orange-growth { color: #f2994a; }
+
+/* ================================ */
+/* TEXTS                            */
+/* ================================ */
+.stat-label {
+  margin-top: 26px;
+  font-size: 15px;
+  color: #606060;
+}
+
+.stat-value {
+  margin-top: 8px;
+  font-size: 38px;
+  font-weight: 700;
+  color: #000;
+}
+
+.stat-sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #787878;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 12px;
+}

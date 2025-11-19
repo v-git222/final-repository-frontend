@@ -1,0 +1,185 @@
+/* GLOBAL FIX — Prevent any overflow child */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Container Layout */
+.dashboard-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  background: #F8F9FB;
+  font-family: Inter, sans-serif;
+  color: #1A1A1A;
+
+  /* prevent both X-SCROLL and scrollbar showing */
+  overflow-x: hidden !important;
+  scrollbar-width: none;
+}
+.dashboard-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Left + Right Column */
+.left-section {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.right-section {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  height: 100vh;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.right-section::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header */
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.header-sub {
+  font-size: 14px;
+  color: #7b7b7b;
+}
+.badge-verified {
+  font-size: 12px;
+  background: #EFEFEF;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border: 1px solid #E6E6E6;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.card-content {
+  padding: 24px;
+}
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.edit-btn {
+  color: #2563eb;
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Grid layout in cards */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  font-size: 14px;
+}
+.label {
+  color: #7b7b7b;
+  font-size: 13px;
+}
+
+/* Status Pills */
+.status-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.status-green {
+  background: #E6F6EC;
+  color: #239B56;
+}
+.status-yellow {
+  background: #FFF6D8;
+  color: #D7A000;
+}
+
+/* QUICK STATS */
+.balance-label {
+  font-size: 14px;
+  color: #7b7b7b;
+  text-align: center;
+}
+.balance-amount {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2ECC71;
+  text-align: center;
+}
+.approve-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px 0;
+  background: #28a745;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.approve-btn:hover {
+  background: #218838;
+}
+
+/* TIMELINE */
+.timeline-list {
+  margin-top: 12px;
+  font-size: 14px;
+}
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+.timeline-date {
+  color: #7b7b7b;
+}
+
+/* SMALL TEXT */
+.small-gray {
+  color: #7b7b7b;
+  font-size: 14px;
+}
+
+/* Responsive behaviour below 1000px */
+@media (max-width: 1000px) {
+  .dashboard-container {
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .right-section {
+    height: auto;
+    overflow-y: visible;
+  }
+}

@@ -1,0 +1,135 @@
+/* MAIN GRID */
+.portfolio-actions-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* LEFT CARD */
+.portfolio-card {
+  flex: 2;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.portfolio-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+.subtitle {
+  font-size: 15px;
+  color: #808080;
+  margin-top: 4px;
+}
+
+/* Value Row */
+.portfolio-value-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.portfolio-value-row h1 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.growth-tag {
+  padding: 6px 14px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #e8fdf3;
+  color: #27ae60;
+}
+.growth-tag.green {
+  background: #e8fdf3;
+  color: #27ae60;
+}
+
+.current-val {
+  margin-top: 4px;
+  color: #7a7a7a;
+  font-size: 14px;
+}
+
+/* Time range buttons */
+.time-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+.time-buttons button {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid #e4e4e4;
+  background: #fafafa;
+  cursor: pointer;
+  font-size: 14px;
+}
+.time-buttons .active {
+  background: #000;
+  color: white;
+  border-color: #000;
+}
+
+/* Chart */
+.chart-container {
+  margin-top: 20px;
+}
+
+/* RIGHT CARD */
+.actions-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+/* Action List */
+.actions-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+.action-icon {
+  height: 46px;
+  width: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.action-text h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.action-text p {
+  color: #7a7a7a;
+  font-size: 14px;
+}
+
+.action-arrow {
+  margin-left: auto;
+  font-size: 20px;
+  opacity: 0.5;
+}

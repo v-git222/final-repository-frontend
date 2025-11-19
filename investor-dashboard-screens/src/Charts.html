@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard</title>
+
+<style>
+  body {
+    font-family: Inter, sans-serif;
+    background: #f5f6fa;
+    padding: 30px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    margin: 0 0 6px 0;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 280px !important;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- TOKEN BALANCE BAR CHART -->
+<div class="card">
+  <h2>Token Balance Growth</h2>
+  <p>6-month trend of total token value</p>
+  <canvas id="barChart"></canvas>
+</div>
+
+<!-- PORTFOLIO LINE CHART -->
+<div class="card">
+  <h2>Portfolio Performance</h2>
+  <p>vs Market Benchmark</p>
+  <canvas id="lineChart"></canvas>
+</div>
+
+<!-- DONUT CHART -->
+<div class="card">
+  <h2>Sector Performance</h2>
+  <p>ROI by industry sector</p>
+  <canvas id="pieChart"></canvas>
+</div>
+
+<script>
+// ----- BAR CHART -----
+const bar = document.getElementById("barChart").getContext("2d");
+new Chart(bar, {
+  type: "bar",
+  data: {
+    labels: ["Q1", "Q2", "Q3", "Q4"],
+    datasets: [{
+      label: "ROI",
+      data: [12000, 18000, 35000, 30000],
+      backgroundColor: "#26A8FF"
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false }},
+    scales: {
+      y: { beginAtZero: true, ticks: { color: "#000" }},
+      x: { ticks: { color: "#000" }}
+    }
+  }
+});
+
+// ----- LINE CHART -----
+const line = document.getElementById("lineChart").getContext("2d");
+new Chart(line, {
+  type: "line",
+  data: {
+    labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+    datasets: [
+      {
+        label: "Market Benchmark",
+        borderColor: "#8E9AAF",
+        data: [200,220,260,300,320,350,370,390,420,450,470,490],
+        tension: 0.4
+      },
+      {
+        label: "Your Portfolio",
+        borderColor: "#00C774",
+        data: [210,240,280,330,350,390,420,450,480,510,540,570],
+        tension: 0.4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { ticks: { color: "#000" }},
+      x: { ticks: { color: "#000" }}
+    }
+  }
+});
+
+// ----- PIE CHART -----
+const pie = document.getElementById("pieChart").getContext("2d");
+new Chart(pie, {
+  type: "doughnut",
+  data: {
+    labels: ["HealthTech","FinTech","AI/ML","CleanTech","EdTech"],
+    datasets: [{
+      data: [48,32,28,22,18],
+      backgroundColor: ["#4C84FF","#00C774","#FF6B6B","#FFA600","#A66BFF"]
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { labels: { color: "#000" }}}
+  }
+});
+</script>
+
+<!-- CHART.JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>

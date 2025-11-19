@@ -1,0 +1,117 @@
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 20px;
+}
+
+/* CARD BASE */
+.profile-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-card-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 8px;
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.label {
+  font-size: 13px;
+  color: #7a7a7a;
+}
+
+.value {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.link {
+  color: #3f6fff;
+  cursor: pointer;
+}
+
+/* KYC SECTION */
+.kyc-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.kyc-sub {
+  font-size: 13px;
+  color: #7a7a7a;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.kyc-row {
+  background: #fafafa;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kyc-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.green { background: #1ba44a; }
+.orange { background: #f69c28; }
+.gray { background: #bfbfbf; }
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.success {
+  background: #d9f7df;
+  color: #1ba44a;
+}
+
+.pending {
+  background: #fff3da;
+  color: #e29315;
+}

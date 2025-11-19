@@ -1,0 +1,81 @@
+.gi-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  max-width: 1200px;
+  margin: auto;
+  font-family: Inter, sans-serif;
+}
+
+/* Header */
+.gi-header {
+  margin-bottom: 24px;
+}
+
+.gi-title-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.gi-title-icon {
+  background: #eef5ff;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.gi-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.gi-sub {
+  margin: 4px 0 0 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* GRID OF ITEMS */
+.gi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.gi-item {
+  background: #f9fafb;
+  padding: 18px 20px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.gi-item-icon {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.gi-item p {
+  margin: 0;
+  font-size: 15px;
+  color: #374151;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Footer */
+.gi-footer {
+  margin-top: 28px;
+  color: #9ca3af;
+  font-size: 14px;
+  text-align: left;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 18px;
+}

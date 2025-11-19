@@ -1,0 +1,30 @@
+.quick-insights {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  width: 85%;
+  margin: 1rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "URW Geometric", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.quick-insights:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.quick-insights h4 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.quick-insights p {
+  margin: 6px 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}

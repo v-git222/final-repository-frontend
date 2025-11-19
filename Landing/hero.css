@@ -1,0 +1,225 @@
+/* ========================= */
+/* HERO SECTION LAYOUT       */
+/* ========================= */
+
+.hero {
+  max-width: 220rem;         
+  margin: 0 auto;
+  padding: 5rem 4rem;
+  text-align: center;
+  background-color: transparent;
+  margin-left: -3rem;
+}
+
+/* ========================= */
+/* TITLE — same size, 2× width */
+/* ========================= */
+.hero-title {
+  font-size: 4.9rem;          
+  font-weight: 700;
+  color: #222;
+  max-width: 170rem;          /* was 70rem → 2× width */
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.1;
+}
+
+/* ========================= */
+/* SUBTITLE — same size, 2× width */
+/* ========================= */
+.hero-subtitle {
+  font-size: 1.6rem;
+  color: #555;
+  max-width: 110rem;          /* was 55rem → 2× width */
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+}
+
+/* ========================= */
+/* BUTTON GROUP (unchanged)  */
+/* ========================= */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* primary */
+.btn-primary {
+  background: #0A1F4D;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #071836;
+}
+
+/* secondary */
+.btn-secondary {
+  background: white;
+  border: 0.12rem solid #dce2ec;
+}
+
+.btn-secondary:hover {
+  background: #f7f9fc;
+}
+
+/* ========================= */
+/* SEARCH BAR WRAPPER — 2× width */
+/* ========================= */
+.hero-search-container {
+  position: relative;
+  max-width: 200rem;            /* was 60rem → 2× width */
+  margin: 0 auto;
+}
+
+/* ========================= */
+/* SEARCH BAR — same height, 2× width */
+/* ========================= */
+.hero-search {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  width: 73rem;
+}
+
+/* input (same size) */
+.hero-search input {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background: #f6f8fd;
+  border-radius: 0.6rem;
+  border: none;
+}
+
+.hero-search input:focus {
+  outline: none;
+}
+
+/* select (same size) */
+.hero-search select {
+  padding: 1rem;
+  font-size: 1.05rem;
+  background: #f6f8fd;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-search select:focus {
+  outline: none;
+}
+
+/* search button */
+.btn-search {
+  padding: 1rem 1.5rem;
+  background: #0A1F4D;
+  color: white;
+  border-radius: 0.6rem;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background: #071836;
+}
+
+/* ========================= */
+/* RESULTS DROPDOWN — 2× width */
+/* ========================= */
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;                  /* auto-adjusts because container width doubled */
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+/* result items (same size) */
+.result-item {
+  padding: 1rem 1.5rem;
+  font-size: 1.05rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.result-item:hover {
+  background: #f6f8fd;
+}
+
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 2.6rem;
+    max-width: 100%;
+  }
+
+  .hero-subtitle {
+    font-size: 1.8rem;
+    max-width: 100%;
+  }
+
+  .hero-search {
+    flex-direction: column;
+  }
+
+  .hero-search input,
+  .hero-search select,
+  .hero-search button {
+    width: 100%;
+  }
+
+  .search-results {
+    position: relative;
+  }
+}
+/* SEARCH BAR WRAPPER — 2× width */
+.hero-search-container {
+  position: relative;
+  max-width: 200rem;
+  margin: 0 auto;
+  z-index: 50;                 /* ✅ ensures dropdown stays above hero */
+  overflow: visible !important; /* ✅ prevents clipping */
+}
+
+/* RESULTS DROPDOWN — 2× width */
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 0.8rem;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
+  overflow: hidden;
+  padding: 0.5rem 0;
+
+  z-index: 9999;               /* 🔥 highest, dropdown will ALWAYS be on top */
+}

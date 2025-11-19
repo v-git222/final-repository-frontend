@@ -1,0 +1,180 @@
+:root {
+  --container-w: 1280px;
+  --bg: rgba(193,193,193,0.16);
+  --radius: 24px;
+  --muted: #8D8D99;
+  --text: #121212;
+  --input-bg: rgba(18,18,18,0.05);
+  --input-border: rgba(18,18,18,0.2);
+  --button-bg: #152B5A;
+  --shadow-strong: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1);
+  font-family: Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Outer wrapper to center on page */
+.newsletter-outer {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Main container */
+.newsletter {
+  width: min(var(--container-w), 100%);
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 48px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* inner content row */
+.newsletter-inner {
+  width: 100%;
+  max-width: 1184px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* left column */
+.newsletter-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 544px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* title */
+.newsletter-title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 36px;
+  color: var(--text);
+  font-weight: 400; /* reduced thickness per request */
+  white-space: nowrap; /* force 1 line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* subtitle / paragraph */
+.newsletter-sub {
+  margin: 0;
+  font-size: 18px;
+  line-height: 29px;
+  color: var(--muted);
+  max-width: 544px;
+}
+
+/* optional illustration (placed under text if needed) */
+.newsletter-illustration img {
+  display: none; /* hide by default, uncomment to show if you want the provided image visible */
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* right area: input + button */
+.newsletter-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 544px;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+/* email input wrapper */
+.email-input {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 12px;
+  width: 404px;
+  height: 57.6px;
+  background: var(--input-bg);
+  border: 0.8px solid var(--input-border);
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+/* native input */
+.email-input input {
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--text);
+  width: 100%;
+}
+
+/* subscribe button */
+.subscribe-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 28px;
+  gap: 10px;
+  width: 128px;
+  height: 56px;
+  background: var(--button-bg);
+  box-shadow: var(--shadow-strong);
+  border-radius: 14px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+/* small error message */
+.newsletter-error {
+  margin-top: 12px;
+  color: #b00020;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .newsletter {
+    padding: 28px;
+  }
+
+  .newsletter-inner {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .newsletter-left,
+  .newsletter-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .newsletter-title {
+    white-space: normal;
+  }
+
+  .newsletter-right {
+    justify-content: stretch;
+    gap: 12px;
+  }
+
+  .email-input {
+    width: 100%;
+  }
+
+  .subscribe-btn {
+    width: 100%;
+  }
+}
+

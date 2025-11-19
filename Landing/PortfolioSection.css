@@ -1,0 +1,556 @@
+/* StartupPortfolioSection.css
+   Updated: centered header grid + stable alignment for right column,
+   retains the section upshift on wide screens and responsive fallbacks.
+*/
+
+/* color system */
+:root{
+  --accent-blue: #1c79ff;
+  --text-dark: #121212;
+  --muted: #43536d;
+  --gold: #ffd84d;
+}
+
+/* Outer section */
+.startup-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 96px 24px;
+  box-sizing: border-box;
+  background: #fff;
+
+  /* shift the whole section up by 200px on wide screens */
+  position: relative;
+  top: -200px;
+}
+
+/* keep the upshift disabled on small screens so layout doesn't overlap */
+@media (max-width: 900px){
+  .startup-section { top: 0; position: static; }
+}
+
+.startup-inner {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  box-sizing: border-box;
+}
+
+/* Header
+   — use a two-column grid so left and right blocks are centered together
+   — grid keeps the right block from hugging the far edge
+*/
+.startup-header {
+  display: grid;
+  grid-template-columns: 1fr 420px; /* left fluid column, right fixed column */
+  gap: 80px;                         /* smaller gap than before for better balance */
+  align-items: start;
+  position: relative;                /* safe for decorative positioning if needed */
+  min-height: 140px;                 /* reserve vertical space to avoid overlap */
+  box-sizing: border-box;
+}
+
+.left-head {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  grid-column: 1 / 2;
+  box-sizing: border-box;
+}
+
+/* small badge row */
+.badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #bbd6f1 0%, #f7ecc7 100%);
+  color: #152b5a;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Title */
+.startup-title {
+  font-family: "URW Geometric", "Helvetica Neue", Arial, sans-serif;
+  font-size: 64px;
+  line-height: 72px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.startup-title .accent {
+  color: var(--accent-blue);
+}
+
+/* header-sub-row (paragraph + button)
+   — moved into the second grid column; no absolute positioning required
+*/
+.header-sub-row {
+  grid-column: 2 / 3;   /* place into the fixed right column */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin-top: 16px;     /* slight offset under the main heading */
+  width: 100%;
+}
+
+/* paragraph side */
+.header-sub-row .lead-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* button inside header-sub-row */
+.header-sub-row .outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border-radius: 12px;
+  border: 1.5px solid #121212;
+  background: transparent;
+  color: #121212;
+  font-weight: 500;
+  transition: all 0.16s ease;
+  cursor: pointer;
+}
+
+.header-sub-row .outline-btn:hover {
+  background: #121212;
+  color: #fff;
+}
+
+/* === PORTFOLIO ROW: use grid for reliable baseline alignment ===
+   left column: fixed width for yellow card
+   right column: flexible space for cards
+*/
+.portfolio-row {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 40px;
+  align-items: end; /* align bottoms */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Left yellow card (invest card) */
+.invest-card {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  background: var(--gold);
+  border-radius: 24px;
+  padding: 48px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  isolation: isolate;
+  justify-content: space-between;
+}
+
+/* Top avatars row inside yellow card */
+.invest-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar-stack {
+  display: flex;
+  align-items: center;
+  margin-left: -7px; /* overlap effect */
+  z-index: 1;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  margin-right: -12px;
+  background: #ddd;
+}
+
+.invest-note {
+  font-size: 14px;
+  color: var(--text-dark);
+  font-weight: 500;
+  margin-left: 12px;
+}
+
+.invest-title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 42px;
+  color: var(--text-dark);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.invest-desc {
+  margin: 0;
+  color: rgba(18, 18, 18, 0.7);
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.feature-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  
+}
+
+.pill {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #fff;
+  background: #121212;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.invest-cta {
+  margin-top: auto;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border-radius: 24px;
+  border: 1.5px solid #121212;
+  background: transparent;
+  color: var(--text-dark);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.invest-deco {
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(0.5px);
+}
+
+/* Right column (grid second column) wrapper — use a flex row for cards */
+.cards-col {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 24px;
+  flex-wrap: nowrap;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+/* Dark image card */
+.image-card {
+  width: 230px;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: end;
+  margin: 0;
+}
+
+.card-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.95) saturate(0.95);
+  transform-origin: center;
+}
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 43, 0.8) 0%,
+    rgba(15, 23, 43, 0.3) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: #fff;
+  pointer-events: none; /* prevents interference with hover */
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-tag {
+  background: var(--accent-blue);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.card-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 14px;
+}
+.card-bottom {
+  background: none !important;
+}
+
+.card-bottom {
+  display: flex;
+  align-items: flex-end;
+  background: none; /* ✅ ensure no white bg behind title */
+  padding: 0;
+  margin: 0;
+}
+.card-bottom::before,
+.card-bottom::after {
+  content: none !important;
+}
+/* title: large, crisp, no box */
+.card-title {
+  font-family: "DM Sans", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* responsive size */
+  font-size: clamp(20px, 4vw, 32px);   /* 32px on desktop, scales down */
+  line-height: 1.05;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  background: none !important;         /* nuke any background box */
+  box-shadow: none;
+  text-shadow: 0 8px 22px rgba(0,0,0,0.55); /* helps legibility on busy images */
+}
+/* --- FORCE CLEAN TITLE OVERLAY --- */
+.card-bottom,
+.card-bottom::before,
+.card-bottom::after,
+.card-title,
+.card-title::before,
+.card-title::after {
+  all: unset; /* hard reset everything — removes inherited padding, backgrounds, filters */
+  display: block;
+  position: relative;
+  top: 16px;
+  z-index: 3;
+  color: #fff !important;
+  font-family: "Arial", Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;   /* ~10px smaller than before */
+  font-weight: 500 !important;  /* reduced from 700 → 500 */
+  line-height: 1.2 !important;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.55) !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 0 6px 0 !important;
+   border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  content: none !important;
+  background-image: none !important;
+  pointer-events: none;
+}
+
+/* responsive tweaks */
+@media (max-width: 1100px) {
+  .startup-title {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  /* fallback to a two-row layout: left card then right cards under it */
+  .portfolio-row {
+    display: block; /* let children stack naturally, the inner layout will handle alignment */
+  }
+/* ---------------------------
+   FORCE: startup header stays two-column
+   --------------------------- */
+
+/* Primary forced two-column layout (default) */
+.startup-header {
+  display: grid !important;
+  grid-template-columns: minmax(320px, 1fr) 420px !important; /* left flexible, right fixed */
+  gap: 48px !important;
+  align-items: start !important;
+  box-sizing: border-box !important;
+  grid-auto-flow: column !important;
+}
+
+/* Ensure left and right children sit in their columns */
+.startup-header > .left-head { grid-column: 1 / 2 !important; }
+.startup-header > .header-sub-row { grid-column: 2 / 3 !important; align-self: start !important; }
+
+/* Prevent previously applied responsive rule from switching to flex */
+@media (max-width: 1100px) {
+  .startup-header {
+    /* keep it two-columns but let the right column shrink a bit */
+    grid-template-columns: minmax(280px, 1fr) 360px !important;
+    gap: 32px !important;
+  }
+}
+
+/* Keep two columns down to mobile-ish widths; below this we stack to avoid horizontal overflow */
+@media (max-width: 740px) {
+  .startup-header {
+    /* small-screen two-column fallback: tighter fixed column to avoid overflow */
+    grid-template-columns: minmax(180px, 1fr) 220px !important;
+    gap: 16px !important;
+    align-items: start !important;
+  }
+
+  .startup-title { 
+    /* ensure heading doesn't overflow its column — reduce size a touch */
+    font-size: clamp(28px, 4.5vw, 42px) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+/* Final fallback: truly stack at the smallest widths to avoid unreadable layout */
+@media (max-width: 420px) {
+  .startup-header {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .header-sub-row { grid-column: 1 / -1 !important; }
+}
+
+/* Make sure nothing else wins: block earlier media queries that set display:flex */
+.startup-header[style],
+.startup-header.inline,
+.startup-header {
+  /* re-assert grid as the primary layout mode */
+  display: grid !important;
+}
+
+/* Minor safety: avoid the right column content hugging the edge */
+.header-sub-row {
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+  box-sizing: border-box !important;
+}
+
+  .invest-card {
+    width: 420px;
+    padding: 40px;
+    min-height: 380px;
+    margin-bottom: 28px;
+  }
+
+  .cards-col {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
+
+  .image-card {
+    width: 200px;
+    height: 280px;
+    border-radius: 18px;
+  }
+
+  /* header sub-row stacks under heading on narrow screens */
+  .header-sub-row {
+    grid-column: 1 / -1;
+    position: static;
+    width: auto;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .startup-header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .portfolio-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .cards-col {
+    padding-bottom: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .invest-card {
+    width: 100%;
+    min-height: 360px;
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  .image-card {
+    width: 100%;
+    height: 260px;
+    border-radius: 16px;
+  }
+
+  .outline-btn {
+    top: 0;
+  }
+}
+
+/* accessibility / utility */
+.hidden { display: none !important; }
+.center { display: flex; align-items: center; justify-content: center; }
+
