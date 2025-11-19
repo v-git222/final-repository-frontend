@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+
+.current-deals {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "URW Geometric", sans-serif;
+}
+
+.dark .current-deals {
+  background: #111;
+  color: #f5f5f5;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.deals-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.dark .deals-header h3 {
+  color: #fff;
+}
+
+.deals-header p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.deals-filters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.filter-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  font-size: 14px;
+}
+
+.dark .filter-dropdown {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #e5e7eb;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-left: 8px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.dark .search-box {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #f5f5f5;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f9fafb;
+}
+
+th {
+  text-align: left;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+td {
+  padding: 14px 12px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #111827;
+}
+
+.dark td {
+  color: #f5f5f5;
+  border-top: 1px solid #333;
+}
+
+.startup-name {
+  font-weight: 600;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.active {
+  background: #d1fae5;
+  color: #15803d;
+}
+
+.status-badge.reviewing {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* Action button: bordered circular style */
+.action-btn {
+  background: transparent;
+  border: 2px solid #e5e7eb; /* soft gray border */
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.action-btn:hover {
+  background: #e0e7ff; /* light blue tint on hover */
+  border-color: #3b82f6; /* accent blue border */
+  transform: translateY(-1px);
+}
+
+.action-btn svg {
+  color: #111827; /* dark gray icon for visibility */
+  stroke-width: 2;
+  transition: color 0.25s ease;
+}
+
+/* ✅ Dark mode styling */
+.dark .action-btn {
+  background: transparent;
+  border: 2px solid #475569; /* subtle navy-gray border */
+}
+
+.dark .action-btn:hover {
+  background: #1e40af; /* deep blue hover */
+  border-color: #60a5fa; /* light blue border */
+}
+
+.dark .action-btn svg {
+  color: #ffffff; /* clean white icon */
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pagination button {
+  border: none;
+  background: #f1f5f9;
+  color: #111827;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #111827;
+  color: #fff;
+}
+
+.dark .pagination button {
+  background: #1e293b;
+  color: #f5f5f5;
+}
+
+.dark .pagination button.active {
+  background: #3b82f6;
+}
+
+.table-note {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 10px;
+  text-align: center;
+}

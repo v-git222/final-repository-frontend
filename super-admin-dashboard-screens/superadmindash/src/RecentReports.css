@@ -1,0 +1,105 @@
+/* =====================
+   Search Input
+===================== */
+.search-input {
+  height: 42px;
+  width: 100%;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #1f2937;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.dark .search-input {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #e5e7eb;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #9ca3af;
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.25);
+}
+
+.dark .search-input:focus {
+  border-color: #9ca3af;
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.25);
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+.dark .search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* =====================
+   Action Buttons
+===================== */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #374151;
+  transition: all 0.25s ease;
+}
+
+.action-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: scale(1.05);
+}
+
+.dark .action-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #e5e7eb;
+}
+
+.dark .action-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* =====================
+   Pagination Buttons
+===================== */
+.page-btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #374151;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.page-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.04);
+}
+
+.page-btn.active {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+.dark .page-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #e5e7eb;
+}
+
+.dark .page-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .page-btn.active {
+  background-color: #f3f4f6;
+  color: #111827;
+}

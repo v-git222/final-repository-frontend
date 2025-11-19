@@ -1,0 +1,229 @@
+.investor-directory {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  color: #1f2937;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+.directory-header {
+  margin-bottom: 1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.title h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.directory-header p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.2rem 0;
+}
+
+.status-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f3f4f6;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.search-box {
+  position: relative;
+  width: 240px;
+}
+
+.search-box svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.45rem 0.75rem 0.45rem 2rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+/* Table */
+.investor-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.investor-table th {
+  text-align: left;
+  font-weight: 600;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem 0.5rem;
+}
+
+.investor-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Type Tag */
+.type-tag {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Status Badge */
+.status-badge {
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.status-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.reviewing {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+/* Action Button */
+.action-btn {
+  background: #111827;
+  border: none;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.action-btn:hover {
+  background: #374151;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.pagination button {
+  border: none;
+  background: #f3f4f6;
+  color: #374151;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pagination button.active {
+  background: #1e3a8a;
+  color: #fff;
+}
+
+.pagination button:hover {
+  background: #e5e7eb;
+}
+
+.disclaimer {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* 🌙 Dark Mode */
+.investor-directory.dark {
+  background: #0a0a0a;
+  color: #e5e5e5;
+}
+
+.investor-directory.dark .status-btn,
+.investor-directory.dark .search-box input {
+  background: #1a1a1a;
+  border-color: #333;
+  color: #e5e5e5;
+}
+
+.investor-directory.dark .investor-table th {
+  color: #9ca3af;
+  border-color: #333;
+}
+
+.investor-directory.dark .investor-table td {
+  border-color: #222;
+}
+
+.investor-directory.dark .type-tag {
+  border-color: #444;
+  color: #ccc;
+}
+
+.investor-directory.dark .status-badge.active {
+  background: #064e3b;
+  color: #a7f3d0;
+}
+
+.investor-directory.dark .status-badge.reviewing {
+  background: #1e3a8a;
+  color: #bfdbfe;
+}
+
+.investor-directory.dark .action-btn {
+  background: #222;
+  color: #eee;
+}
+
+.investor-directory.dark .action-btn:hover {
+  background: #333;
+}

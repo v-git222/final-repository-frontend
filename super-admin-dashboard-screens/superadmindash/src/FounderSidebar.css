@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+
+.founder-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "URW Geometric", sans-serif;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+/* === Card === */
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+}
+
+.dark .card {
+  background: #181818;
+  color: #f5f5f5;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* === Founder Profile === */
+.founder-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.founder-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.founder-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.founder-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.founder-actions button {
+  border: none;
+  background: #f3f4f6;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.founder-actions button:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.dark .founder-actions button {
+  background: #222;
+  color: #9ca3af;
+}
+
+.dark .founder-actions button:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* === Founder Info === */
+.founder-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #111827;
+}
+
+.dark .info-label {
+  color: #e5e7eb;
+}
+
+.info-value {
+  color: #6b7280;
+}
+
+.dark .info-value {
+  color: #9ca3af;
+}
+
+.info-link {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+}
+
+/* === Funding === */
+.subtext {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.fund-value {
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* === Timeline === */
+.timeline-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.timeline-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-icon.blue {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.timeline-icon.purple {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.timeline-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-label {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.timeline-date {
+  font-size: 15px;
+  font-weight: 500;
+}

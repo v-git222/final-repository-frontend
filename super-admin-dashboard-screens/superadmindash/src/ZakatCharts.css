@@ -1,0 +1,101 @@
+.zakat-charts {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  color: #111;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.chart-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+}
+
+.chart-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+
+.chart-card p {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.donut-wrapper {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.legend-item {
+  font-size: 0.85rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* 🌙 Dark Mode */
+.zakat-charts.dark {
+  color: #f8fafc;
+}
+
+.zakat-charts.dark .chart-card {
+  background: #1e1e1e;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.zakat-charts.dark .chart-card h3 {
+  color: #e2e8f0;
+}
+
+.zakat-charts.dark .chart-card p,
+.zakat-charts.dark .legend-item {
+  color: #a1a1aa;
+}
+
+.zakat-charts.dark .dot {
+  opacity: 0.9;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donut-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+}

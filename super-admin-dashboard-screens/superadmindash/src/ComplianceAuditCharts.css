@@ -1,0 +1,145 @@
+.donut-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.light {
+  --card-bg: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+}
+
+.dark {
+  --card-bg: #1e293b;
+  --text-primary: #f9fafb;
+  --text-secondary: #94a3b8;
+}
+
+/* Chart Card */
+.chart-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.chart-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chart-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.chart-actions {
+  display: flex;
+  gap: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+/* Chart layout */
+.chart-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.chart-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.chart-center h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.chart-center p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Legend */
+.chart-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.chart-legend li {
+  display: grid;
+  grid-template-columns: 14px 1fr auto auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-label {
+  color: var(--text-primary);
+}
+
+.legend-value {
+  font-weight: 500;
+}
+
+.legend-percent {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .donut-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart-legend {
+    width: 100%;
+    margin-top: 16px;
+  }
+}

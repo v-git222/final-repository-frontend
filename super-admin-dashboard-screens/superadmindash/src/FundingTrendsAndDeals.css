@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+
+.funding-trends-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+  font-family: "URW Geometric", sans-serif;
+}
+
+.chart-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 20px 24px;
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+}
+
+.dark .chart-card {
+  background: #111;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+  color: #f5f5f5;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.chart-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.dark .chart-header h3 {
+  color: #fff;
+}
+
+.chart-header p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.dark .chart-header p {
+  color: #9ca3af;
+}
+
+.chart-actions {
+  display: flex;
+  gap: 10px;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.chart-actions svg:hover {
+  color: #2563eb;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 220px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .funding-trends-container {
+    grid-template-columns: 1fr;
+  }
+}

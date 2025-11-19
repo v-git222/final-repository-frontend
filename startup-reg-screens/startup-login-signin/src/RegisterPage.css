@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --yellow: #f5c200;
+  --blue-dark: #0a193c;
+  --muted: #8b8ea3;
+  --border: #d9d9e4;
+}
+
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* PAGE GRID */
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* LEFT SECTION */
+.left {
+  background: linear-gradient(180deg, #fff, #f6f7ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px;
+}
+
+.left-inner {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  
+}
+.brand-logo {
+  width: 10rem;
+  height: 2.5rem;
+}
+.btn-social span {
+  color: #000 !important;
+  position: relative;
+  left: 5rem;
+}
+
+
+.logo-box {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #ffdd6b, #fdbb13);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #252525;
+}
+
+/* Welcome Text */
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.subtitle {
+  margin-bottom: 26px;
+  color: #757889;
+  font-size: 14px;
+}
+
+/* FORM */
+.form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #50515b;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #b5b7c4;
+}
+
+/* Primary Button */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--yellow);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+/* Login link */
+.login {
+  text-align: center;
+  margin-top: 18px;
+  color: #7a7c8b;
+  font-size: 14px;
+}
+
+.login a {
+  color: #1c3fb0;
+  font-weight: 500;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 26px 0;
+  color: #9aa1ae;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: #e3e5ef;
+}
+
+/* Social Buttons */
+.btn-social {
+  width: 100%;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e3e5ef;
+  background: white;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.btn-social .icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* RIGHT SIDE */
+.right {
+  background-image: url("https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+  color: white;
+}
+
+/* Trusted Badge */
+.trusted {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.trusted img {
+  width: 16px;
+  filter: invert(90%);
+}
+
+/* Hero heading */
+.hero-title {
+  font-size: 58px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 24px 0 12px;
+}
+
+/* Description text */
+.hero-desc {
+  font-size: 16px;
+  color: #dcdde5;
+  margin-bottom: 32px;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.feature-item img {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  filter: invert(80%);
+}
+
+.feature-item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.feature-item p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    display: none;
+  }
+}
+/* FIX SOCIAL BUTTON ICONS */
+.social-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* FIX FEATURE ICON BOXES */
+.feature-icon-box {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.feature-icon-box img {
+  width: 26px;
+  height: 26px;
+  filter: invert(90%);
+}
+
+/* FIXED ALIGNMENT */
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Trust Badge icon fix */
+.trusted img {
+  width: 18px;
+  filter: invert(90%);
+  margin-bottom: -1px; /* align perfectly */
+}
+/* REMOVE BLACK OUTLINE / FOCUS BORDER ON BUTTONS */
+/* REMOVE BLACK OUTLINE */
+button,
+button:focus,
+button:active,
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* ⭐ DEFAULT BORDER-SHADOW (ALWAYS ON) */
+button {
+  box-shadow: 0 0 0 3px rgba(245, 194, 0, 0.25) !important; /* soft yellow ring */
+  border-radius: 10px;
+}
+
+/* Primary buttons keep stronger glow */
+.btn-primary,
+.btn-next {
+  box-shadow: 0 0 0 3px rgba(245, 194, 0, 0.35) !important;
+}
+
+/* Back button gets soft grey glow */
+.btn-back {
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.08) !important;
+}

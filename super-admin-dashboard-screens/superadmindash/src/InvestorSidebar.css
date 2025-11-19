@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+
+.investor-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "URW Geometric", sans-serif;
+}
+
+.sidebar-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 26px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dark .sidebar-card {
+  background: #181818;
+  color: #f5f5f5;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.contact-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.contact-avatar {
+  background: #f3f4f6;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark .contact-avatar {
+  background: #222;
+}
+
+.contact-top h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.contact-actions button {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.contact-actions button:hover {
+  background: #e5e7eb;
+}
+
+.dark .contact-actions button {
+  background: #222;
+  color: #ddd;
+}
+
+.contact-info p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.contact-info span {
+  display: block;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.contact-info a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* === Financial Section === */
+.financial .balance-label {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.financial .balance-amount {
+  font-size: 28px;
+  color: #16a34a;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.financial .balance-total {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* === Timeline === */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.timeline-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-icon.green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.timeline-icon.blue {
+  background: #e0f2fe;
+  color: #2563eb;
+}
+
+.timeline-icon.purple {
+  background: #f3e8ff;
+  color: #8b5cf6;
+}
+
+.timeline-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.timeline-date {
+  font-size: 13px;
+  color: #6b7280;
+}

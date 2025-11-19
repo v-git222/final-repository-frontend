@@ -1,0 +1,116 @@
+.zakat-summary {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  color: #111;
+  background: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Grid layout */
+.zakat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.zakat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.zakat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* Header (icon + badge) */
+.zakat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.zakat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zakat-badge {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  background: rgba(0,0,0,0.05);
+  border-radius: 20px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Text Content */
+.zakat-content h4 {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+}
+
+.zakat-content h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.zakat-content p {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 0.3rem;
+}
+
+/* 🌙 Dark Mode */
+.zakat-summary.dark {
+  color: #f1f5f9;
+}
+
+.zakat-summary.dark .zakat-card {
+  background: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.zakat-summary.dark .zakat-content h4 {
+  color: #a1a1aa;
+}
+
+.zakat-summary.dark .zakat-content h2 {
+  color: #f9fafb;
+}
+
+.zakat-summary.dark .zakat-content p {
+  color: #9ca3af;
+}
+
+.zakat-summary.dark .zakat-badge {
+  background: rgba(255,255,255,0.1);
+  color: #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .zakat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .zakat-grid {
+    grid-template-columns: 1fr;
+  }
+}

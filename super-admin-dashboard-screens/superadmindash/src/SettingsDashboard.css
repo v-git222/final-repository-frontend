@@ -1,0 +1,224 @@
+.settings-dashboard {
+  display: flex;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: #f9fafb;
+  color: #111;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px 0 0 12px;
+}
+
+.sidebar-title {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.sidebar li.active {
+  background: #2563eb;
+  color: #fff;
+  font-weight: 500;
+}
+
+.sidebar li:hover {
+  background: #f3f4f6;
+}
+
+/* Content */
+.settings-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* ✅ Hide Scrollbar (Cross-Browser) */
+.settings-content::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+.settings-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.settings-section h4 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+/* Toggles */
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 0.75rem 0;
+}
+
+.toggle-row strong {
+  display: block;
+  font-weight: 500;
+}
+
+.toggle-row p {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+/* Switch */
+.switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #d1d5db;
+  transition: 0.3s;
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: #2563eb;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* Save Button */
+.save-btn {
+  background: #2563eb;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+  background: #1e40af;
+}
+
+/* 🌙 Dark Mode */
+.settings-dashboard.dark {
+  background: #0f0f0f;
+  color: #e5e5e5;
+}
+
+.settings-dashboard.dark .sidebar {
+  background: #181818;
+  border-color: #222;
+}
+
+.settings-dashboard.dark .settings-section {
+  background: #1a1a1a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.settings-dashboard.dark input,
+.settings-dashboard.dark select {
+  background: #111;
+  border-color: #333;
+  color: #e5e5e5;
+}
+
+.settings-dashboard.dark .toggle-row {
+  border-color: #222;
+}
+
+.settings-dashboard.dark .slider {
+  background: #444;
+}
+
+.settings-dashboard.dark .save-btn {
+  background: #3b82f6;
+}

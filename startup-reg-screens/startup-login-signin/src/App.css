@@ -1,0 +1,13 @@
+/* REMOVE VITE'S CENTERING AND PADDING */
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Make the whole app fullscreen */
+.app-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
