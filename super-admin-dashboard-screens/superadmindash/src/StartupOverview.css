@@ -1,0 +1,82 @@
+.startups-page {
+  padding: 24px;
+  font-family: "Inter", sans-serif;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.startup-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.startup-table th {
+  text-align: left;
+  padding: 12px 6px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.startup-table td {
+  padding: 14px 6px;
+  border-top: 1px solid #f1f1f1;
+}
+
+.startup-row:hover {
+  background: #f9fafb;
+  cursor: pointer;
+}
+
+.badge.stage {
+  background: #e0f2fe;
+  color: #0284c7;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.badge.status {
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.badge.status.approved { background:#dcfce7; color:#166534; }
+.badge.status.pending { background:#fef9c3; color:#ca8a04; }
+.badge.status.rejected { background:#fee2e2; color:#991b1b; }
+
+.progress-bar {
+  background: #e5e7eb;
+  height: 8px;
+  width: 70px;
+  border-radius: 6px;
+}
+
+.progress {
+  height: 100%;
+  background: #22c55e;
+  border-radius: 6px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}

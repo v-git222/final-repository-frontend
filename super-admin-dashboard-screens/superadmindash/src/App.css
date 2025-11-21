@@ -1,6 +1,5 @@
 /* Reset and base */
-@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
-/* Reset and base */
+
 html, body, #root {
   height: 100%;
   width: 100%;
@@ -8,9 +7,18 @@ html, body, #root {
   padding: 0;
   overflow: hidden;
   background: #f9fafb;
-  font-family: 'URW Geometric', sans-serif; /* ✅ Global font applied */
+  /* font-family: 'URW Geometric', sans-serif; ✅ Global font applied */
   font-weight: 400; /* ✅ Default weight */
 }
+:root {
+  font-family: "URWGeometric";
+}
+
+* {
+  font-family: "URWGeometric" !important;
+}
+
+
 
 * {
   margin: 0;

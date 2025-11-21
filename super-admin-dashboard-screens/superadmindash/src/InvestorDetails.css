@@ -1,183 +1,159 @@
-@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500&display=swap');
+/* ----------------------
+   GLOBAL FONT + BASE
+----------------------- */
+@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
 
-/* === ROOT CONTAINER === */
 .investor-details {
   font-family: "URW Geometric", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 20px 24px;
-  background: transparent;
-  font-weight: 400;
-  color: #111827;
-  transition: all 0.3s ease;
+  gap: 32px;
+  padding: 26px 32px;
+  background: #f9fafb;
+  color: #111;
+  transition: all 0.25s ease;
 }
 
-.dark.investor-details {
-  background: #0f0f0f;
-  color: #f5f5f5;
+/* Smooth animations globally */
+* {
+  transition: all 0.22s ease;
 }
 
-/* === HEADER === */
-.investor-header {
-  background: #fff;
-  border-radius: 14px;
-  padding: 16px 24px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.dark .investor-header {
-  background: #181818;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: none;
-}
-
-.header-left h1 {
-  font-size: 0.95rem;
-  font-weight: 500;
-  margin: 0;
-  color: #111827;
-}
-
-.meta-text {
-  font-size: 0.72rem;
-  color: #6b7280;
-  margin-top: 2px;
-}
-
-/* === INFO CARDS === */
+/* ----------------------
+      CARD LAYOUT
+----------------------- */
 .info-card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 16px 20px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-  color: #111827;
-  font-weight: 400;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px 36px;
+  box-shadow: 0px 4px 14px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.info-card:hover {
+  box-shadow: 0px 8px 22px rgba(0,0,0,0.06);
 }
 
 .dark .info-card {
-  background: #181818;
+  background: #1b1b1b;
   color: #f5f5f5;
+  border: 1px solid #333;
 }
 
+/* ----------------------
+     TITLES & TEXT
+----------------------- */
 .info-card h3 {
-  font-size: 0.82rem;
-  font-weight: 500;
-  margin-bottom: 3px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 6px;
 }
 
 .desc {
-  color: #9ca3af;
-  font-size: 0.7rem;
-  margin-bottom: 10px;
-  font-weight: 400;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 22px;
 }
 
-/* === GRID === */
+/* ----------------------
+   GRID (2-column)
+----------------------- */
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px 16px;
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 32px 54px;
 }
 
-/* LABELS */
 .label {
-  font-size: 0.68rem;
+  font-size: 0.82rem;
   color: #9ca3af;
-  font-weight: 400;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
+  letter-spacing: 0.2px;
 }
 
-/* INFO VALUE (formerly .value) */
 .info-value {
-  font-size: 0.74rem;
-  font-weight: 400;
-  color: #374151;
-  line-height: 1.35;
-  opacity: 0.9;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-  white-space: normal;
+  font-size: 0.95rem;
+  color: #111;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
-.dark .info-value {
-  color: #d1d5db;
-  opacity: 0.85;
-}
-
-/* LINKS */
+/* Links */
 .link {
   color: #2563eb;
+  font-size: 0.93rem;
   text-decoration: none;
-  font-size: 0.74rem;
-  font-weight: 400;
 }
 
 .link:hover {
+  color: #1d4ed8;
   text-decoration: underline;
 }
 
-/* === KYC SECTION === */
+/* ----------------------
+      KYC SECTION
+----------------------- */
 .kyc-status {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
 .kyc-row {
   display: flex;
   justify-content: space-between;
+  padding: 18px 20px;
+  border-radius: 16px;
   align-items: center;
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 0.75rem;
-  font-weight: 400;
+  border: 1px solid transparent;
 }
 
-.kyc-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.kyc-title {
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #111827;
-}
-
-.kyc-desc {
-  font-size: 0.7rem;
-  color: #6b7280;
-  font-weight: 400;
-}
-
-/* ROW COLORS */
+/* Polished soft colors */
 .kyc-row.green {
-  background: #ecfdf5;
-  color: #047857;
+  background: #e9fdf0;
+  border-color: #c3f1d3;
 }
 
 .kyc-row.orange {
-  background: #fff7ed;
-  color: #b45309;
+  background: #fff4e6;
+  border-color: #ffd8b2;
 }
 
 .kyc-row.gray {
-  background: #f4f4f5;
-  color: #4b5563;
+  background: #f3f4f6;
+  border-color: #e5e7eb;
 }
 
-/* STATUS BADGES */
+.kyc-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 14px rgba(0,0,0,0.07);
+}
+
+/* Row left */
+.kyc-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.kyc-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.kyc-desc {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+/* Status badge */
 .status-badge {
-  font-size: 0.7rem;
-  font-weight: 400;
-  padding: 3px 8px;
-  border-radius: 6px;
+  font-size: 0.78rem;
+  padding: 5px 14px;
+  border-radius: 40px;
+  font-weight: 500;
 }
 
 .status-badge.active {
@@ -188,4 +164,57 @@
 .status-badge.pending {
   background: #f59e0b;
   color: #fff;
+}
+
+/* ----------------------
+     HEADER TOP AREA
+----------------------- */
+.investor-header {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px 36px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.investor-header:hover {
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.06);
+}
+
+.header-left h1 {
+  font-size: 1.32rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.meta-text {
+  font-size: 0.88rem;
+  color: #6b7280;
+  letter-spacing: 0.2px;
+}
+
+/* Tag styling */
+.tag {
+  font-size: 0.82rem;
+  padding: 6px 12px;
+  border-radius: 18px;
+  font-weight: 500;
+}
+
+.tag-success {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.tag-warning {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.tag-outline {
+  border: 1px solid #d1d5db;
+  color: #6b7280;
 }

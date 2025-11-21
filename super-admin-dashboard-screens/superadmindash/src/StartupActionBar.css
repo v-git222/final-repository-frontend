@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+
+.startup-action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: transparent;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.3);
+  font-family: "URW Geometric", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+.dark.startup-action-bar {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Back Button */
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+  font-size: 15px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #1f2937;
+}
+
+.dark .back-btn {
+  color: #d1d5db;
+}
+
+.dark .back-btn:hover {
+  color: #fff;
+}
+
+/* Action buttons container */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Reject Button */
+.reject-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #ef4444;
+  color: #dc2626;
+  background: transparent;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.reject-btn:hover {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+/* Approve Button */
+.approve-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: #22c55e;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.approve-btn:hover {
+  background: #16a34a;
+}
+
+/* Dark mode tuning */
+.dark .reject-btn {
+  border-color: #f87171;
+  color: #f87171;
+}
+
+.dark .reject-btn:hover {
+  background: rgba(248, 113, 113, 0.12);
+}
+
+.dark .approve-btn {
+  background: #16a34a;
+}
+
+.dark .approve-btn:hover {
+  background: #15803d;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .startup-action-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .action-buttons {
+    align-self: flex-end;
+  }
+}
