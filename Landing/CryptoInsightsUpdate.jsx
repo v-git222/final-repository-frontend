@@ -5,7 +5,6 @@ import { FaUserCircle } from "react-icons/fa";
 import { SiBitcoin, SiEthereum, SiRipple } from "react-icons/si";
 import { FiBarChart2 } from "react-icons/fi";
 
-
 const topCoins = [
   {
     name: "Aurivox",
@@ -78,6 +77,7 @@ export default function CryptoInsights() {
           Stay updated with real-time market data, trends, and analysis across the cryptocurrency ecosystem.
         </p>
 
+        {/* Metrics */}
         <div className="ci-metrics">
           <div className="metric">
             <div className="metric-value">41.5%</div>
@@ -95,77 +95,81 @@ export default function CryptoInsights() {
           </div>
         </div>
 
-        {/* Dashboard card */}
+        {/* Dashboard */}
         <div className="dashboard">
-          {/* top row */}
+
+          {/* Top row */}
           <div className="dashboard-top">
             <div className="dashboard-title">Investment Portfolio Dashboard</div>
+
             <div className="dashboard-actions">
-              <button className="icon-btn" aria-label="theme"><FiSun /></button>
+              <button className="icon-btn"><FiSun /></button>
 
               <div className="search">
                 <FiSearch className="search-icon" />
                 <input className="search-input" placeholder="Search" />
               </div>
 
-              <button className="icon-btn" aria-label="notifications"><FiBell /></button>
+              <button className="icon-btn"><FiBell /></button>
               <FaUserCircle className="profile" />
             </div>
           </div>
 
-          {/* mini cards */}
+          {/* Mini cards */}
           <div className="mini-cards">
-            {topCoins.map((c, i) => (
+            {topCoins.map((coin, i) => (
               <article className="mini-card" key={i}>
-                <div className="mini-top">
-                  <div className="coin-meta">
-                    <div className="coin-badge" style={{ background: c.color }}>
-                      {/* simplified icon placeholder */}
-                      <span className="coin-initial">{c.code[0]}</span>
+
+                {/* header */}
+                <div className="mini-header">
+                  <div className="mini-left">
+                    <div className="badge-icon" style={{ backgroundColor: coin.color }}>
+                      {coin.code[0]}
                     </div>
-                    <div className="coin-name">
-                      <div className="name">{c.name}</div>
-                      <div className="code">{c.code}</div>
+                    <div className="badge-text">
+                      <div className="coin-name">{coin.name}</div>
+                      <div className="coin-code">{coin.code}</div>
                     </div>
                   </div>
 
-                  <div className={`small-badge ${c.trend === "up" ? "up" : "down"}`}>
-                    {c.change}
+                  <div className={`mini-change ${coin.trend}`}>
+                    {coin.change}
                   </div>
                 </div>
 
-                <div className="mini-price">{c.price}</div>
+                {/* price */}
+                <div className="mini-price">{coin.price}</div>
 
-                <div className={`mini-graph ${c.trend}`}>
-                  <svg viewBox="0 0 100 30" preserveAspectRatio="none" className="spark">
-                    {c.trend === "up" ? (
-                      <polyline points="0,24 20,20 40,18 60,12 80,6 100,4" />
+                {/* graph */}
+                <div className="mini-graph">
+                  <svg viewBox="0 0 100 40" className="spark">
+                    {coin.trend === "up" ? (
+                      <polyline points="0,32 20,28 40,22 60,14 80,8 100,6" />
                     ) : (
-                      <polyline points="0,8 20,12 40,14 60,20 80,24 100,26" />
+                      <polyline points="0,10 20,14 40,20 60,26 80,32 100,34" />
                     )}
                   </svg>
                 </div>
 
                 <div className="mini-footer">
-                  <div className="date">Tuesday, 14th October 2025</div>
-                  <div className="mini-link">$23,738</div>
+                  <span>Tuesday, 14th October 2025</span>
+                  <span className="mini-link">$23,738</span>
                 </div>
               </article>
             ))}
           </div>
 
-          {/* table header */}
+          {/* Market Overview title */}
           <div className="market-heading">
-           <h3 className="market-heading-title">
-  <FiBarChart2 className="mh-ico" /> Market Overview
-</h3>
-
+            <h3 className="market-heading-title">
+              <FiBarChart2 className="mh-ico" /> Market Overview
+            </h3>
             <p className="mh-sub">Comprehensive token statistics trading information</p>
           </div>
 
-          {/* table */}
+          {/* Table */}
           <div className="table-wrap">
-            <table className="market-table" role="table">
+            <table className="market-table">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -178,34 +182,32 @@ export default function CryptoInsights() {
               </thead>
 
               <tbody>
-                {tableData.map((r, idx) => (
-                  <tr key={idx}>
+                {tableData.map((row, i) => (
+                  <tr key={i}>
                     <td>
                       <div className="row-name">
-                        <div className="row-icon" aria-hidden>{r.icon}</div>
+                        <div className="row-icon">{row.icon}</div>
                         <div>
-                          <div className="row-title">{r.name}</div>
-                          <div className="row-sub">{r.code}</div>
+                          <div className="row-title">{row.name}</div>
+                          <div className="row-sub">{row.code}</div>
                         </div>
                       </div>
                     </td>
 
-                    <td>{r.price}</td>
+                    <td>{row.price}</td>
 
-                    <td className={r.trend === "up" ? "trend up" : "trend down"}>
-                      {r.trend === "up" ? <FiChevronUp /> : <FiChevronDown />}
-                      <span>{r.changePct}</span>
+                    <td className={`trend ${row.trend}`}>
+                      {row.trend === "up" ? <FiChevronUp /> : <FiChevronDown />}
+                      {row.changePct}
                     </td>
 
-                    <td className={r.trend === "up" ? "trend up" : "trend down"}>
-                      <span>{r.changeDollar}</span>
+                    <td className={`trend ${row.trend}`}>
+                      {row.changeDollar}
                     </td>
 
-                    <td>{r.marketcap}</td>
+                    <td>{row.marketcap}</td>
 
-                    <td>
-                      <button className="trade-btn">Trade</button>
-                    </td>
+                    <td><button className="trade-btn">Trade</button></td>
                   </tr>
                 ))}
               </tbody>

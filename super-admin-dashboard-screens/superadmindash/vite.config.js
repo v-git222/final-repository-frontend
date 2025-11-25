@@ -5,14 +5,13 @@ export default defineConfig({
   plugins: [react()],
 
   server: {
-    port: 5174,
+    port: 3000,
     proxy: {
       "/api": {
         target: "https://app.emireq.com",
         changeOrigin: true,
         secure: false,
-        ws: true,
-        rewrite: (path) => path,   // No unnecessary replacement
+        rewrite: (path) => path, 
       },
     },
   },

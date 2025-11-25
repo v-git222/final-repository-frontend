@@ -22,3 +22,13 @@ body {
 .no-horizontal-scroll {
   overflow-x: clip !important;   /* stronger than hidden */
 }
+.app-scale-wrap {
+  transform: scale(0.90);
+  transform-origin: center center; /* ⭐ perfect proportional scaling */
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}

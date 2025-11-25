@@ -1,0 +1,144 @@
+:root{
+  --bg:#fafafa;
+  --card:#fff;
+  --muted:#777;
+  --border:#eee;
+  --accent:#2563eb;
+  --navy:#071b4c;
+  --pill-bg:#eef4ff;
+  --radius:16px;
+  --gap:28px;
+  font-size:16px;
+}
+
+* { box-sizing: border-box; }
+body { margin:0; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:#111; }
+
+/* Layout */
+.investors-wrapper {
+  display:flex;
+  gap:40px;
+  padding:40px;
+  align-items:flex-start;
+}
+
+/* Sidebar filters */
+.filters {
+  width:260px;
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  border:1px solid var(--border);
+  box-shadow:0 2px 6px rgba(10,10,10,0.02);
+}
+
+.filters-header {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.filter-icon { width:34px; height:34px; display:flex; align-items:center; justify-content:center; background:#f1f5f9; border-radius:8px; }
+.filters-title { margin:0; font-size:18px; font-weight:600; color:#0f172a; }
+
+.filter-block { margin-bottom:16px; }
+.filter-label { display:block; font-size:13px; color:#6b7280; margin-bottom:6px; }
+.dropdown {
+  border:1px solid #e6e9ee;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:14px;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+
+/* Content */
+.content { flex:1; min-width:0; }
+
+.subtitle { color:#9ca3af; font-size:12px; letter-spacing:1px; margin-bottom:6px; }
+.main-title { font-size:52px; margin:0 0 8px 0; font-weight:600; line-height:1.05; }
+.blue { color:var(--accent); }
+.subtext { color:var(--muted); margin-bottom:18px; }
+
+/* optional sample image row (uses uploaded file) */
+.hero-sample { margin:12px 0 24px 0; }
+.hero-sample img { width:220px; border-radius:10px; display:block; box-shadow:0 6px 18px rgba(10,10,10,0.04); }
+
+/* Grid */
+.cards-grid {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:var(--gap);
+}
+
+/* Card */
+.inv-card {
+  background:var(--card);
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  box-shadow:0 4px 12px rgba(10,10,10,0.02);
+}
+
+.inv-card-top { display:flex; justify-content:space-between; align-items:center; }
+.inv-icon { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; }
+.inv-trending { background:#fff6ef; color:#f97316; padding:6px 10px; border-radius:12px; font-size:12px; font-weight:600; }
+
+/* Title & meta */
+.inv-title { margin:6px 0 0 0; font-size:17px; font-weight:700; color:#0f172a; }
+.inv-meta { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:6px; }
+.meta-item { display:inline-flex; gap:6px; align-items:center; font-size:13px; color:#6b7280; }
+.meta-text { color:#6b7280; font-size:13px; }
+.range { margin-left:auto; color:#6b7280; }
+
+/* Tags */
+.inv-tags { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+.inv-tag {
+  background:var(--pill-bg);
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  color:#0f172a;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+/* Stats */
+.inv-stats { display:flex; align-items:center; margin-top:12px; }
+.stat-block { display:flex; flex-direction:column; align-items:flex-start; }
+.stat-number { font-size:20px; font-weight:700; color:#0f172a; }
+.stat-label { font-size:13px; color:var(--muted); margin-top:4px; }
+.divider { width:1px; height:44px; background:var(--border); margin:0 26px; }
+
+/* CTA */
+.inv-btn {
+  margin-top:6px;
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid var(--accent);
+  background:transparent;
+  color:var(--accent);
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* Pagination */
+.pagination { display:flex; gap:8px; margin-top:28px; align-items:center; }
+.page-btn {
+  padding:8px 12px;
+  border-radius:8px;
+  background:#fff;
+  border:1px solid #ddd;
+  cursor:pointer;
+  font-weight:600;
+}
+.page-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+.page-btn.disabled { opacity:0.45; cursor:not-allowed; }

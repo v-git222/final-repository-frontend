@@ -1,0 +1,172 @@
+/* -------------------------------------------------------------
+   FEATURED STARTUPS — Clean UI (Updated Header + Lighter Fonts)
+-------------------------------------------------------------- */
+
+.startups-wrapper {
+  padding: 60px 80px;
+  font-family: "Inter", "DM Sans", sans-serif;
+  color: #0f172a;
+  text-align: left;   
+  transform: scale(1.2);  /* NEW: Ensures left alignment globally */
+}
+
+/* SECTION TOP ----------------------------------------------*/
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f3f4f6;
+  color: #475569;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;     /* ↓ lighter */
+  letter-spacing: 0.3px;
+}
+
+.section-title {
+  margin-top: 18px;
+  font-size: 42px;      /* ↓ slightly smaller */
+  font-weight: 700;     /* ↓ lighter than 800 */
+  line-height: 1.18;
+  color: #0f172a;
+}
+
+.section-title .blue {
+  color: #2563eb;
+  font-weight: 700;     /* ↓ matches real UI */
+}
+
+.section-sub {
+  margin-top: 14px;
+  max-width: 680px;     /* ↓ more compact */
+  line-height: 1.65;
+  color: #52525b;
+  font-size: 16px;
+  font-weight: 400;     /* NEW: lighter paragraph */
+}
+
+/* GRID ------------------------------------------------------*/
+
+.startups-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 🔥 Two per row */
+  gap: 32px;
+}
+
+@media (max-width: 700px) {
+  .startups-grid {
+    grid-template-columns: 1fr; /* One per row on mobile */
+  }
+}
+
+/* CARD ------------------------------------------------------*/
+
+.startup-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;        /* ↓ lighter feel */
+  transition: 0.25s ease;
+}
+
+.startup-card:hover {
+  transform: translateY(-4px);
+  border-color: #2563eb;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+}
+
+/* CARD HEAD --------------------------------------------------*/
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.initials {
+  width: 44px;          /* ↓ smaller */
+  height: 44px;
+  background: #1e293b;
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;      /* ↓ less bulky */
+  font-weight: 600;
+}
+
+.verified {
+  background: #e7f9ef;
+  color: #22c55e;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;     /* ↓ softer */
+}
+
+/* NAME + DESC ------------------------------------------------*/
+
+.startup-name {
+  margin-top: 18px;
+  font-size: 18px;      /* ↓ cleaner */
+  font-weight: 600;     /* ↓ lighter */
+  color: #0f172a;
+}
+
+.startup-desc {
+  margin-top: 6px;
+  color: #475569;
+  font-size: 14px;     /* ↓ slightly reduced */
+  line-height: 1.5;
+  font-weight: 400;    /* NEW: lighter */
+}
+
+/* TAG --------------------------------------------------------*/
+
+.startup-tag {
+  display: inline-block;
+  margin-top: 10px;
+  background: #eef2ff;
+  color: #4338ca;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;     /* ↓ restrained */
+}
+
+/* LOCATION ---------------------------------------------------*/
+
+.location {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* BUTTON -----------------------------------------------------*/
+
+.profile-btn {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1.8px solid #2563eb;
+  color: #2563eb;
+  font-weight: 600;      /* ↓ lighter */
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.profile-btn:hover {
+  background: #2563eb;
+  color: white;
+}

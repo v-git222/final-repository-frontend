@@ -1,7 +1,21 @@
+@font-face {
+  font-family: 'URWGeometric';
+  src: url('/fonts/URWGeometricRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  font-family: 'URWGeometric', sans-serif;
+}
+
+
 /* Layout Wrapper */
 .portfolio-wrapper {
   padding: 5rem 4rem;
-  font-family: "Inter", sans-serif;
+  font-family: 'URWGeometric', sans-serif;
+
   display: flex;
   flex-direction: column;
   gap: 4rem;

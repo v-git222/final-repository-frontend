@@ -4,7 +4,7 @@ import { ArrowLeft, Check, X } from "lucide-react";
 
 export default function ActionBar({ onBack, dark }) {
 
-  const API_URL = "/api/superadmin/investors/1/decision/";
+  const API_URL = "/superadmin/investors/1/decision/";
 
   // -----------------------------
   // HANDLE APPROVE ACTION (POST)

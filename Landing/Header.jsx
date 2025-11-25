@@ -2,7 +2,7 @@ import React from "react";
 import "./header.css";
 import logo from "./assets/logo.png";
 
-const Header = () => {
+const Header = ({setActiveScreen}) => {
   return (
     <header className="header">
       <div className="header-container">
@@ -13,13 +13,28 @@ const Header = () => {
         </div>
 
         {/* COLUMN 2 — NAV LINKS */}
-        <nav className="col nav-col">
-          <a href="#marketplace">Marketplace</a>
-          <a href="#tokenize">Tokenize</a>
-          <a href="#investors">Investors</a>
-          <a href="#events">Events</a>
-          <a href="#about">About</a>
-        </nav>
+<nav className="col nav-col">
+  <a href="#" onClick={(e) => { e.preventDefault(); setActiveScreen("marketplace"); }}>
+    Marketplace
+  </a>
+
+  <a href="#" onClick={(e) => { e.preventDefault(); setActiveScreen("tokenize"); }}>
+    Tokenize
+  </a>
+
+  <a href="#" onClick={(e) => { e.preventDefault(); setActiveScreen("investors"); }}>
+    Investors
+  </a>
+
+  <a href="#" onClick={(e) => { e.preventDefault(); setActiveScreen("events"); }}>
+    Events
+  </a>
+
+  <a href="#" onClick={(e) => { e.preventDefault(); setActiveScreen("about"); }}>
+    About
+  </a>
+</nav>
+
 
         {/* COLUMN 3 — BUTTONS */}
         <div className="col btn-col">

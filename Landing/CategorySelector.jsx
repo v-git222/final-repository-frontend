@@ -32,49 +32,51 @@ const CategorySelector = () => {
           <FiCheckCircle size={22} />
           <span>Setup</span>
         </div>
+
         <div className="line active"></div>
+
         <div className="step active">
           <div className="circle">2</div>
           <span>Pickup Category</span>
         </div>
+
         <div className="line"></div>
+
         <div className="step">
           <div className="circle">3</div>
           <span>Start Exploring</span>
         </div>
       </div>
 
-      {/* Purple tooltip */}
+      {/* Tooltip */}
       <div className="tooltip-box animate-tooltip">
         Please select your interested topic to make our suggestions better
       </div>
 
-      {/* Header */}
+      {/* Title */}
       <h2 className="title">Pickup your Category to start</h2>
 
-      {/* Arrow animation */}
+      {/* Arrow */}
       <div className="arrow-animated"></div>
 
-      {/* Categories Grid */}
+      {/* CATEGORY GRID */}
       <div className="categories-grid">
         {categoriesData.map((cat) => (
           <div
             key={cat.id}
-            className={`category-card ${
-              selected.includes(cat.id) ? "active" : ""
-            }`}
+            className={`category-card ${selected.includes(cat.id) ? "active" : ""}`}
             onClick={() => toggleCategory(cat.id)}
           >
-       <div className="category-content">
-  <div className="category-icon" style={{ background: cat.color }}>
-    {cat.icon}
-  </div>
+            <div className="category-left">
+              <div className="category-icon" style={{ background: cat.color }}>
+                {cat.icon}
+              </div>
 
-  <div className="category-text">
-    <h4>{cat.name}</h4>
-    <p>{cat.count} Opportunities</p>
-  </div>
-</div>
+              <div className="category-text">
+                <h4>{cat.name}</h4>
+                <p>{cat.count} Opportunities</p>
+              </div>
+            </div>
 
             <label className="switch">
               <input
@@ -87,19 +89,19 @@ const CategorySelector = () => {
           </div>
         ))}
 
-        {/* Empty card */}
+        {/* Empty Card */}
         <div className="category-card empty-card">
           <FiGrid size={32} opacity={0.4} />
           <p>Browse Category</p>
         </div>
       </div>
 
-      {/* Yellow continue box */}
+      {/* Continue */}
       <div className="continue-box animate-continue">
         Select continue to <b>complete this step</b> & go to next one
       </div>
 
-      {/* Footer actions */}
+      {/* Footer */}
       <div className="footer-actions">
         <span className="clear">Clear all</span>
         <button className="btn-continue">Continue</button>

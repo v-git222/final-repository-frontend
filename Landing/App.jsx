@@ -1,24 +1,34 @@
-// src/App.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header.jsx";
-import HeroSection from "./HeroSection.jsx";
-import CategorySelector from "./CategorySelector.jsx";
-import CryptoInsights from "./CryptoInsightsUpdate.jsx";
-import Footer from "./Footer.jsx";
 import hero from "./assets/hero.png";
-import PortfolioSectionUpdated from "./PortfolioSectionUpdated.jsx";
 import "./App.css";
 
+// Always-render About components
+import HeroSection from "./HeroSection.jsx";
+
+const CategorySelector = React.lazy(() => import("./CategorySelector.jsx"));
+const CryptoInsights = React.lazy(() => import("./CryptoInsightsUpdate.jsx"));
+const PortfolioSectionUpdated = React.lazy(() =>
+  import("./PortfolioSectionUpdated.jsx")
+);
 const BusinessListingUpdated = React.lazy(() =>
   import("./BusinessListingUpdated.jsx")
 );
 const BlogListingUpdated = React.lazy(() =>
   import("./BlogListingUpdated.jsx")
 );
+const Footer = React.lazy(() => import("./Footer.jsx"));
+
+// Pages (use imports directly)
+import EventsPage from "./events/index.jsx";
+import Tokenize from "./tokenize/index.jsx";
+import MarketPlace from "./marketplace/index.jsx";
+import InvestorHub from "./investors/index.jsx";
 
 export default function App() {
+  const [activeScreen, setActiveScreen] = useState("about");
 
-  // 🔒 FULL HARD LOCK OF ZOOM
+  // Zoom lock
   useEffect(() => {
     const setLockedZoom = () => {
       const lockedScale = 0.95;
@@ -56,6 +66,22 @@ export default function App() {
     };
   }, []);
 
+  // Render active screen using switch
+  const renderActiveScreen = () => {
+    switch (activeScreen) {
+      case "marketplace":
+        return <MarketPlace />;
+      case "tokenize":
+        return <Tokenize />;
+      case "investors":
+        return <InvestorHub />;
+      case "events":
+        return <EventsPage />;
+      default:
+        return null; // about page handled separately
+    }
+  };
+
   return (
     <div
       className="no-horizontal-scroll"
@@ -68,18 +94,13 @@ export default function App() {
         position: "relative",
       }}
     >
-
-      {/* UI SCALE WRAPPER */}
       <div
         style={{
           transform: "scale(0.98)",
           transformOrigin: "top center",
-          width: "100%",       // FIXED (was 102.04%)
-          overflowX: "hidden",
+          width: "100%",
         }}
       >
-
-        {/* COLUMN WRAPPER */}
         <div
           style={{
             display: "flex",
@@ -87,81 +108,72 @@ export default function App() {
             paddingLeft: "10rem",
             paddingRight: "10rem",
             margin: "4rem 0",
-            background: "transparent",
             minHeight: "100vh",
-            fontFamily: "'DM Sans', Arial, sans-serif",
-            color: "#2F2F33",
-            boxSizing: "border-box",
           }}
         >
-
-          {/* HEADER */}
-          <div style={{ width: "100%", display: "flex", justifyContent: "center", marginBottom: "2rem" }}>
+          {/* Header */}
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: "2rem",
+            }}
+          >
             <div style={{ width: "100%", maxWidth: "1280px" }}>
-              <Header />
+              <Header setActiveScreen={setActiveScreen} />
             </div>
           </div>
 
-          {/* MAIN */}
-          <main style={{ display: "flex", flexDirection: "column", width: "100%", alignItems: "center" }}>
-
-            {/* HERO SECTION */}
-            <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-              <div>
+          <main
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
+            {/* ABOUT SCREEN */}
+            {activeScreen === "about" && (
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "1280px",
+                  transform: "scale(1.15) translateX(-1.5rem)",
+                  transformOrigin: "top left",
+                  marginBottom: "5rem",
+                }}
+              >
                 <HeroSection />
+
+                <img
+                  src={hero}
+                  alt="Hero"
+                  style={{
+                    width: "100%",
+                    borderRadius: "20px",
+                    marginTop: 32,
+                    objectFit: "cover",
+                  }}
+                />
+
+                <React.Suspense fallback={null}>
+                  <CategorySelector />
+                  <CryptoInsights />
+                  <PortfolioSectionUpdated />
+                  <BusinessListingUpdated />
+                  <BlogListingUpdated />
+                  <Footer />
+                </React.Suspense>
               </div>
-            </div>
+            )}
 
-            {/* HERO IMAGE */}
-            <img
-              src={hero}
-              alt="Hero"
-              style={{
-                width: "100%",
-                maxWidth: "1280px",
-                borderRadius: "20px",
-                marginTop: 32,
-                objectFit: "cover",
-                display: "block",
-              }}
-              loading="eager"
-            />
-
-            {/* CATEGORY SELECTOR */}
-            <div style={{ marginTop: 56 }}>
-              <CategorySelector />
-            </div>
-
-            <CryptoInsights />
-            <PortfolioSectionUpdated />
-
-            {/* LAZY LOAD SECTIONS */}
-            <React.Suspense
-              fallback={
-                <div style={{ padding: "40px 0", textAlign: "center", fontSize: "18px", opacity: 0.5 }}>
-                  Loading…
-                </div>
-              }
-            >
-              <BusinessListingUpdated />
-              <BlogListingUpdated />
-            </React.Suspense>
-
-            {/* FOOTER */}
-            <div
-              style={{
-                marginTop: 40,
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Footer />
-            </div>
-
-            {/* Remove leftover bottom gap */}
-            {/* <div style={{ height: "0px", marginBottom: "0px", padding: "0" }}></div> */}
-
+            {/* OTHER SCREENS */}
+            {activeScreen !== "about" && (
+              <div style={{ width: "100%", maxWidth: "1280px" }}>
+                {renderActiveScreen()}
+              </div>
+            )}
           </main>
         </div>
       </div>

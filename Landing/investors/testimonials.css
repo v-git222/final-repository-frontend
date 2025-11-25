@@ -1,0 +1,136 @@
+.t-wrapper {
+  padding: 80px 40px 120px;
+  text-align: center;
+  background: linear-gradient(160deg, #0b1438 0%, #0f1e55 50%, #0b1533 100%);
+  color: white;
+  font-family: "URWGeometric", sans-serif;
+}
+
+/* Badge */
+.t-header-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 30px;
+  font-family: "URWGeometric", sans-serif;
+}
+
+/* Titles */
+.t-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+  font-family: "URWGeometric", sans-serif;
+}
+
+.yellow {
+  color: #FACC15;
+}
+
+.t-subtitle {
+  color: #d3d7e8;
+  margin-top: 14px;
+  font-size: 16px;
+  margin-bottom: 60px;
+  font-family: "URWGeometric", sans-serif;
+}
+
+/* Grid */
+.t-grid {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 30px;
+}
+
+/* Card */
+.t-card {
+  width: 370px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: left;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: "URWGeometric", sans-serif;
+}
+
+/* Profile Row */
+.t-profile {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.t-initials {
+  width: 60px;
+  height: 60px;
+  background: #FACC15;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 22px;
+  color: #0b1438;
+  font-family: "URWGeometric", sans-serif;
+}
+
+.t-profile-info {
+  margin-left: 16px;
+}
+
+.t-name {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "URWGeometric", sans-serif;
+}
+
+.t-role {
+  font-size: 14px;
+  color: #C5C8D9;
+  margin-top: 2px;
+  font-family: "URWGeometric", sans-serif;
+}
+
+/* Verified Icon */
+.t-verify {
+  margin-left: auto;
+}
+
+/* Testimonial Text */
+.t-text {
+  margin-top: 20px;
+  color: #e0e2ef;
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: pre-line;
+  font-family: "URWGeometric", sans-serif;
+}
+
+/* Footer */
+.t-footer {
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  color: #d9dbef;
+  font-size: 15px;
+  font-family: "URWGeometric", sans-serif;
+}
+
+.t-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #FACC15;
+  font-family: "URWGeometric", sans-serif;
+}
+
+.t-raised {
+  color: #4ade80;
+  font-weight: 500;
+  font-family: "URWGeometric", sans-serif;
+}

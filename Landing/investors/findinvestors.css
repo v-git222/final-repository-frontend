@@ -1,0 +1,120 @@
+.fi-wrapper {
+  width: 100%;
+  padding: 80px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  background: "transparent";
+  font-family: "URWGeometric", sans-serif;
+}
+
+/* LEFT COLUMN */
+.fi-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.fi-badge {
+  display: inline-flex;
+  background: #fff7d6;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #b57c00;
+  width: fit-content;
+}
+
+.fi-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #0b0d17;
+}
+
+.fi-title span {
+  color: #2663ff;
+}
+
+.fi-subtitle {
+  font-size: 18px;
+  color: #6a7282;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* CHECKMARK LIST */
+.fi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 10px;
+}
+
+.fi-check-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.fi-check-item p {
+  font-size: 17px;
+  color: #0f1724;
+}
+
+.fi-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+}
+
+.fi-icon.green {
+  background: #e6fcef;
+  border: 2px solid #25ad63;
+}
+
+.fi-icon.blue {
+  background: #eef4ff;
+  border: 2px solid #2663ff;
+}
+
+.fi-icon.purple {
+  background: #f4e8ff;
+  border: 2px solid #8b5cf6;
+}
+
+/* BUTTON */
+.fi-btn {
+  margin-top: 10px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: #0b1f4a;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  width: fit-content;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.fi-btn:hover {
+  background: #081737;
+}
+
+/* RIGHT COLUMN */
+.fi-col-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fi-table-img {
+  width: 100%;
+  max-width: 620px;
+  display: block;
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,0.12));
+  border-radius: 16px;
+}

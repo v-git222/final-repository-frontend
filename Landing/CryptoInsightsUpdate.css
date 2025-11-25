@@ -1,68 +1,73 @@
-/* ========== APPLE-LIKE MINIMAL THEME (SMALLER VERSION) ========== */
-
-:root{
-  --bg: #ffffff;
-  --muted: #7b7b88;
-  --card: #ffffff;
-  --soft-shadow: 0 12px 40px rgba(20,20,40,0.08);
-  --soft-surface: #f6f7fb;
-  --radius-lg: 28px;
-  --radius-md: 18px;
+:root {
+  --muted: #818181;
+  --muted2: #999;
+  --shadow: 0 8px 30px rgba(0,0,0,0.08);
+  --radius: 18px;
+  --border: #eaeaea;
   --accent: #0a1f4d;
-  --muted-2: #9aa0a6;
+}
+/* --------------------------------------------- */
+/* URW GEOMETRIC — REGULAR (400)                 */
+/* --------------------------------------------- */
+@font-face {
+  font-family: "URW Geometric";
+  src: url("/fonts/URWGeometricRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* wrapper */
+/* WRAPPER */
 .ci-wrapper {
-  background: var(--bg);
-  color: #111;
-  padding: 70px 54px;
+  padding: 60px 40px;
   display: flex;
   justify-content: center;
 }
 
-/* center column */
 .ci-inner {
+  max-width: 1100px;
   width: 100%;
-  max-width: 1040px;
   text-align: center;
-  padding: 30px;
 }
 
-/* pill */
+/* PILL */
 .ci-pill {
-  display: inline-block;
-  padding: 10px 22px;
   background: #eef6ff;
   color: #2b6ef6;
-  font-weight: 600;
+  padding: 10px 22px;
   border-radius: 999px;
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+/* Apply URW Geometric to this section only */
+.ci-wrapper, 
+.ci-wrapper * {
+  font-family: "URW Geometric", sans-serif !important;
+  font-weight: 400;
 }
 
-/* title */
+/* TITLE */
 .ci-title {
-  font-size: 62px;
+  font-size: 52px;
   font-weight: 700;
-  margin: 12px 0 18px;
-  letter-spacing: -0.02em;
+  margin-bottom: 18px;
 }
 
-/* subtitle */
+/* SUB */
 .ci-sub {
-  margin: 0 auto 42px;
-  max-width: 660px;
   color: var(--muted);
-  font-size: 22px;
-  line-height: 1.6;
+  font-size: 20px;
+  max-width: 620px;
+  margin: 0 auto 40px;
 }
 
-/* metrics */
+/* METRICS */
 .ci-metrics {
   display: flex;
   justify-content: center;
-  gap: 80px;
+  gap: 70px;
   margin-bottom: 50px;
 }
 
@@ -73,193 +78,231 @@
 }
 
 .metric-label {
-  color: var(--muted-2);
-  font-size: 20px;
+  font-size: 18px;
+  color: var(--muted2);
 }
 
-/* dashboard card */
+/* DASHBOARD CARD */
 .dashboard {
-  background: linear-gradient(180deg, #fff 0%, #fbfdff 100%);
-  padding: 32px;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--soft-shadow);
-  border: 2px solid rgba(15,20,40,0.04);
-  margin-top: 42px;
+  padding: 28px;
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  border: 1px solid #efefef;
 }
 
-/* top row */
+/* TOP ROW */
 .dashboard-top {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 26px;
+  align-items: center;
 }
 
-.dashboard-title {
-  font-weight: 600;
-  font-size: 24px;
-  color: #333;
-}
-
+/* ACTIONS */
 .dashboard-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
 .icon-btn {
-  background: transparent;
-  border: none;
-  padding: 12px;
+  background: #f8f8f8;
+  padding: 10px;
   border-radius: 12px;
-  cursor: pointer;
-  color: var(--muted-2);
-}
-.icon-btn:hover { background: rgba(15,20,40,0.04); }
-
-/* search */
-.search {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #f4f6f9;
-  padding: 12px 16px;
-  border-radius: 16px;
-  color: var(--muted-2);
-}
-
-.search-input {
   border: none;
-  background: transparent;
-  min-width: 180px;
-  font-size: 20px;
+  cursor: pointer;
 }
 
-/* mini cards */
+/* SEARCH */
+.search {
+  background: #f3f6fa;
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* MINI CARDS */
 .mini-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-bottom: 28px;
+  display: flex;
+  gap: 22px;
+  margin-top: 26px;
 }
 
 .mini-card {
-  background: var(--card);
-  border-radius: 20px;
-  padding: 22px;
-  box-shadow: 0 12px 32px rgba(20,20,40,0.06);
-  border: 2px solid rgba(15,20,40,0.04);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  width: 100%;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+/* MINI HEADER */
+.mini-header {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  height: 18rem;
-  overflow: hidden;
-  position: relative;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.mini-card * {
-  transform: scale(0.78);
-  transform-origin: top left;
+.mini-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* mini top */
-.mini-top { display:flex; align-items:center; gap:18px; }
-
-.coin-badge {
-  width:58px; height:58px; border-radius:16px;
-  display:flex; align-items:center; justify-content:center;
-  font-weight:700; font-size:22px; color:#222;
+/* COIN ICON */
+.badge-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
 }
 
-.coin-name .name { font-weight:700; font-size:22px; }
-.coin-name .code { font-size:18px; color:var(--muted-2); }
-
-.small-badge {
-  padding: 8px 12px;
-  border-radius: 16px;
+/* COIN NAME/TEXT */
+.coin-name {
+  font-weight: 700;
   font-size: 18px;
 }
 
-.mini-price { font-weight:700; font-size:28px; }
+.coin-code {
+  font-size: 14px;
+  color: var(--muted2);
+}
 
-/* graph */
+/* CHANGE BADGE */
+.mini-change {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.mini-change.up { background:#dff7e6; color:#2cab3d; }
+.mini-change.down { background:#ffe5e5; color:#ff4444; }
+
+/* PRICE */
+.mini-price {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 14px 0;
+}
+
+/* GRAPH */
 .mini-graph {
-  height:58px;
-  border-radius:12px;
-  overflow:hidden;
+  height: 48px;
 }
 
-.mini-graph.up polyline { stroke:#1db954; stroke-width:4px; }
-.mini-graph.down polyline { stroke:#ff4d4d; stroke-width:4px; }
+.spark polyline {
+  fill: none;
+  stroke-width: 3px;
+}
 
-/* footer */
+.mini-card .up polyline { stroke:#2cab3d; }
+.mini-card .down polyline { stroke:#ff4444; }
+
+/* FOOTER */
 .mini-footer {
-  display:flex;
-  justify-content:space-between;
-  font-size:18px;
-  color:var(--muted-2);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  color: var(--muted2);
+  font-size: 14px;
 }
 
-/* table */
+.mini-link {
+  color: #2b6ef6;
+  font-weight: 600;
+}
+
+/* MARKET HEADING */
+.market-heading {
+  text-align: left;
+  margin-top: 26px;
+}
+
+.market-heading-title {
+  font-size: 26px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.mh-sub {
+  color: var(--muted2);
+  font-size: 16px;
+}
+
+/* TABLE WRAPPER */
 .table-wrap {
-  margin-top: 18px;
+  margin-top: 20px;
   background: #fff;
   border-radius: 18px;
   padding: 12px;
-  border: 2px solid rgba(15,20,40,0.04);
-  box-shadow: 0 12px 32px rgba(20,20,40,0.04);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
+/* TABLE */
 .market-table {
-  width:100%;
-  border-collapse:collapse;
-  font-size:20px;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.market-table thead th {
-  padding:18px 20px;
-  color:var(--muted-2);
+.market-table th {
+  text-align:left;
+  padding: 14px 18px;
+  color: var(--muted2);
   font-weight:600;
-  font-size:20px;
 }
 
-.market-table tbody td {
-  padding:20px;
-  font-size:18px;
+.market-table td {
+  padding: 18px;
+  font-size: 16px;
 }
 
-/* row */
+/* TABLE ROW */
+.row-name {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
 .row-icon {
-  width:56px; height:56px; border-radius:12px;
-  background:#f3f6fa; color:var(--muted-2);
-  display:flex; align-items:center; justify-content:center;
+  width: 44px;
+  height: 44px;
+  background: #f3f6fa;
+  border-radius: 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.row-title { font-size:22px; font-weight:700; }
-.row-sub { font-size:18px; color:var(--muted-2); }
+.row-title {
+  font-size: 18px;
+  font-weight: 700;
+}
 
-.trend { font-size:20px; font-weight:600; }
+.row-sub {
+  font-size: 14px;
+  color: var(--muted2);
+}
 
-/* trade button */
+/* TREND COLORS */
+.trend.up { color:#2cab3d; font-weight:700; }
+.trend.down { color:#ff4444; font-weight:700; }
+
+/* TRADE BUTTON */
 .trade-btn {
-  background:#0a1f4d;
-  color:white;
-  padding:10px 16px;
-  border-radius:12px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background:#f9d9a8;
+  color:#7a4a00;
   border:none;
-  font-size:18px;
-}
-
-.dashboard-note {
-  margin-top:18px;
-  font-size:18px;
-  color:var(--muted-2);
-}
-
-/* responsive */
-@media (max-width: 980px) {
-  .ci-inner { padding: 0 24px; }
-  .mini-cards { grid-template-columns: 1fr; }
-  .ci-metrics { gap: 40px; flex-wrap:wrap; justify-content:center; }
+  cursor:pointer;
+  font-weight:600;
 }

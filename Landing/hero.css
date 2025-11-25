@@ -3,7 +3,7 @@
 /* ========================= */
 
 .hero {
-  max-width: 220rem;         
+  max-width: 220rem;
   margin: 0 auto;
   padding: 5rem 4rem;
   text-align: center;
@@ -11,31 +11,28 @@
   margin-left: -3rem;
 }
 
-/* ========================= */
-/* TITLE — same size, 2× width */
-/* ========================= */
+/* ------------------------- */
+/* TITLE + SUBTITLE          */
+/* ------------------------- */
 .hero-title {
-  font-size: 4.9rem;          
+  font-size: 4.9rem;
   font-weight: 700;
   color: #222;
-  max-width: 170rem;          /* was 70rem → 2× width */
+  max-width: 170rem;
   margin: 0 auto 1.5rem auto;
   line-height: 1.1;
 }
 
-/* ========================= */
-/* SUBTITLE — same size, 2× width */
-/* ========================= */
 .hero-subtitle {
   font-size: 1.6rem;
   color: #555;
-  max-width: 110rem;          /* was 55rem → 2× width */
+  max-width: 110rem;
   margin: 0 auto 3rem auto;
   line-height: 1.6;
 }
 
 /* ========================= */
-/* BUTTON GROUP (unchanged)  */
+/* BUTTON GROUP              */
 /* ========================= */
 .hero-buttons {
   display: flex;
@@ -44,59 +41,72 @@
   margin-bottom: 3rem;
 }
 
+/* ========================= */
+/* UNIFIED BUTTON STYLE      */
+/* ========================= */
 .btn-primary,
 .btn-secondary {
-  padding: 1rem 2rem;
+  padding: 0.9rem 1.8rem;
   font-size: 1.05rem;
   border-radius: 0.6rem;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
+  width: auto !important;
+  min-width: unset !important;
+  max-width: fit-content !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* primary */
 .btn-primary {
   background: #0A1F4D;
   color: white;
   border: none;
 }
-
 .btn-primary:hover {
   background: #071836;
 }
 
-/* secondary */
 .btn-secondary {
   background: white;
   border: 0.12rem solid #dce2ec;
 }
-
 .btn-secondary:hover {
   background: #f7f9fc;
 }
 
 /* ========================= */
-/* SEARCH BAR WRAPPER — 2× width */
-/* ========================= */
-.hero-search-container {
-  position: relative;
-  max-width: 200rem;            /* was 60rem → 2× width */
-  margin: 0 auto;
-}
-
-/* ========================= */
-/* SEARCH BAR — same height, 2× width */
+/* SEARCH BAR                */
 /* ========================= */
 .hero-search {
   display: flex;
   gap: 1rem;
   padding: 1rem;
   background: white;
-  border-radius: 0.8rem;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+  border-radius: 1.4rem;
+
+  /* Yellow border */
+  border: 8px solid #FFE8A3;
+
+  /* Inset soft highlight */
+  box-shadow: inset 0 0 0 2px #FDE28A;
+
   width: 73rem;
 }
 
-/* input (same size) */
+/* SEARCH BAR WRAPPER */
+.hero-search-container {
+  position: relative;
+  max-width: 200rem;
+  margin: 0 auto;
+  z-index: 50;
+  overflow: visible !important;
+}
+
+/* INPUT */
 .hero-search input {
   flex: 1;
   padding: 1rem;
@@ -105,26 +115,72 @@
   border-radius: 0.6rem;
   border: none;
 }
-
 .hero-search input:focus {
   outline: none;
 }
-
-/* select (same size) */
-.hero-search select {
-  padding: 1rem;
-  font-size: 1.05rem;
-  background: #f6f8fd;
-  border-radius: 0.6rem;
-  border: none;
+/* Container */
+.custom-select {
+  position: relative;
+  width: 150px;
   cursor: pointer;
 }
 
-.hero-search select:focus {
-  outline: none;
+/* Selected box */
+.custom-select-trigger {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #111;
 }
 
-/* search button */
+/* Dropdown menu */
+.custom-options {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  overflow: hidden;
+    z-index: 20;  /* HIGHER */
+  position: absolute;
+  width: 100%;
+}
+
+/* Option rows */
+.custom-option {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  color: #374151;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s ease;
+}
+
+.custom-option:last-child {
+  border-bottom: none;
+}
+
+.custom-option:hover {
+  background: #f8fafc;
+}
+
+/* Arrow */
+.arrow {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+
+/* ========================= */
+/* SEARCH BUTTON             */
+/* ========================= */
 .btn-search {
   padding: 1rem 1.5rem;
   background: #0A1F4D;
@@ -135,91 +191,150 @@
   font-weight: 600;
   cursor: pointer;
 }
-
 .btn-search:hover {
   background: #071836;
 }
-
-/* ========================= */
-/* RESULTS DROPDOWN — 2× width */
-/* ========================= */
+/* ============================= */
+/* Search Results Container      */
+/* ============================= */
 .search-results {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;                  /* auto-adjusts because container width doubled */
-  margin-top: 0.5rem;
-  background: white;
-  border-radius: 0.8rem;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  overflow: hidden;
-  padding: 0.5rem 0;
+  right: 0;
+
+  background: #fff;
+  border-radius: 22px;
+  border: 1px solid #e5e7eb;
+  padding: 22px 26px 26px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+
+  z-index: 5;
 }
 
-/* result items (same size) */
-.result-item {
-  padding: 1rem 1.5rem;
-  font-size: 1.05rem;
-  text-align: left;
-  cursor: pointer;
+
+.ai-discovery-card {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding: 1rem 1.4rem;
+  background: #f4f6ff;
+  border-radius: 22px;
+  gap: 18px;
 }
 
-.result-item:hover {
-  background: #f6f8fd;
-}
-
-/* ========================= */
-/* RESPONSIVE                */
-/* ========================= */
-@media (max-width: 900px) {
-  .hero-title {
-    font-size: 2.6rem;
-    max-width: 100%;
-  }
-
-  .hero-subtitle {
-    font-size: 1.8rem;
-    max-width: 100%;
-  }
-
-  .hero-search {
-    flex-direction: column;
-  }
-
-  .hero-search input,
-  .hero-search select,
-  .hero-search button {
-    width: 100%;
-  }
-
-  .search-results {
-    position: relative;
-  }
-}
-/* SEARCH BAR WRAPPER — 2× width */
-.hero-search-container {
-  position: relative;
-  max-width: 200rem;
-  margin: 0 auto;
-  z-index: 50;                 /* ✅ ensures dropdown stays above hero */
-  overflow: visible !important; /* ✅ prevents clipping */
-}
-
-/* RESULTS DROPDOWN — 2× width */
-.search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
+/* Increase space below AI card */
+.divider {
+  height: 1px;
   width: 100%;
+  background: #e5e8ef;
+  margin: 2.6rem 0; /* increased spacing */
+}
 
-  margin-top: 0.5rem;
-  background: white;
-  border-radius: 0.8rem;
+.ai-icon {
+  width: 54px;
+  height: 54px;
+  background: #fff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
 
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+.ai-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #111;
+}
 
-  overflow: hidden;
-  padding: 0.5rem 0;
+.ai-description {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #596377;
+}
 
-  z-index: 9999;               /* 🔥 highest, dropdown will ALWAYS be on top */
+
+
+
+/* Trending header */
+.search-results-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #52627a;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.6rem;
+  margin-top: 2rem;
+}
+
+/* =============================== */
+/* SKELETON LOADER (TRENDING LIST) */
+/* =============================== */
+
+.skeleton-wrapper {
+  padding: 1.4rem 0 0.6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.skeleton-line {
+  height: 22px;
+  width: 100%;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    90deg,
+    #f2f4f8 0%,
+    #e9ecf1 35%,
+    #f2f4f8 70%
+  );
+
+  background-size: 300% 100%;
+  animation: skeletonLoading 1.3s ease-in-out infinite;
+}
+
+/* Animation */
+@keyframes skeletonLoading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Make skeleton align exactly like result items */
+.skeleton-line {
+  margin-left: 0.2rem;
+}
+
+
+/* ============================= */
+/* Trending Items (rows)         */
+/* ============================= */
+.trending-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 0;
+  font-size: 1.05rem;
+  color: #111;
+  border-bottom: 1px solid #f1f4f8;
+}
+
+.trending-item:last-child {
+  border-bottom: none;
+}
+
+.trend-positive {
+  color: #0abf66;
+  font-weight: 600;
+  font-size: 1rem;
 }
