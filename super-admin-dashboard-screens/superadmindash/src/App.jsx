@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import logo from "./assets/logo.svg";
 
-// Icons
+
 import {
   Home,
   Users,
@@ -24,73 +24,54 @@ import {
   HandHeart,
 } from "lucide-react";
 
-// Dashboard components
 import StatsCard from "./StatsCard";
 import InvestmentSection from "./InvestmentSection";
 import FundingAndTokenization from "./FundingAndTokenization";
 import MarketOverview from "./MarketOverview";
-import ActionBar from "./ActionBar"
-// Startups
+import ActionBar from "./ActionBar";
 import StartupsList from "./StartupList";
 import StartupDetails from "./StartupDetails";
 import StartupActionBar from "./StartupActionBar";
 import FounderSidebar from "./FounderSidebar";
-
-// Investors
 import InvestorDetails from "./InvestorDetails";
 import InvestorSidebar from "./InvestorSidebar";
-
-// Funding
 import FundingStats from "./FundingStats";
 import FundingTrendsAndDeals from "./FundingTrendsAndDeals";
 import RecentFundingDeals from "./RecentFundingDeals";
-
-// Deals
 import DealsSummary from "./DealsSummary";
 import DealStageAndValueCharts from "./DealStageAndValueCharts";
 import CurrentDeals from "./CurrentDeals";
-
-// Compliance
 import DashboardStats from "./DashboardStats";
 import DonutCharts from "./ComplianceAuditCharts";
 import ComplianceRecords from "./ComplianceRecords";
-
-// Reports
 import ReportStats from "./ReportStats";
 import ReportCharts from "./ReportCharts";
 import GenerateReport from "./GenerateReport";
 import RecentReports from "./ReportsComponent";
-
-// Tokenization
 import Dashboard from "./TokenDash";
 import TokenizedStartups from "./TokenizedStartups";
-
-// Metaverse
 import MetaverseDashboard from "./MetaverseDash";
 import MetaverseEvents from "./MetaverseEvents";
-
-// Zakat
 import ZakatSummary from "./ZakatSummary";
 import ZakatCharts from "./ZakatCharts";
 import ZakatRecords from "./ZakatRecords";
-
-// Investor Network
 import InvestorDashboard from "./InvestorDashboard";
 import InvestorDirectory from "./InvestorDirectory";
-
-// Settings
 import SettingsDashboard from "./SettingsDashboard";
 import InvestorOverview from "./InvestorOverview";
+import ChartsSection from "./ChartSectionUpdated";
+import MiniCharts from "./ZakatCharts";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [activeTab, setActiveTab] = useState("Dashboard");
 
-  // ⭐ When null → list; when id → details
+  
   const [selectedStartupId, setSelectedStartupId] = useState(null);
 const [selectedInvestorId, setSelectedInvestorId] = useState(null);
+const [previousTab, setPreviousTab] = useState(null);
 
-  // Sidebar menu
+
   const menuItems = [
     {
       section: "MAIN",
@@ -134,31 +115,33 @@ const [selectedInvestorId, setSelectedInvestorId] = useState(null);
     <div className={`app ${darkMode ? "dark" : ""}`}>
 
       {/* ========================= SIDEBAR ========================= */}
-      <aside className="sidebar">
-        <div className="logo">
-          <img src={logo} alt="emireq" />
-        </div>
+   <aside className="sidebar">
+  <div className="logo">
+    <img src={logo} alt="emireq" />
+  </div>
 
-        {menuItems.map((section) => (
-          <div key={section.section}>
-            <p className="menu-title">{section.section}</p>
 
-            {section.items.map((item) => (
-              <a
-                key={item.name}
-                className={`menu-item ${activeTab === item.name ? "active" : ""}`}
-                onClick={() => {
-                  setActiveTab(item.name);
-                  setSelectedStartupId(null); // reset on tab switch
-                }}
-              >
-                {item.icon}
-                {item.name}
-              </a>
-            ))}
-          </div>
-        ))}
-      </aside>
+  {menuItems.map((section) => (
+    <div key={section.section}>
+      <p className="menu-title" style={{ fontSize: "13px" }}>{section.section}</p>
+
+      {section.items.map((item) => (
+        <a
+          key={item.name}
+          className={`menu-item ${activeTab === item.name ? "active" : ""}`}
+          style={{ fontSize: "17px", padding: "12px 18px" }} // ← increased size
+          onClick={() => {
+            setActiveTab(item.name);
+            setSelectedStartupId(null);
+          }}
+        >
+          {item.icon}
+          {item.name}
+        </a>
+      ))}
+    </div>
+  ))}
+</aside>
 
       {/* ========================= MAIN ========================= */}
       <main className="main">
@@ -183,20 +166,23 @@ const [selectedInvestorId, setSelectedInvestorId] = useState(null);
           <p className="content-subtitle">{activeSubtitle}</p>
 
           {/* ========================= DASHBOARD ========================= */}
-          {activeTab === "Dashboard" && (
-            <>
-              <div className="stats-row">
-                <StatsCard title="Total Startups" value="87" icon={Building2} color="#10b981" dark={darkMode} />
-                <StatsCard title="Active Investors" value="1,258" icon={Users} color="#3b82f6" dark={darkMode} />
-                <StatsCard title="Tokenized Startups" value="34" icon={Coins} color="#f59e0b" dark={darkMode} />
-                <StatsCard title="Zakat Pending" value="$42.5k" icon={HandHeart} color="#8b5cf6" dark={darkMode} />
-              </div>
+         {activeTab === "Dashboard" && (
+  <div className="dashboard-wrapper">
+    
+    <div className="stats-row">
+      <StatsCard title="Total Startups" value="87" icon={Building2} color="#10b981" dark={darkMode} />
+      <StatsCard title="Active Investors" value="1,258" icon={Users} color="#3b82f6" dark={darkMode} />
+      <StatsCard title="Tokenized Startups" value="34" icon={Coins} color="#f59e0b" dark={darkMode} />
+      <StatsCard title="Zakat Pending" value="$42.5k" icon={HandHeart} color="#8b5cf6" dark={darkMode} />
+    </div>
 
-              <InvestmentSection dark={darkMode} />
-              <FundingAndTokenization dark={darkMode} />
-              <MarketOverview dark={darkMode} />
-            </>
-          )}
+    <InvestmentSection dark={darkMode} />
+    <FundingAndTokenization dark={darkMode} />
+    <MarketOverview dark={darkMode} />
+
+  </div>
+)}
+
 
           {/* ========================= STARTUPS ========================= */}
           {activeTab === "Startups" && (
@@ -294,9 +280,16 @@ const [selectedInvestorId, setSelectedInvestorId] = useState(null);
           {/* FUNDING */}
           {activeTab === "Funding" && (
             <>
+             <div style={{ marginTop: "13rem" }}></div>
               <FundingStats dark={darkMode} />
-              <FundingTrendsAndDeals dark={darkMode} />
-              <RecentFundingDeals dark={darkMode} />
+              {/* <FundingTrendsAndDeals dark={darkMode} /> */}
+              <div style={{ marginTop: "5rem" }}></div>
+           <ChartsSection />
+
+<div style={{ marginTop: "5rem" }}>
+  <RecentFundingDeals dark={darkMode} />
+</div>
+
             </>
           )}
 
@@ -347,9 +340,16 @@ const [selectedInvestorId, setSelectedInvestorId] = useState(null);
           {/* ZAKAT */}
           {activeTab === "Zakat" && (
             <>
-              <ZakatSummary dark={darkMode} />
-              <ZakatCharts dark={darkMode} />
-              <ZakatRecords dark={darkMode} />
+             <div style={{ marginBottom: "4rem" }}>
+  <ZakatSummary dark={darkMode} />
+</div>
+
+<div style={{ marginBottom: "4rem" }}>
+  <MiniCharts/>
+</div>
+
+<ZakatRecords dark={darkMode} />
+
             </>
           )}
 
@@ -363,6 +363,104 @@ const [selectedInvestorId, setSelectedInvestorId] = useState(null);
 
           {/* SETTINGS */}
           {activeTab === "Settings" && <SettingsDashboard dark={darkMode} />}
+
+          {/* LOG OUT */}
+    {activeTab === "Log out" && (
+  <div
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: darkMode ? "rgba(0,0,0,0.6)" : "rgba(0,0,0,0.4)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backdropFilter: "blur(6px)",
+      zIndex: 999,
+    }}
+  >
+    <div
+      style={{
+        backgroundColor: darkMode ? "#1f2937" : "#fff",
+        padding: "30px",
+        width: "350px",
+        borderRadius: "16px",
+        textAlign: "center",
+        boxShadow: darkMode
+          ? "0 10px 25px rgba(0,0,0,0.4)"
+          : "0 10px 25px rgba(0,0,0,0.15)",
+        transition: "all 0.3s ease",
+      }}
+    >
+      <h2
+        style={{
+          marginBottom: "10px",
+          fontSize: "22px",
+          fontWeight: "600",
+          color: darkMode ? "#f5f5f5" : "#111",
+        }}
+      >
+        Log Out?
+      </h2>
+
+      <p
+        style={{
+          marginBottom: "25px",
+          fontSize: "14px",
+          color: darkMode ? "#9ca3af" : "#6b7280",
+        }}
+      >
+        You’ll be signed out of your account and will need to log in again.
+      </p>
+
+      <div style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
+        <button
+          style={{
+            padding: "10px 18px",
+            backgroundColor: darkMode ? "#ef4444" : "#dc2626",
+            color: "#fff",
+            border: "none",
+            borderRadius: "10px",
+            cursor: "pointer",
+            fontWeight: "600",
+            flex: 1,
+          }}
+          onClick={() => {
+            console.log(
+              "%c[LOG OUT] User logged out.",
+              "color:#b91c1c;font-weight:700;"
+            );
+            // Add logout logic here
+          }}
+        >
+          Yes, Log Out
+        </button>
+
+        <button
+          style={{
+            padding: "10px 18px",
+            backgroundColor: darkMode ? "#374151" : "#e5e7eb",
+            color: darkMode ? "#f3f4f6" : "#111",
+            border: "none",
+            fontWeight: "500",
+            borderRadius: "10px",
+            cursor: "pointer",
+            flex: 1,
+          }}
+          onClick={() => {
+            setActiveTab(previousTab || "Dashboard");
+          }}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+
         </div>
       </main>
     </div>

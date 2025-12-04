@@ -9,6 +9,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 40px auto 0;
+ 
 }
 
 /* ---- Left: Investment Banner ---- */
@@ -20,7 +21,7 @@
   background-image: url("./assets/fefa7ff4-7370-46a4-bc4a-3878ee86610c.png"); /* ✅ Use your uploaded image */
   background-size: cover;
   background-position: center;
-  height: 260px;
+  height: 25rem;
 }
 
 .banner-overlay {

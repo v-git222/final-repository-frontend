@@ -1,105 +1,305 @@
-/* =====================
-   Search Input
-===================== */
-.search-input {
-  height: 42px;
+/* ---------------- FONT LOAD ---------------- */
+
+@font-face {
+  font-family: "URW Geometric";
+  src: url("/fonts/URWGeometricRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: "URW Geometric", sans-serif;
+}
+
+/* ---------------- REPORTS UI ---------------- */
+
+.reports-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background: var(--bg, #f8f9fa);
+}
+
+.dark .reports-container {
+  --bg: #0d0d0d;
+}
+
+.reports-wrapper {
   width: 100%;
-  padding: 0 14px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  background-color: #f9fafb;
-  color: #1f2937;
+  max-width: 900px;
+  background: #fff;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .reports-wrapper {
+  background: #111;
+  border-color: #222;
+}
+
+.reports-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.subtext {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.dark .subtext {
+  color: #9ca3af;
+}
+
+.table-wrapper {
+  margin-top: 22px;
+  overflow-x: auto;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
   font-size: 14px;
-  transition: all 0.25s ease;
 }
 
-.dark .search-input {
-  background-color: #374151;
-  border-color: #4b5563;
-  color: #e5e7eb;
+/* ----- Table header ----- */
+
+.reports-table th {
+  text-align: left;
+  padding: 14px;
+  background: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
 }
 
-.search-input:focus {
-  outline: none;
-  border-color: #9ca3af;
-  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.25);
+.dark .reports-table th {
+  background: #1a1a1a;
+  color: #d1d5db;
 }
 
-.dark .search-input:focus {
-  border-color: #9ca3af;
-  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.25);
+/* ----- Rows ----- */
+
+.reports-table tbody tr {
+  border-bottom: 1px solid #ececec;
+  transition: 0.2s;
 }
 
-.search-input::placeholder {
-  color: #9ca3af;
+.dark .reports-table tbody tr {
+  border-color: #222;
 }
 
-.dark .search-input::placeholder {
-  color: #9ca3af;
+.reports-table tbody tr:hover {
+  background: #fafafa;
 }
 
-/* =====================
-   Action Buttons
-===================== */
-.action-btn {
+.dark .reports-table tbody tr:hover {
+  background: #1a1a1a;
+}
+
+.reports-table td {
+  padding: 14px;
+  color: #4b5563;
+}
+
+.dark .reports-table td {
+  color: #e5e5e5;
+}
+
+/* ICON FIX (IMPORTANT) */
+
+.reports-table svg {
+  stroke: #374151 !important;
+  opacity: 0.85;
+}
+
+.dark .reports-table svg {
+  stroke: #e5e7eb !important;
+  opacity: 1;
+}
+
+/* File icon */
+
+.file-icon {
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  background: #ececec;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.dark .file-icon {
+  background: #2a2a2a;
+}
+
+/* Format Tag */
+
+.tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #eef2ff;
+  color: #374151;
+}
+
+.dark .tag {
+  background: #333;
+  color: #ccc;
+}
+
+/* Action Buttons */
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+/* -----------------------------------
+   Stats Card Layout
+----------------------------------- */
+
+.report-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin: 28px auto;
+  max-width: 900px;
+}
+
+@media (max-width: 850px) {
+  .report-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .report-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -----------------------------------
+   Cards
+----------------------------------- */
+
+.report-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid #ececec;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.dark .report-card {
+  background: #141414;
+  border-color: #2a2a2a;
+}
+
+/* -----------------------------------
+   Header Row (icon + growth badge)
+----------------------------------- */
+
+.report-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 7px;
+}
+
+.growth-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid;
+  font-weight: 600;
+}
+
+/* -----------------------------------
+   Text Styles
+----------------------------------- */
+
+.report-title {
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #5a5a5a;
+}
+
+.dark .report-title {
+  color: #e6e6e6;
+}
+
+.report-value {
+  font-size: 34px;
+  font-weight: 700;
+  margin-top: 6px;
+  color: #111;
+}
+
+.dark .report-value {
+  color: #fff;
+}
+
+.report-sub {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #7b7b7b;
+}
+
+.dark .report-sub {
+  color: #bfbfbf;
+}
+
+
+/* -----------------------------------
+   Fix Icon Visibility
+----------------------------------- */
+
+.report-card svg {
+  stroke: currentColor !important;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #374151;
-  transition: all 0.25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.action-btn:hover {
-  background-color: rgba(0, 0, 0, 0.08);
-  transform: scale(1.05);
+.icon-btn:hover {
+  background: #e5e7eb;
 }
 
-.dark .action-btn {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #e5e7eb;
+.dark .icon-btn {
+  background: #222;
 }
 
-.dark .action-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: scale(1.05);
+.dark .icon-btn:hover {
+  background: #333;
 }
 
-/* =====================
-   Pagination Buttons
-===================== */
-.page-btn {
-  padding: 7px 14px;
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #374151;
-  font-weight: 500;
-  font-size: 14px;
-  transition: all 0.25s ease;
-}
-
-.page-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  transform: scale(1.04);
-}
-
-.page-btn.active {
-  background-color: #111827;
-  color: #ffffff;
-}
-
-.dark .page-btn {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #e5e7eb;
-}
-
-.dark .page-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.dark .page-btn.active {
-  background-color: #f3f4f6;
-  color: #111827;
+.icon-btn svg {
+  transition: 0.2s;
 }

@@ -6,7 +6,7 @@ import EmireqToken from "./EmireqToken.jsx";
 import Marketplace from "./MarketPlaceSection.jsx";
 import BuySellTokens from "./BuySellTokens.jsx";
 import HowTokenizationWorks from "./HowTokenizationWorks.jsx";
-import Footer from "../Footer.jsx";
+import Footer from "../about/Footer.jsx";
 
 export default function Tokenize() {
 
@@ -43,31 +43,28 @@ export default function Tokenize() {
       <div className="scale-wrapper">
         <div className="container">
 
-          <motion.div
-            key="tokenize-screen"
-            variants={fadeVariant}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "10rem", // Global vertical spacing rhythm
-              width: "100%",
-              height: "auto"
-            }}
-          >
-            <TokenizeHero />
-            <EmireqToken />
-            <Marketplace />
-            <BuySellTokens />
-            <HowTokenizationWorks />
+  <motion.div
+  key="tokenize-screen"
+  variants={fadeVariant}
+  initial="hidden"
+  animate="visible"
+  exit="exit"
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "6rem", // adjust here for all sections
+    width: "100%",
+    height: "auto"
+  }}
+>
+  <TokenizeHero />
+  <EmireqToken />
+  <Marketplace />
+  <BuySellTokens />
+  <HowTokenizationWorks />
+  <Footer />
+</motion.div>
 
-            {/* space so footer doesn't overlap content */}
-            <div style={{ height: "140px" }} />
-
-            <Footer />
-          </motion.div>
 
         </div>
       </div>

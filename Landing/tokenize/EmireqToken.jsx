@@ -49,61 +49,63 @@ export default function EmireqToken() {
         </p>
       </div>
 
-      {/* Token Cards */}
-      <div className="token-grid">
-        {tokens.map((t) => (
-          <div
-            key={t.symbol}
-            className="token-card"
-            style={{ backgroundColor: t.color }}
-          >
-            <div className="token-card-header">
-              <span
-                className="token-badge"
-                style={{ backgroundColor: t.badgeColor }}
-              >
-                {t.symbol}
-              </span>
-              <div className="token-name-row">
-                <h2>{t.name}</h2>
-                <span className="token-tag">{t.tag}</span>
-              </div>
-            </div>
+ <div className="token-grid">
+  {tokens.map((t) => (
+    <div
+      key={t.symbol}
+      className="token-card"
+      style={{
+        background: `linear-gradient(to bottom, ${t.color} 0%, ${t.color} 8%, white 8%)`
+      }}
+    >
+      <div className="token-card-header">
+        <span
+          className="token-badge"
+          style={{ backgroundColor: t.badgeColor }}
+        >
+          {t.symbol}
+        </span>
 
-            <p className="token-desc">
-              {/* Short description based on token */}
-              {t.symbol === "EMR" &&
-                "Core governance and staking token — used for ecosystem payments, staking and DAO automation."}
-              {t.symbol === "XNR" &&
-                "NFT & Digital-asset token — powers halal NFT art + culture + minting — quality focus."}
-              {t.symbol === "AVX" &&
-                "Real-world asset token — used in Shariah-compliant real-estate + commodity profit-sharing models."}
-            </p>
-
-            <div className="token-info-box">
-              <span>Total {t.symbol} Supply</span>
-              <strong>{t.supply}</strong>
-            </div>
-
-            <div className="info-pair">
-              <div>
-                <label>Primary Use</label>
-                <p>{t.primaryUse}</p>
-              </div>
-
-              <div>
-                <label>Smart Logic</label>
-                <p>{t.smartLogic}</p>
-              </div>
-            </div>
-
-            <div className="actions">
-              <button className="outline-btn">View Details</button>
-              <button className="solid-btn">Buy / Mint</button>
-            </div>
-          </div>
-        ))}
+        <div className="token-name-row">
+          <h2>{t.name}</h2>
+          <span className="token-tag">{t.tag}</span>
+        </div>
       </div>
+
+      <p className="token-desc">
+        {t.symbol === "EMR" &&
+          "Core governance and staking token — used for ecosystem payments, staking and DAO automation."}
+        {t.symbol === "XNR" &&
+          "NFT & Digital-asset token — powers halal NFT art + culture + minting — quality focus."}
+        {t.symbol === "AVX" &&
+          "Real-world asset token — used in Shariah-compliant real-estate + commodity profit-sharing models."}
+      </p>
+
+      <div className="token-info-box">
+        <span>Total {t.symbol} Supply</span>
+        <strong>{t.supply}</strong>
+      </div>
+
+      <div className="info-pair">
+        <div>
+          <label>Primary Use</label>
+          <p>{t.primaryUse}</p>
+        </div>
+
+        <div>
+          <label>Smart Logic</label>
+          <p>{t.smartLogic}</p>
+        </div>
+      </div>
+
+      <div className="actions">
+        <button className="outline-btn">View Details</button>
+        <button className="solid-btn">Buy / Mint</button>
+      </div>
+    </div>
+  ))}
+</div>
+
       <div style={{marginTop:"5rem"}}></div>
     
       {/* Footer Strategy Box */}

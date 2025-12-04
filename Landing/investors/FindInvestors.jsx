@@ -1,6 +1,7 @@
 import React from "react";
 import table from "../assets/table.png";
 import "./findinvestors.css"
+import { transform } from "framer-motion";
 export default function FindInvestors() {
   return (
     <div className="fi-wrapper">
@@ -41,7 +42,13 @@ export default function FindInvestors() {
 
       {/* RIGHT COLUMN */}
       <div className="fi-col-right">
-        <img src={table} className="fi-table-img" alt="Investors UI" />
+        <img 
+  src={table} 
+  className="fi-table-img" 
+  alt="Investors UI"
+  style={{ transform: "scale(1.1)" }} 
+/>
+
       </div>
     </div>
   );

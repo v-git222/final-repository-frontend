@@ -6,43 +6,61 @@ const startups = [
     initials: "CN",
     name: "CloudNova AI",
     desc: "AI automation + cloud cost optimization",
-    tag: "Technology",
+    category: "Technology",
+    funding: "$6.2M",
     location: "San Francisco, CA",
+    verified: true,
+    trending: true
   },
   {
     initials: "HD",
     name: "HealPro Diagnostics",
     desc: "Advanced testing + digital lab solutions",
-    tag: "Healthcare",
+    category: "Healthcare",
+    funding: "$3.8M",
     location: "Boston, MA",
+    verified: true,
+    trending: false
   },
   {
     initials: "BB",
     name: "BlueByte Cyber",
     desc: "Defensive cybersecurity for SMEs",
-    tag: "Cybersecurity",
+    category: "Cybersecurity",
+    funding: "$4.1M",
     location: "Austin, TX",
+    verified: true,
+    trending: true
   },
   {
     initials: "MG",
     name: "MarqGrow",
-    desc: "Growth marketing engine for fast-scaling brands",
-    tag: "Marketing",
+    desc: "Growth marketing engine for scaling brands",
+    category: "Marketing",
+    funding: "$2.4M",
     location: "New York, NY",
+    verified: true,
+    trending: false
   },
   {
     initials: "PG",
     name: "PayStream Global",
     desc: "Cross-border payment solutions for businesses",
-    tag: "FinTech",
+    category: "FinTech",
+    funding: "$8.5M",
     location: "London, UK",
+    verified: true,
+    trending: true
   },
   {
     initials: "TF",
     name: "TalentForge",
     desc: "AI-powered recruitment and talent management",
-    tag: "HR Tech",
+    category: "HR Tech",
+    funding: "$5.1M",
     location: "Singapore",
+    verified: true,
+    trending: false
   },
 ];
 
@@ -50,7 +68,7 @@ export default function StartupsSection() {
   return (
     <div className="startups-wrapper">
 
-      {/* Section Heading */}
+      {/* Section Header */}
       <div className="section-top">
         <span className="breadcrumb">STARTUPS</span>
 
@@ -59,39 +77,46 @@ export default function StartupsSection() {
         </h2>
 
         <p className="section-sub">
-          Commodo nec mi id ullamcorper vitae augue neque dis. Nunc lacinia
-          viverra orci diam. Nibh est vitae suspendisse parturient sed lorem eu.
+          Discover innovative companies shaping the future across AI, FinTech, cybersecurity, and more.
         </p>
       </div>
 
-      {/* Cards Grid */}
+      {/* Cards */}
       <div className="startups-grid">
         {startups.map((s) => (
           <div className="startup-card" key={s.name}>
 
-            {/* Initials + Verified */}
-            <div className="card-head">
+            {/* Top Header */}
+            <div className="card-header">
               <div className="initials">{s.initials}</div>
-              <div className="verified">✔ Verified</div>
+
+              <div className="badges">
+                {s.verified && (
+                  <span className="badge verified">Verified</span>
+                )}
+                {s.trending && (
+                  <span className="badge trending">Trending</span>
+                )}
+              </div>
             </div>
 
-            {/* Name + Desc */}
+            {/* Title */}
             <h3 className="startup-name">{s.name}</h3>
+
+            {/* Description */}
             <p className="startup-desc">{s.desc}</p>
 
-            {/* Tag */}
-            <span className="startup-tag">{s.tag}</span>
-
-            {/* Location */}
-            <div className="location">
-              <span>📍</span> {s.location}
+            {/* Meta */}
+            <div className="startup-meta">
+              <span className="tag-chip category">{s.category}</span>
+              <span className="tag-chip funded">{s.funding}</span>
             </div>
 
-            {/* Button */}
-            <button className="profile-btn">
-              View Profile →
-            </button>
+            {/* Location */}
+            <div className="location">{s.location}</div>
 
+            {/* CTA */}
+            <button className="profile-btn">View Profile →</button>
           </div>
         ))}
       </div>

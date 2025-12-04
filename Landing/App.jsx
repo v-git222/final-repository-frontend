@@ -12,7 +12,7 @@ const CryptoInsights = React.lazy(() => import("./CryptoInsightsUpdate.jsx"));
 const PortfolioSectionUpdated = React.lazy(() => import("./PortfolioSectionUpdated.jsx"));
 const BusinessListingUpdated = React.lazy(() => import("./BusinessListingUpdated.jsx"));
 const BlogListingUpdated = React.lazy(() => import("./BlogListingUpdated.jsx"));
-const Footer = React.lazy(() => import("./Footer.jsx"));
+const Footer = React.lazy(() => import("./about/Footer.jsx"));
 
 import EventsPage from "./events/index.jsx";
 import Tokenize from "./tokenize/index.jsx";
@@ -79,7 +79,7 @@ export default function App() {
             <PortfolioSectionUpdated />
             <BusinessListingUpdated />
             <BlogListingUpdated />
-            <div style={{ marginTop: "19rem" }}></div>
+            <div style={{ marginTop: "9rem" }}></div>
             <Footer />
           </React.Suspense>
         </>

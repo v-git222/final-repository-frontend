@@ -4,20 +4,11 @@ import { Shield, FileText, Users, Clock } from "lucide-react";
 
 export default function DashboardStats({ dark=false }) {
   const data = [
+ 
     {
-      icon: <Shield size={36} />,
-      iconBg: "rgba(0,168,107,0.15)",
-      iconColor: "#00A86B",
-      title: "Shariah Compliant",
-      value: "95%",
-      subtitle: "31 out of 33 startups",
-      tag: "+2.3%",
-      tagColor: "#00A86B",
-    },
-    {
-      icon: <FileText size={36} />,
-      iconBg: "rgba(0,122,255,0.15)",
-      iconColor: "#007AFF",
+     icon: <FileText size={36} />,
+    iconBg: "#007AFF",  // new solid
+    iconColor: "#fff",
       title: "Audits Completed",
       value: "124",
       subtitle: "+18 vs last year",
@@ -25,9 +16,9 @@ export default function DashboardStats({ dark=false }) {
       tagColor: "#007AFF",
     },
     {
-      icon: <Users size={36} />,
-      iconBg: "rgba(155,81,224,0.15)",
-      iconColor: "#9B51E0",
+       icon: <Users size={36} />,
+    iconBg: "#9B51E0",
+    iconColor: "#fff",
       title: "Board Members",
       value: "8",
       subtitle: "active scholars",
@@ -36,8 +27,8 @@ export default function DashboardStats({ dark=false }) {
     },
     {
       icon: <Clock size={36} />,
-      iconBg: "rgba(242,153,74,0.15)",
-      iconColor: "#F2994A",
+    iconBg: "#FF9D3B", // soft orange like your screenshot
+    iconColor: "#fff",
       title: "Pending Reviews",
       value: "6",
       subtitle: "-2% this week",

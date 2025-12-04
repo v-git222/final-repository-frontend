@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./MarketOverview.css";
+import { FiBarChart2 } from "react-icons/fi";
+
 import {
   Search,
   TrendingUp,
@@ -47,7 +49,12 @@ export default function MarketOverview({ dark }) {
   return (
     <div className={`market-overview ${dark ? "dark" : ""}`}>
       <div className="header">
-        <h3>📊 Market Overview</h3>
+      <h3 className="header-title">
+  <FiBarChart2 className="header-icon" />
+  Market Overview
+</h3>
+
+
         <p>Comprehensive token statistics trading information</p>
       </div>
 
@@ -72,16 +79,17 @@ export default function MarketOverview({ dark }) {
       {/* Table */}
       <div className="table-container">
         <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Change(%)</th>
-              <th>Change($)</th>
-              <th>Marketcap</th>
-              <th>Trade</th>
-            </tr>
-          </thead>
+        <thead style={{ background: "#ffffff" }}>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Change(%)</th>
+    <th>Change($)</th>
+    <th>Marketcap</th>
+    <th>Trade</th>
+  </tr>
+</thead>
+
           <tbody>
             {marketData.map((token, index) => (
               <tr key={index}>

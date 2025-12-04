@@ -9,7 +9,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import "./ReportCharts.css";
 
 ChartJS.register(ArcElement, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -28,19 +27,26 @@ export default function ReportCharts({ dark }) {
           "#EC4899",
           "#06B6D4",
         ],
-        borderColor: dark ? "#0d0d0d" : "#fff",
-        borderWidth: 3,
-        cutout: "70%",
+        borderColor: dark ? "#111" : "#fff",
+        borderWidth: 4,
+        cutout: "72%",
       },
     ],
   };
 
   const donutOptions = {
-    plugins: { legend: { display: false } },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: dark ? "#18181b" : "#111827",
+        borderRadius: 8,
+        padding: 10,
+      },
+    },
     maintainAspectRatio: false,
   };
 
-  // Bar Chart Data
+  // Bar Chart Data (reduced corner radius)
   const barData = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
     datasets: [
@@ -48,10 +54,10 @@ export default function ReportCharts({ dark }) {
         label: "Reports",
         data: [5, 25, 12, 20, 35, 25, 37],
         backgroundColor: "#3B82F6",
-        borderRadius: 10,
+        borderRadius: 6, // 🔥 reduced roundness
         borderSkipped: false,
-        barPercentage: 0.6,
-        categoryPercentage: 0.7,
+        barPercentage: 0.52, // tighter & cleaner
+        categoryPercentage: 0.55,
       },
     ],
   };
@@ -63,8 +69,7 @@ export default function ReportCharts({ dark }) {
       legend: { display: false },
       tooltip: {
         backgroundColor: dark ? "#18181b" : "#111827",
-        titleColor: "#fff",
-        bodyColor: "#fff",
+        borderRadius: 8,
         padding: 10,
         displayColors: false,
         callbacks: {
@@ -78,27 +83,24 @@ export default function ReportCharts({ dark }) {
         grid: { display: false },
         ticks: {
           color: dark ? "#a1a1aa" : "#6b7280",
-          font: { size: 13 },
-          padding: 8,
+          font: { size: 12 },
         },
       },
       y: {
         beginAtZero: true,
         ticks: {
           color: dark ? "#a1a1aa" : "#6b7280",
-          font: { size: 12 },
           stepSize: 10,
+          font: { size: 12 },
         },
         grid: {
-          color: dark ? "#1f1f1f" : "#e5e7eb",
-          drawBorder: false,
+          color: dark ? "#222" : "#e5e7eb",
           borderDash: [4, 4],
         },
       },
     },
   };
 
-  // Legends
   const donutLegend = [
     { label: "Funding", color: "#3B82F6", value: 35 },
     { label: "Investor", color: "#10B981", value: 28 },
@@ -108,60 +110,107 @@ export default function ReportCharts({ dark }) {
     { label: "Platform", color: "#06B6D4", value: 30 },
   ];
 
-  const barLegend = [
-    { label: "Jan", value: 5 },
-    { label: "Feb", value: 25 },
-    { label: "Mar", value: 12 },
-    { label: "Apr", value: 20 },
-    { label: "May", value: 35 },
-    { label: "Jun", value: 25 },
-    { label: "Jul", value: 37 },
-  ];
+  const chartContainerStyle = {
+    display: "flex",
+    gap: "22px",
+    width: "100%",
+    flexWrap: "nowrap", // 🔥 keeps same row
+  };
 
-  const Card = ({ title, subtitle, chart, legend }) => (
-    <div className={`chart-card ${dark ? "dark" : "light"}`}>
-      <div className="chart-header">
-        <div>
-          <h3 className="chart-title">{title}</h3>
-          <p className="chart-subtitle">{subtitle}</p>
+  const cardStyle = {
+    flex: 1,
+    minHeight: "270px",
+    background: dark ? "#111" : "#fff",
+    borderRadius: "14px",
+    border: `1px solid ${dark ? "#1f1f1f" : "#e5e7eb"}`,
+    padding: "18px",
+    display: "flex",
+    flexDirection: "column",
+    transition: "0.2s",
+  };
+
+  const headerStyle = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
+
+  const titleStyle = {
+    fontSize: "16px",
+    fontWeight: 600,
+    color: dark ? "#fff" : "#111",
+  };
+
+  const subtitleStyle = {
+    fontSize: "12px",
+    color: dark ? "#9ca3af" : "#6b7280",
+    marginTop: "3px",
+  };
+
+  const legendItemStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    fontSize: "13px",
+    marginBottom: "6px",
+  };
+
+  return (
+    <div style={chartContainerStyle}>
+      
+      {/* Donut Chart Card */}
+      <div style={cardStyle}>
+        <div style={headerStyle}>
+          <div>
+            <h3 style={titleStyle}>Report Type Distribution</h3>
+            <p style={subtitleStyle}>Breakdown by report category</p>
+          </div>
+          <div style={{ fontSize: "20px", opacity: 0.7, cursor: "pointer" }}>⋯</div>
         </div>
-        <div className="chart-actions">⋯</div>
-      </div>
 
-      <div className="chart-body">
-        <div className="chart-visual">{chart}</div>
-        {legend && (
-          <ul className="chart-legend">
-            {legend.map((item, i) => (
-              <li key={i}>
+        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "8px" }}>
+          <div style={{ width: "55%", height: "160px" }}>
+            <Doughnut data={donutData} options={donutOptions} />
+          </div>
+
+          <ul style={{ width: "45%", margin: 0, padding: 0, listStyle: "none" }}>
+            {donutLegend.map((item, i) => (
+              <li key={i} style={legendItemStyle}>
                 <span
-                  className="dot"
-                  style={{ backgroundColor: item.color || "#3B82F6" }}
+                  style={{
+                    width: "10px",
+                    height: "10px",
+                    borderRadius: "50%",
+                    background: item.color,
+                    marginRight: "8px",
+                  }}
                 ></span>
-                <span className="legend-text">{item.label}</span>
-                <span className="legend-value">{item.value}</span>
+                <span
+                  style={{ flex: 1, marginLeft: "8px", color: dark ? "#e5e5e5" : "#4b5563" }}
+                >
+                  {item.label}
+                </span>
+                <span style={{ fontWeight: 600 }}>{item.value}</span>
               </li>
             ))}
           </ul>
-        )}
+        </div>
       </div>
-    </div>
-  );
 
-  return (
-    <div className="report-chart-container">
-      <Card
-        title="Report Type Distribution"
-        subtitle="Breakdown by report category"
-        chart={<Doughnut data={donutData} options={donutOptions} />}
-        legend={donutLegend}
-      />
-      <Card
-        title="Reports Generated"
-        subtitle="Last 6 months trend"
-        chart={<Bar data={barData} options={barOptions} />}
-        legend={barLegend}
-      />
+      {/* Bar Chart Card */}
+      <div style={cardStyle}>
+        <div style={headerStyle}>
+          <div>
+            <h3 style={titleStyle}>Reports Generated</h3>
+            <p style={subtitleStyle}>Last 6 months trend</p>
+          </div>
+          <div style={{ fontSize: "20px", opacity: 0.7, cursor: "pointer" }}>⋯</div>
+        </div>
+
+        <div style={{ width: "100%", height: "180px", marginTop: "10px" }}>
+          <Bar data={barData} options={barOptions} />
+        </div>
+      </div>
     </div>
   );
 }

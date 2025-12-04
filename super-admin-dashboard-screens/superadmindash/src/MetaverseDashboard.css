@@ -7,21 +7,35 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* 4 Cards Grid */
+/* ---------------------- */
+/*  Stats Cards Row       */
+/* ---------------------- */
+
 .cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: nowrap; /* force one row */
   gap: 1.2rem;
   margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  white-space: nowrap; /* prevent line wrapping */
+}
+
+.cards-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
+  flex: 0 0 auto; /* prevent shrinking */
+  min-width: 230px;
   background: #fff;
   border-radius: 16px;
   padding: 1.5rem;
   position: relative;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, background 0.3s ease;
+  scroll-snap-align: start;
 }
 
 .card:hover {
@@ -62,7 +76,10 @@
   color: #666;
 }
 
-/* Charts Section */
+/* ---------------------- */
+/*          Charts        */
+/* ---------------------- */
+
 .charts-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -99,7 +116,7 @@
   margin-bottom: 1rem;
 }
 
-/* ✅ Fixed Donut Wrapper */
+/* Donut Wrapper */
 .donut-wrapper {
   width: 180px;
   height: 180px;
@@ -109,7 +126,7 @@
   justify-content: center;
 }
 
-/* ✅ Legend section - prevents overflow */
+/* Legend */
 .legend-list {
   list-style: none;
   padding: 0;
@@ -149,7 +166,10 @@
   border-radius: 50%;
 }
 
-/* 🌙 Dark Mode */
+/* ---------------------- */
+/*      Dark Mode         */
+/* ---------------------- */
+
 .metaverse-dashboard.dark {
   background: #0a0a0a;
   color: #f8fafc;
@@ -184,12 +204,9 @@
   background: #444;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* ---------------------- */
+/*      Responsive        */
+/* ---------------------- */
 
 @media (max-width: 768px) {
   .charts-grid {

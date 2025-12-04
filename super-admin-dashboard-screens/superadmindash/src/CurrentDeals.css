@@ -85,35 +85,34 @@
 .table-container {
   overflow-x: auto;
 }
+.table-container {
+  overflow-x: auto;
+}
 
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
+/* ✅ Updated Table Header Styling */
 thead {
-  background: #f9fafb;
+  background: #ffffff !important;
+  color: #111827;
+}
+
+.dark thead {
+  background: #1a1a1a !important;
+  color: #ffffff;
 }
 
 th {
   text-align: left;
-  padding: 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #6b7280;
-}
-
-td {
   padding: 14px 12px;
-  border-top: 1px solid #f1f5f9;
-  font-size: 14px;
-  color: #111827;
+  font-size: 13px;
+  font-weight: 600;
+  color: inherit;
 }
 
-.dark td {
-  color: #f5f5f5;
-  border-top: 1px solid #333;
-}
 
 .startup-name {
   font-weight: 600;

@@ -1,220 +1,231 @@
-/* ----------------------
-   GLOBAL FONT + BASE
------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+/* ----------------------------------------------------------
+   FONT IMPORT (Local OTF)
+----------------------------------------------------------*/
+@font-face {
+  font-family: "URWGeometric";
+  src: url("/public/fonts/URWGeometricRegular.otf") format("opentype");
+  font-weight: 400;
+}
 
+
+/* ----------------------------------------------------------
+   PAGE WRAPPER
+----------------------------------------------------------*/
 .investor-details {
-  font-family: "URW Geometric", sans-serif;
+  font-family: "URWGeometric", sans-serif;
+  background: #f7f8fa;
+  padding: 28px 36px;
+  max-width: 1400px;
+  margin: auto;
+  color: #111;
+  line-height: 1.32;
+}
+
+
+/* ----------------------------------------------------------
+   MAIN CONTENT WIDTH CONTAINER
+----------------------------------------------------------*/
+.content-wrapper {
+  max-width: 1180px;
+  margin: auto;
+}
+
+
+/* ----------------------------------------------------------
+   HEADER CARD
+----------------------------------------------------------*/
+.header-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 26px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.04);
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  padding: 26px 32px;
-  background: #f9fafb;
-  color: #111;
-  transition: all 0.25s ease;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Smooth animations globally */
-* {
-  transition: all 0.22s ease;
-}
-
-/* ----------------------
-      CARD LAYOUT
------------------------ */
-.info-card {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 30px 36px;
-  box-shadow: 0px 4px 14px rgba(0,0,0,0.03);
-  border: 1px solid rgba(0,0,0,0.06);
-}
-
-.info-card:hover {
-  box-shadow: 0px 8px 22px rgba(0,0,0,0.06);
-}
-
-.dark .info-card {
-  background: #1b1b1b;
-  color: #f5f5f5;
-  border: 1px solid #333;
-}
-
-/* ----------------------
-     TITLES & TEXT
------------------------ */
-.info-card h3 {
-  font-size: 1.15rem;
+.name {
+  font-size: 1rem;
   font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.header-sub {
+  font-size: 0.68rem;
+  color: #6f6f6f;
+}
+
+.badge-verified {
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #fde5c4;
+  color: #8a5403;
+  font-weight: 500;
+}
+
+
+/* ----------------------------------------------------------
+   TABS (CLEAN + CENTERED)
+----------------------------------------------------------*/
+.section-tabs-wrapper {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.04);
+  width: fit-content;
+  margin: 18px auto;
+}
+
+.section-tabs {
+  display: flex;
+  gap: 26px;
+}
+
+.tab-btn {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #8a8a8a;
+  padding-bottom: 4px;
+  transition: 0.2s ease;
+}
+
+.tab-btn:hover {
   color: #111;
-  margin-bottom: 6px;
 }
 
-.desc {
-  font-size: 0.9rem;
-  color: #6b7280;
-  margin-bottom: 22px;
+.tab-btn.active {
+  color: #111;
+  border-bottom: 2px solid #111;
+  font-weight: 600;
 }
 
-/* ----------------------
-   GRID (2-column)
------------------------ */
+
+/* ----------------------------------------------------------
+   GRID LAYOUT
+----------------------------------------------------------*/
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   CARD UI
+----------------------------------------------------------*/
+.card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px 24px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.03);
+}
+
+.card-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+
+/* ----------------------------------------------------------
+   INFO GRID (ALL LABEL + VALUE ITEMS)
+----------------------------------------------------------*/
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
-  gap: 32px 54px;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 16px 26px;
+}
+
+@media (max-width: 1100px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .label {
-  font-size: 0.82rem;
-  color: #9ca3af;
+  font-size: 0.62rem;
+  color: #9d9d9d;
+  text-transform: uppercase;
   margin-bottom: 3px;
   letter-spacing: 0.2px;
 }
 
-.info-value {
-  font-size: 0.95rem;
-  color: #111;
+.value {
+  font-size: 0.75rem;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
-/* Links */
-.link {
+.value.link {
   color: #2563eb;
-  font-size: 0.93rem;
-  text-decoration: none;
+  cursor: pointer;
 }
 
-.link:hover {
-  color: #1d4ed8;
-  text-decoration: underline;
-}
 
-/* ----------------------
-      KYC SECTION
------------------------ */
+/* ----------------------------------------------------------
+   KYC STATUS UI
+----------------------------------------------------------*/
 .kyc-status {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .kyc-row {
   display: flex;
   justify-content: space-between;
-  padding: 18px 20px;
-  border-radius: 16px;
-  align-items: center;
-  border: 1px solid transparent;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 0.75rem;
 }
 
-/* Polished soft colors */
-.kyc-row.green {
-  background: #e9fdf0;
-  border-color: #c3f1d3;
-}
+.kyc-row.green { background:#e9fbe9;border:1px solid #c2efc4; }
+.kyc-row.orange { background:#fff3e6;border:1px solid #ffd6ad; }
+.kyc-row.gray   { background:#f3f4f6;border:1px solid #e5e7eb; }
 
-.kyc-row.orange {
-  background: #fff4e6;
-  border-color: #ffd8b2;
-}
-
-.kyc-row.gray {
-  background: #f3f4f6;
-  border-color: #e5e7eb;
-}
-
-.kyc-row:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 6px 14px rgba(0,0,0,0.07);
-}
-
-/* Row left */
-.kyc-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.kyc-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #111;
-}
-
-.kyc-desc {
-  font-size: 0.82rem;
-  color: #6b7280;
-}
-
-/* Status badge */
-.status-badge {
-  font-size: 0.78rem;
-  padding: 5px 14px;
-  border-radius: 40px;
+.status-pill {
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 0.68rem;
   font-weight: 500;
 }
 
-.status-badge.active {
-  background: #16a34a;
-  color: #fff;
+.status-pill.green { background:#18bb52;color:white; }
+.status-pill.orange { background:#f2a334;color:white; }
+.status-pill.gray   { background:#b7b7b7;color:white; }
+
+
+/* ----------------------------------------------------------
+   SIDEBAR BUTTON
+----------------------------------------------------------*/
+.approve-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 8px 0;
+  background: #35c759;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
-.status-badge.pending {
-  background: #f59e0b;
-  color: #fff;
-}
-
-/* ----------------------
-     HEADER TOP AREA
------------------------ */
-.investor-header {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 30px 36px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.04);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-
-.investor-header:hover {
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.06);
-}
-
-.header-left h1 {
-  font-size: 1.32rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.meta-text {
-  font-size: 0.88rem;
-  color: #6b7280;
-  letter-spacing: 0.2px;
-}
-
-/* Tag styling */
-.tag {
-  font-size: 0.82rem;
-  padding: 6px 12px;
-  border-radius: 18px;
-  font-weight: 500;
-}
-
-.tag-success {
-  background: #d1fae5;
-  color: #047857;
-}
-
-.tag-warning {
-  background: #fef3c7;
-  color: #b45309;
-}
-
-.tag-outline {
-  border: 1px solid #d1d5db;
-  color: #6b7280;
+.approve-btn:hover {
+  opacity: 0.88;
 }

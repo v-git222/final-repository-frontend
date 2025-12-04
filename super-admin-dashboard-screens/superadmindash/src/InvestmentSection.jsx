@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import bitcoinBg from "./assets/bitcoin.png"; // ✅ Bitcoin image for banner background
+import InvestmentCard from "./InvestmentCard";
 
 const data = [
   { name: "Jan", value: 4000 },
@@ -44,49 +45,8 @@ export default function InvestmentSection({ dark }) {
       </div>
 
       {/* Right - Chart Card */}
-      <div className="investment-card">
-        <div className="investment-header">
-          <h3>Total Investment</h3>
-          <Info size={16} className="info-icon" />
-        </div>
-
-        <h2 className="investment-value">$94,127</h2>
-        <p className="investment-change">
-          <span className="up">↑ 12%</span> vs last month
-        </p>
-
-        <div className="chart-wrapper">
-          <ResponsiveContainer width="100%" height={140}>
-            <LineChart data={data}>
-              <XAxis dataKey="name" axisLine={false} tickLine={false} />
-              <Tooltip
-                contentStyle={{
-                  background: "#fff",
-                  borderRadius: "10px",
-                  border: "none",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-                }}
-                labelStyle={{ color: "#111" }}
-              />
-              <Line
-                type="monotone"
-                dataKey="value"
-                stroke="#facc15"
-                strokeWidth={3}
-                dot={{ r: 4, fill: "#facc15", stroke: "white", strokeWidth: 2 }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="chart-months">
-          {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"].map((m) => (
-            <span key={m} className={m === "Jun" ? "active" : ""}>
-              {m}
-            </span>
-          ))}
-        </div>
+     <InvestmentCard />
       </div>
-    </div>
+   
   );
 }

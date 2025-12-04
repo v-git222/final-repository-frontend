@@ -1,76 +1,76 @@
 import React from "react";
-import "./ReportStats.css";
-import { FileText, Clock, Download, FileSpreadsheet } from "lucide-react";
+import "./RecentReports.css";
+import { FileSpreadsheet, Clock, Download } from "lucide-react";
 
 export default function ReportStats({ dark }) {
   const data = [
     {
-      icon: <FileText size={36} />,
-      iconBg: "#007AFF20",
-      iconColor: "#007AFF",
-      title: "Total Reports",
-      value: "148",
-      subtitle: "Generated this year",
-      tag: "+12%",
-      tagColor: "#00A86B",
-    },
-    {
-      icon: <Clock size={36} />,
+      Icon: Clock,
       iconBg: "#00A86B20",
       iconColor: "#00A86B",
       title: "Schedule Reports",
       value: "12",
       subtitle: "Active automations",
-      tag: "+3",
-      tagColor: "#00A86B",
+      growth: "+3",
     },
     {
-      icon: <Download size={36} />,
+      Icon: Download,
       iconBg: "#9B51E020",
       iconColor: "#9B51E0",
       title: "Recent Downloads",
       value: "42",
       subtitle: "Last 30 days",
-      tag: "+8",
-      tagColor: "#9B51E0",
+      growth: "+8",
     },
     {
-      icon: <FileSpreadsheet size={36} />,
+      Icon: FileSpreadsheet,
       iconBg: "#F2994A20",
       iconColor: "#F2994A",
       title: "Export Formats",
       value: "6",
       subtitle: "PDF, Excel, CSV, JSON",
-      tag: "+8",
-      tagColor: "#F2994A",
+      growth: "+2",
     },
   ];
 
   return (
     <div className={`report-container ${dark ? "dark" : "light"}`}>
-      {data.map((item, i) => (
-        <div className="report-card" key={i}>
-          <div className="report-header">
+      {data.map((item, index) => (
+        <div className="report-card" key={index}>
+          
+          <div className="report-card-top">
             <div
-              className="report-icon"
-              style={{ backgroundColor: item.iconBg, color: item.iconColor }}
-            >
-              {item.icon}
-            </div>
-            <div
-              className="report-tag"
+              className="icon-box"
               style={{
-                color: item.tagColor,
-                borderColor: item.tagColor,
+                backgroundColor: item.iconBg,
+                color: item.iconColor,
               }}
             >
-              ↑ {item.tag}
+              <item.Icon
+                size={34}
+                strokeWidth={2}
+                style={{
+                  stroke: item.iconColor,
+                  color: item.iconColor,
+                  display: "block",
+                }}
+              />
             </div>
+
+            <span
+              className="growth-badge"
+              style={{
+                color: item.iconColor,
+                borderColor: item.iconColor,
+              }}
+            >
+              ↑ {item.growth}
+            </span>
           </div>
 
-          <h4 className="report-title">{item.title}</h4>
+          <div className="report-title">{item.title}</div>
           <div className="report-value">{item.value}</div>
-          <p className="report-subtitle">{item.subtitle}</p>
+          <div className="report-sub">{item.subtitle}</div>
         </div>
       ))}
     </div>

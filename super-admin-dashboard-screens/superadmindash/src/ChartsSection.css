@@ -1,0 +1,88 @@
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 32px; /* increased breathing space */
+  margin-top: -5rem; /* and removed negative margin */
+}
+
+
+/* Card Styling */
+.chart-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.03);
+  transition: 0.25s ease;
+  width: 26rem;
+  position: relative;
+  left: -2rem;
+
+}
+/* ---- Mini Chart Styling ---- */
+.chart-card {
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.chart-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.chart-sub {
+  font-size: 0.7rem;
+  opacity: 0.55;
+  margin-top: 2px;
+}
+
+.chart-icons {
+  font-size: 1rem;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+/* Smaller tick labels */
+.recharts-cartesian-axis-tick-value {
+  font-size: 9px !important;
+  fill: #999 !important;
+}
+
+.chart-card:hover {
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Row */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.chart-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.chart-sub {
+  font-size: 0.65rem;
+  color: #9ca3af;
+  margin-top: 1px;
+}
+
+.chart-icons {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #999;
+}

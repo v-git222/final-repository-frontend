@@ -7,6 +7,15 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   font-family: "URW Geometric", sans-serif;
 }
+.funding-deals table thead {
+  background-color: #ffffff !important;
+}
+
+.funding-deals table thead th {
+  color: #111; /* optional: make title text visible */
+  font-weight: 600;
+  padding: 12px 0;
+}
 
 .dark .funding-deals {
   background: #111;

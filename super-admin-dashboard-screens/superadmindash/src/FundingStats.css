@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+@font-face {
+  font-family: "URWGeometric";
+  src: url("/fonts/URWGeometricRegular.otf") format("opentype");
+  font-weight: 400;
+}
+
 
 .funding-stats {
   display: grid;

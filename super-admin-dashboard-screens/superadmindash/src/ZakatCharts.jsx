@@ -1,94 +1,175 @@
 import React from "react";
-import "./ZakatCharts.css";
-import { Doughnut, Bar } from "react-chartjs-2";
+import { Doughnut, Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   ArcElement,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Tooltip,
   Legend,
 } from "chart.js";
 
-ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Tooltip, Legend);
+ChartJS.register(
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend
+);
 
-export default function ZakatCharts({ dark = false }) {
+export default function MiniCharts({ dark }) {
+  // ==== DONUT DATA ====
   const donutData = {
-    labels: ["Paid", "Pending", "Upcoming", "Overdue"],
+    labels: ["Decentraland", "The Sandbox", "Somnium Space", "Spatial", "Others"],
     datasets: [
       {
-        data: [55, 25, 12, 8],
-        backgroundColor: ["#22c55e", "#f97316", "#3b82f6", "#ef4444"],
-        borderWidth: 0,
+        data: [6, 5, 4, 2, 1],
+        backgroundColor: ["#a855f7", "#3b82f6", "#06b6d4", "#fb923c", "#9ca3af"],
+        borderColor: dark ? "#111" : "#fff",
+        borderWidth: 4,
+        cutout: "72%",
       },
     ],
   };
 
-  const barData = {
-    labels: ["Annual", "Quarterly", "Monthly"],
+  // ==== LINE / AREA CHART ====
+  const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+  const values = [420, 690, 530, 580, 620, 850, 830];
+
+  const lineData = {
+    labels,
     datasets: [
       {
-        label: "Payments",
-        data: [90, 70, 40],
-        backgroundColor: ["#22c55e", "#facc15", "#a855f7"],
-        borderRadius: 8,
+        label: "Attendance",
+        data: values,
+        fill: true,
+        borderColor: "#3b82f6",
+        borderWidth: 2,
+        tension: 0.4,
+        pointRadius: 0,
+        backgroundColor: (ctx) => {
+          const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 240);
+          gradient.addColorStop(0, "rgba(59,130,246,0.25)");
+          gradient.addColorStop(1, "rgba(59,130,246,0.03)");
+          return gradient;
+        },
       },
     ],
+  };
+
+  const lineOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: dark ? "#18181b" : "#111827",
+        borderRadius: 8,
+        displayColors: false,
+        padding: 10,
+      },
+    },
+    scales: {
+      x: {
+        ticks: { color: dark ? "#9ca3af" : "#6b7280" },
+        grid: { display: false },
+      },
+      y: {
+        ticks: { color: dark ? "#9ca3af" : "#6b7280", stepSize: 300 },
+        grid: { color: dark ? "#2b2b2b" : "#e5e7eb", borderDash: [4, 4] },
+      },
+    },
+    hover: { mode: "index", intersect: false },
+  };
+
+  // ==== CARD STYLE ====
+  const card = {
+    flex: 1,
+    background: dark ? "#111" : "#fff",
+    padding: "18px",
+    borderRadius: "16px",
+    border: `1px solid ${dark ? "#1f1f1f" : "#e5e7eb"}`,
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
+  };
+
+  const container = {
+    display: "flex",
+    flexWrap: "nowrap",
+    gap: "22px",
+    width: "100%",
   };
 
   return (
-    <div className={`zakat-charts ${dark ? "dark" : ""}`}>
-      <div className="charts-grid">
-        <div className="chart-card">
-          <h3>Zakat Status Distribution</h3>
-          <p>Current status of all tokens</p>
-          <div className="donut-wrapper">
+    <div style={container}>
+      {/* ================= DONUT CHART ================= */}
+      <div style={card}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div>
+            <h3 style={{ fontSize: 16, margin: 0, color: dark ? "#fff" : "#000" }}>
+              Event Distribution by Platform
+            </h3>
+            <p style={{ fontSize: 12, color: dark ? "#9ca3af" : "#6b7280", margin: 0 }}>
+              Events scheduled across metaverse platforms
+            </p>
+          </div>
+          <span style={{ opacity: 0.6, cursor: "pointer" }}>⋯</span>
+        </div>
+
+        <div style={{ display: "flex", gap: "12px", marginTop: "4px" }}>
+          <div style={{ width: "55%", height: "160px" }}>
             <Doughnut
               data={donutData}
-              options={{
-                cutout: "70%",
-                plugins: { legend: { display: false } },
-              }}
+              options={{ plugins: { legend: { display: false } }, maintainAspectRatio: false }}
             />
           </div>
-          <div className="legend">
+
+          <div style={{ width: "45%" }}>
             {donutData.labels.map((label, i) => (
-              <div key={i} className="legend-item">
+              <div
+                key={i}
+                style={{ display: "flex", alignItems: "center", marginBottom: 6, fontSize: 13 }}
+              >
                 <span
-                  className="dot"
-                  style={{ background: donutData.datasets[0].backgroundColor[i] }}
+                  style={{
+                    width: 10,
+                    height: 10,
+                    borderRadius: "50%",
+                    background: donutData.datasets[0].backgroundColor[i],
+                    marginRight: 8,
+                  }}
                 ></span>
-                {label}
+                <span style={{ flex: 1, color: dark ? "#e5e5e5" : "#4b5563" }}>{label}</span>
+                <strong style={{ color: dark ? "#fff" : "#000" }}>
+                  {donutData.datasets[0].data[i]} events
+                </strong>
               </div>
             ))}
           </div>
         </div>
+      </div>
 
-        <div className="chart-card">
-          <h3>Payment Type Distribution</h3>
-          <p>Breakdown by token type</p>
-          <Bar
-            data={barData}
-            options={{
-              plugins: { legend: { display: false } },
-              scales: {
-                x: { grid: { display: false } },
-                y: { grid: { color: "#f1f5f9" }, beginAtZero: true },
-              },
-            }}
-          />
-          <div className="legend">
-            {barData.labels.map((label, i) => (
-              <div key={i} className="legend-item">
-                <span
-                  className="dot"
-                  style={{ background: barData.datasets[0].backgroundColor[i] }}
-                ></span>
-                {label}
-              </div>
-            ))}
+      {/* ================= LINE CHART ================= */}
+      <div style={card}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div>
+            <h3 style={{ fontSize: 16, margin: 0, color: dark ? "#fff" : "#000" }}>
+              Monthly Attendee Growth
+            </h3>
+            <p style={{ fontSize: 12, color: dark ? "#9ca3af" : "#6b7280", margin: 0 }}>
+              Cumulative attendance trend over time
+            </p>
           </div>
+          <span style={{ opacity: 0.6, cursor: "pointer" }}>⋯</span>
+        </div>
+
+        <div style={{ width: "100%", height: "180px", marginTop: "10px" }}>
+          <Line data={lineData} options={lineOptions} />
         </div>
       </div>
     </div>

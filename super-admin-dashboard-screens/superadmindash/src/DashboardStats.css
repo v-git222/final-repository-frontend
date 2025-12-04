@@ -1,111 +1,155 @@
+/* ------------------------------
+  Dashboard Stats Styling
+--------------------------------*/
 .dashboard-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 40px auto;
-  flex-wrap: wrap;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 24px;
+  margin: 32px auto;
+  width: calc(100% - 10rem);
+  font-family: "URW Geometric", sans-serif;
 }
 
-/* Light theme */
-.dashboard-container.light {
 
-  color: #111827;
-}
-
-/* Dark theme */
-.dashboard-container.dark {
-
-  color: #f9fafb;
-}
-
+/* Cards */
 .card {
-  flex: 1;
-  min-width: 220px;
-  border-radius: 20px;
-  padding: 24px;
-  background: var(--card-bg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
-}
-
-.light .card {
-  --card-bg: linear-gradient(to bottom right, #ffffff, #f9fafb);
-}
-
-.dark .card {
-  --card-bg: linear-gradient(to bottom right, #1e293b, #0f172a);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
+
+/* Dark mode card */
+.dark .card {
+  background: #111;
+  color: #fff;
+}
+
+
+/* ------------------------------
+  Header Layout
+--------------------------------*/
 
 .card-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
+
+/* ------------------------------
+  ICON BOX
+--------------------------------*/
+
 .icon-box {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
+  width: 52px;
+  height: 52px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 14px;
+  color: #ffffff;
+  transition: 0.25s ease;
 }
+
+.icon-box svg {
+  stroke: #ffffff !important;
+  opacity: 1;
+}
+
+.dark .icon-box {
+  background-color: rgba(255,255,255,0.05) !important; 
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.dark .icon-box svg {
+  opacity: 0.75;
+}
+
+
+/* ------------------------------
+  TAG
+--------------------------------*/
 
 .tag {
-  font-size: 0.8rem;
-  border: 1px solid;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
   background: transparent;
+  border: 1px solid;
 }
 
+
+/* ------------------------------
+  Text Styling
+--------------------------------*/
+
 .title {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: var(--text-muted);
-  font-weight: 500;
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.dark .title {
+  color: #e5e7eb;
 }
 
 .value {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin: 6px 0;
+  font-size: 34px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #111827;
+}
+
+.dark .value {
+  color: #fff;
 }
 
 .subtitle {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 6px;
 }
 
-/* Light text colors */
-.light .title {
-  --text-muted: #6b7280;
-}
-.light .value {
-  --text-primary: #111827;
-}
-.light .subtitle {
-  --text-secondary: #9ca3af;
-}
-
-/* Dark text colors */
-.dark .title {
-  --text-muted: #d1d5db;
-}
-.dark .value {
-  --text-primary: #f9fafb;
-}
 .dark .subtitle {
-  --text-secondary: #94a3b8;
+  color: #9ca3af;
+}
+
+
+/* ------------------------------
+  Hover Motion
+--------------------------------*/
+
+.card:hover .icon-box {
+  transform: scale(1.06);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.dark .card:hover .icon-box {
+  box-shadow: 0 0 14px rgba(255,255,255,0.06);
+}
+
+
+/* ------------------------------
+  Responsive Layout
+--------------------------------*/
+
+@media (max-width: 900px) {
+  .dashboard-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
 }

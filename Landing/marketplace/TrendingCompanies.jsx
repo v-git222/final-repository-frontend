@@ -2,7 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./trending.css";
 import FOOTER_LOGO from "../assets/logo.png"
-import Footer from "../Footer";
+import Footer from "../about/Footer";
+
 
 // Local uploaded image (you provided)
 // const FOOTER_LOGO = "/mnt/data/6111c510-3270-43b0-bb2d-b02e31e73d13.png";

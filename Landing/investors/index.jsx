@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
-import Footer from "../Footer";
+
 import InvestorsPage from "./FeaturedInvestors";
 import FindInvestors from "./FindInvestors";
 import HowThisWorks from "./HowThisWorks";
 import InvestorSection from "./InvestorSection";
 import Testimonials from "./Testimonials";
 import UpcomingEvents from "./Upcomingevents";
+import Footer from "../about/Footer";
 
 export default function InvestorsHub() {
 
@@ -80,9 +81,9 @@ export default function InvestorsHub() {
               <Testimonials />
 
               {/* Footer protection offset */}
-              <div style={{ height: "13rem" }} />
+              
 
-              <Footer />
+             <Footer/>
 
             </motion.div>
           </div>

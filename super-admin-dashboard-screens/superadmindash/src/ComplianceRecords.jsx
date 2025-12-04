@@ -60,28 +60,34 @@ export default function ComplianceRecords({ dark }) {
         </div>
       </div>
 
-      <div className="controls">
-        <select
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-        >
-          <option>All</option>
-          <option>Approved</option>
-          <option>In Review</option>
-          <option>Pending</option>
-          <option>Non-Compliant</option>
-        </select>
+      
+    <div className="controls">
+  <div className="left-controls">
+    <select
+      value={statusFilter}
+      onChange={(e) => setStatusFilter(e.target.value)}
+    >
+      <option>All</option>
+      <option>Approved</option>
+      <option>In Review</option>
+      <option>Pending</option>
+      <option>Non-Compliant</option>
+    </select>
+  </div>
 
-        <div className="search-box">
-          <Search size={18} />
-          <input
-            type="text"
-            placeholder="Search"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-      </div>
+  <div className="right-controls">
+    <div className="search-box">
+      <Search size={18} />
+      <input
+        type="text"
+        placeholder="Search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+    </div>
+  </div>
+</div>
+
 
       <table>
         <thead>

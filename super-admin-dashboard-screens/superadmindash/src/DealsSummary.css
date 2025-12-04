@@ -1,4 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+/* ------------------------------
+   Custom Font (Local)
+--------------------------------*/
+@font-face {
+  font-family: 'URW Geometric';
+  src: url('/fonts/URWGeometricRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* OPTIONAL: Additional weights:
+@font-face {
+  font-family: 'URW Geometric';
+  src: url('/fonts/URWGeometricMedium.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'URW Geometric';
+  src: url('/fonts/URWGeometricBold.otf') format('opentype');
+  font-weight: 600;
+}
+*/
+
+
+/* ------------------------------
+   Component Styling
+--------------------------------*/
 
 .deals-summary {
   display: grid;
@@ -6,6 +32,11 @@
   gap: 24px;
   margin-top: 32px;
   font-family: "URW Geometric", sans-serif;
+}
+
+/* 👇 All icons will now be white */
+.icon-box svg {
+  stroke: #ffffff !important;
 }
 
 .deal-card {
@@ -85,6 +116,11 @@
 .deal-sub.positive {
   color: #10b981;
 }
+
+
+/* ------------------------------
+   Responsiveness
+--------------------------------*/
 
 @media (max-width: 1200px) {
   .deals-summary {

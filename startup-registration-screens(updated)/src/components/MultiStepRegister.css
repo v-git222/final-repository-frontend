@@ -1,0 +1,423 @@
+.multi-step-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: #fff;
+}
+
+/* Left Panel */
+.multi-step-form-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 4rem;
+    max-width: 60%;
+    background: #fff;
+    position: relative;
+}
+
+.ms-header {
+    margin-bottom: 2rem;
+}
+
+/* Stepper Design */
+.stepper-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 40px;
+}
+
+.step-item:last-child {
+    flex: 0;
+    min-width: auto;
+}
+
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.step-item.active .step-circle {
+    background: #fbbf24;
+    color: #1a1a1a;
+    box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.2);
+}
+
+.step-item.completed .step-circle {
+    background: #10b981;
+    color: #fff;
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    min-width: 10px;
+}
+
+.step-line.completed {
+    background: #10b981;
+}
+
+.ms-form-wrapper {
+    flex: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step-content h2 {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.step-content p {
+    color: #6b7280;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    font-family: 'URW Geometric', sans-serif;
+    transition: all 0.2s ease;
+    background: #fff;
+    color: #1a1a1a;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.radio-card {
+    flex: 1;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.radio-card:hover {
+    background: #f9fafb;
+}
+
+.radio-card.selected {
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.05);
+}
+
+.radio-card input {
+    width: auto;
+}
+
+.upload-box {
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #6b7280;
+}
+
+.upload-box:hover {
+    border-color: #3b82f6;
+    background: #f0f9ff;
+}
+
+.upload-icon {
+    font-size: 2rem;
+    color: #9ca3af;
+}
+
+.ms-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.ms-btn-primary {
+    background: #fbbf24;
+    color: #1a1a1a;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s ease;
+    font-family: 'URW Geometric', sans-serif;
+}
+
+.ms-btn-primary:hover {
+    background: #f59e0b;
+}
+
+.ms-btn-secondary {
+    background: transparent;
+    color: #6b7280;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    font-family: 'URW Geometric', sans-serif;
+}
+
+.ms-btn-secondary:hover {
+    color: #1a1a1a;
+    background: #f3f4f6;
+}
+
+/* Right Panel */
+.multi-step-info-panel {
+    flex: 1;
+    padding: 4rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background 0.5s ease;
+    position: relative;
+    overflow-y: auto;
+}
+
+.ms-info-content {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.ms-step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ms-step-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.ms-step-item.active {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+.ms-step-item.completed {
+    opacity: 0.8;
+}
+
+.ms-step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.ms-step-item.active .ms-step-icon {
+    background: #fbbf24;
+    color: #1a1a1a;
+    border-color: #fbbf24;
+}
+
+.ms-step-item.completed .ms-step-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fbbf24;
+}
+
+.ms-step-text h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.125rem;
+}
+
+.ms-step-text p {
+    font-size: 0.75rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+/* Review & Verification Styles */
+.review-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.review-item label {
+    display: block;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.review-item p {
+    font-size: 1rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin: 0;
+}
+
+.checkbox-group {
+    margin-top: 1rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    width: auto;
+    margin: 0;
+}
+
+.verification-box {
+    text-align: center;
+    padding: 2rem;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.verify-icon {
+    font-size: 4rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+}
+
+.verification-input {
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .multi-step-form-panel {
+        max-width: 100%;
+        padding: 2rem;
+    }
+
+    .multi-step-info-panel {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+
+    .stepper-container {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+}

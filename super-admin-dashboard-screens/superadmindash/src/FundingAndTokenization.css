@@ -1,44 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+/* ---------------------------------------- */
+/* FONT FACE (LOCAL FONT)                   */
+/* ---------------------------------------- */
+@font-face {
+  font-family: "URWGeometric";
+  src: url("/fonts/URWGeometricRegular.otf") format("opentype");
+  font-display: swap;
+  font-weight: 400;
+}
 
+/* ---------------------------------------- */
+/* DESIGN TOKENS                            */
+/* ---------------------------------------- */
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #181818;
+
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+
+  --accent: #ffe66d;
+  --accent-hover: #ffd845;
+
+  --radius-lg: 16px;
+  --radius-md: 10px;
+
+  --shadow-light: 0px 3px 12px rgba(0,0,0,0.06);
+  --shadow-hover: 0px 6px 20px rgba(0,0,0,0.10);
+
+  --transition: 0.28s cubic-bezier(.22,.1,.07,1);
+}
+
+/* ---------------------------------------- */
+/* GLOBAL TYPOGRAPHY + SMOOTHING            */
+/* ---------------------------------------- */
+.funding-tokenization * {
+  font-family: "URWGeometric", sans-serif;
+  font-size: clamp(12px, 0.9vw, 15px);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------- */
+/* MAIN WRAPPER                             */
+/* ---------------------------------------- */
 .funding-tokenization {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   width: 100%;
   max-width: 1200px;
   margin: 40px auto;
-  font-family: "URW Geometric", sans-serif;
 }
 
-/* ---- Left: Funding Trend Card ---- */
+/* ---------------------------------------- */
+/* FUNDING (LEFT CARD)                      */
+/* ---------------------------------------- */
 .funding-card {
   flex: 2;
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px 26px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  padding: 22px 28px;
+  box-shadow: var(--shadow-light);
   display: flex;
   flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+  top:-8rem;
+  transform: scale(1);
+}
+
+.funding-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
 .dark .funding-card {
-  background: #1a1a1a;
-  color: #f5f5f5;
+  background: var(--bg-dark);
+  color: #fff;
+  box-shadow: none;
 }
 
 .funding-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  align-items: center;
+  margin-bottom: 14px;
 }
 
 .funding-header h3 {
   font-size: 15px;
   font-weight: 500;
-  color: #111827;
   display: flex;
-  align-items: center;
   gap: 6px;
+  align-items: center;
+  color: var(--text-primary);
 }
 
 .dark .funding-header h3 {
@@ -46,7 +100,7 @@
 }
 
 .info-icon {
-  color: #888;
+  color: var(--text-muted);
 }
 
 .chart-container {
@@ -54,29 +108,38 @@
   height: 230px;
 }
 
-/* ---- Right: Tokenization Card ---- */
+/* ---------------------------------------- */
+/* TOKENIZATION CARD (RIGHT COLUMN)         */
+/* ---------------------------------------- */
 .tokenization-card {
   flex: 1;
-  background: #fff;
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-light);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  transition: var(--transition);
+  position: relative;
+  top: -8rem;
+}
+
+.tokenization-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
 .dark .tokenization-card {
-  background: #1a1a1a;
-  color: #f5f5f5;
+  background: var(--bg-dark);
+  color: #fff;
 }
 
+/* Header inside tokenization card */
 .token-header {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .token-header h3 {
@@ -86,18 +149,23 @@
 
 .period-btn {
   background: #f3f4f6;
-  border: none;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 8px;
-  font-size: 12px;
-  color: #555;
+  border: none;
   cursor: pointer;
+  font-size: 12px;
+  transition: var(--transition);
 }
 
+.period-btn:hover {
+  background: #e5e7eb;
+}
+
+/* Pie chart */
 .pie-chart-wrapper {
-  position: relative;
-  width: 100%;
   height: 200px;
+  width: 100%;
+  position: relative;
   margin-top: 20px;
 }
 
@@ -110,12 +178,12 @@
   font-size: 18px;
 }
 
+/* Legend */
 .token-legend {
-  margin-top: 15px;
-  width: 100%;
+  margin-top: 18px;
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 26px;
 }
 
 .legend-item {
@@ -123,7 +191,11 @@
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: #555;
+  color: var(--text-secondary);
+}
+
+.dark .legend-item {
+  color: #cfcfcf;
 }
 
 .dot {
@@ -140,11 +212,12 @@
   background: #a855f7;
 }
 
-/* ---- Responsive ---- */
+/* ---------------------------------------- */
+/* RESPONSIVE BEHAVIOR                      */
+/* ---------------------------------------- */
 @media (max-width: 1024px) {
   .funding-tokenization {
     flex-direction: column;
-    align-items: center;
   }
 
   .funding-card,

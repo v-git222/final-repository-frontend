@@ -25,14 +25,7 @@ ChartJS.register(
 
 export default function MetaverseDashboard({ dark = false }) {
   const cards = [
-    {
-      icon: <Activity size={22} color="#fff" />,
-      title: "Active Platforms",
-      value: "5",
-      subtitle: "Decentraland, Sandbox, more",
-      badge: "Active",
-      color: "linear-gradient(135deg, #22c55e, #86efac)",
-    },
+   
     {
       icon: <CalendarDays size={22} color="#fff" />,
       title: "Virtual Events",

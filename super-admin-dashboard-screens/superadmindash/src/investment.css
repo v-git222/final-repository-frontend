@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "URWGeometric";
+  src: url("/fonts/URWGeometricRegular.otf") format("opentype");
+  font-weight: normal;
+}
+
+.investment-card {
+  font-family: "URWGeometric", sans-serif;
+  background: #fff;
+  border-radius: 22px;
+  padding: 24px;
+  width: 420px;
+  box-shadow: 0px 8px 40px rgba(0,0,0,0.07);
+  position: relative;
+  top: -5rem;
+  left: -3rem;
+  transform: scale(0.8);
+}
+
+.inv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.inv-header-icon {
+  background: #f9f1c6;
+  color: #d9b000;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.inv-value {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.inv-growth {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: #4caf50;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.chart-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.month-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.month {
+  padding: 6px 14px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .2s;
+  color: #777;
+}
+
+.month.active {
+  background: #ffe78a;
+  color: #b58100;
+}

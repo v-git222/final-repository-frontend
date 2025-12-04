@@ -1,68 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=URW+Geometric:wght@400;500;600&display=swap');
+/* ---------------------------------------- */
+/* FONT IMPORT (Local with 12px min scaling) */
+/* ---------------------------------------- */
+@font-face {
+  font-family: "URWGeometric";
+  src: url("/fonts/URWGeometricRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "URWGeometric", sans-serif;
+}
 
+
+:root {
+  --card-bg: #ffffff;
+  --text-primary: #111;
+  --text-secondary: #6b7280;
+  --positive: #16a34a;
+  --negative: #dc2626;
+
+  --radius: 14px;
+  --transition: 0.28s cubic-bezier(.25,.1,.25,1);
+}
+
+/* Force minimum readable font size */
+body, button, input {
+  font-size: clamp(12px, 1vw, 14px);
+  font-family: "URWGeometric", sans-serif;
+}
+
+/* ---------------------------------------- */
+/* STATS CARD (Fintech Design) */
+/* ---------------------------------------- */
 .stats-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
-  border-radius: 16px;
-  padding: 16px 18px; /* reduced padding */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  width: 230px; /* ✅ reduced fixed width */
-  transition: all 0.3s ease;
-  font-family: 'URW Geometric', sans-serif;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  width: 220px;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform var(--transition), background var(--transition), border var(--transition);
+  cursor: pointer;
 }
 
+/* Hover Subtle Micro Interaction */
+.stats-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0,0,0,0.12);
+}
+
+/* ---------------------------------------- */
+/* DARK MODE */
+/* ---------------------------------------- */
 .stats-card.dark {
-  background: #1a1a1a;
-  color: #f1f1f1;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: #181818;
+  color: #ededed;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
+.stats-card.dark:hover {
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* ---------------------------------------- */
+/* LEFT COLUMN */
+/* ---------------------------------------- */
 .stats-left {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .stats-title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  color: #6b7280;
+  color: var(--text-secondary);
 }
 
 .dark .stats-title {
-  color: #9ca3af;
+  color: #b6b6b6;
 }
 
 .stats-value {
-  font-size: 28px;
-  font-weight: 500;
-  color: #111;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .dark .stats-value {
-  color: #f5f5f5;
+  color: #fff;
 }
 
+/* ---------------------------------------- */
+/* CHANGE INDICATOR */
+/* ---------------------------------------- */
 .stats-change {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 13px;
-  margin-top: 4px;
+  gap: 5px;
+  font-size: 12px;
+  margin-top: 2px;
 }
 
 .change-text {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .change-text.positive {
-  color: #16a34a;
+  color: var(--positive);
 }
 
 .change-text.negative {
-  color: #dc2626;
+  color: var(--negative);
 }
 
 .vs-text {
@@ -70,30 +122,38 @@
   margin-left: 2px;
 }
 
+/* ---------------------------------------- */
+/* ICON CONTAINER */
+/* ---------------------------------------- */
 .stats-icon {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  background: rgba(0,0,0,0.04);
 }
-/* === Stats Row Layout === */
+
+.dark .stats-icon {
+  background: rgba(255,255,255,0.08);
+}
+
+/* ---------------------------------------- */
+/* ROW LAYOUT */
+/* ---------------------------------------- */
 .stats-row {
   display: flex;
-  justify-content: center; /* ✅ center align for perfect symmetry */
-  align-items: stretch;
+  justify-content: center;
   gap: 18px;
-  margin-top: 30px;
-  flex-wrap: nowrap; /* ✅ Stay in one row */
+  margin-top: 28px;
+  flex-wrap: nowrap;
 }
 
-
-/* For smaller screens, allow wrapping gracefully */
 @media (max-width: 1200px) {
   .stats-row {
-    flex-wrap: wrap; /* ✅ Only wrap if space runs out */
+    flex-wrap: wrap;
     justify-content: flex-start;
   }
 }
@@ -105,7 +165,7 @@
   }
 
   .stats-card {
-    width: 90%;
-    max-width: 400px;
+    width: 92%;
+    max-width: 420px;
   }
 }

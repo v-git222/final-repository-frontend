@@ -1,172 +1,197 @@
-/* -------------------------------------------------------------
-   FEATURED STARTUPS — Clean UI (Updated Header + Lighter Fonts)
--------------------------------------------------------------- */
-
-.startups-wrapper {
-  padding: 60px 80px;
-  font-family: "Inter", "DM Sans", sans-serif;
-  color: #0f172a;
-  text-align: left;   
-  transform: scale(1.2);  /* NEW: Ensures left alignment globally */
-}
-
-/* SECTION TOP ----------------------------------------------*/
-
-.breadcrumb {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #f3f4f6;
-  color: #475569;
-  padding: 6px 14px;
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 500;     /* ↓ lighter */
-  letter-spacing: 0.3px;
-}
-
-.section-title {
-  margin-top: 18px;
-  font-size: 42px;      /* ↓ slightly smaller */
-  font-weight: 700;     /* ↓ lighter than 800 */
-  line-height: 1.18;
-  color: #0f172a;
-}
-
-.section-title .blue {
-  color: #2563eb;
-  font-weight: 700;     /* ↓ matches real UI */
-}
-
-.section-sub {
-  margin-top: 14px;
-  max-width: 680px;     /* ↓ more compact */
-  line-height: 1.65;
-  color: #52525b;
-  font-size: 16px;
-  font-weight: 400;     /* NEW: lighter paragraph */
-}
-
-/* GRID ------------------------------------------------------*/
-
-.startups-grid {
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 🔥 Two per row */
-  gap: 32px;
-}
-
-@media (max-width: 700px) {
-  .startups-grid {
-    grid-template-columns: 1fr; /* One per row on mobile */
-  }
-}
-
-/* CARD ------------------------------------------------------*/
+/* -----------------------------------------------
+   MODERN SAAS CARD — FIXED HEIGHT + BUTTON LOCKED
+------------------------------------------------ */
 
 .startup-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 24px;        /* ↓ lighter feel */
-  transition: 0.25s ease;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  transition: 0.28s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+position: relative;
+left: -15rem;
+top: -4rem;
+  width: 25rem;
+  height: 25rem;              /* ⭐ Fixed consistent height */
+  overflow: hidden;
+            /* prevents layout break */
 }
 
 .startup-card:hover {
-  transform: translateY(-4px);
-  border-color: #2563eb;
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  border-color: #d0d7ff;
 }
 
-/* CARD HEAD --------------------------------------------------*/
-
-.card-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* spacing between items except button */
+.startup-card > *:not(:last-child) {
+  margin-bottom: 10px;
 }
+
+/* -----------------------------------------------
+   Top: Logo + Badges
+------------------------------------------------ */
 
 .initials {
-  width: 44px;          /* ↓ smaller */
-  height: 44px;
-  background: #1e293b;
+  width: 48px;
+  height: 48px;
+  background: #0f1b33;
   color: white;
-  border-radius: 12px;
+  border-radius: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;      /* ↓ less bulky */
+  font-size: 16px;
   font-weight: 600;
 }
 
-.verified {
-  background: #e7f9ef;
-  color: #22c55e;
-  padding: 3px 10px;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 500;     /* ↓ softer */
+.badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
 }
 
-/* NAME + DESC ------------------------------------------------*/
+.badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge.verified {
+  background: #e9fdf1;
+  color: #22c55e;
+}
+
+.badge.trending {
+  background: #ffece5;
+  color: #f97316;
+}
+
+/* -----------------------------------------------
+   Text Content
+------------------------------------------------ */
 
 .startup-name {
-  margin-top: 18px;
-  font-size: 18px;      /* ↓ cleaner */
-  font-weight: 600;     /* ↓ lighter */
+  font-size: 18px;
+  font-weight: 600;
   color: #0f172a;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .startup-desc {
-  margin-top: 6px;
   color: #475569;
-  font-size: 14px;     /* ↓ slightly reduced */
-  line-height: 1.5;
-  font-weight: 400;    /* NEW: lighter */
+  font-size: 14px;
+  line-height: 1.35;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
 }
 
-/* TAG --------------------------------------------------------*/
+/* -----------------------------------------------
+   Metadata Section (Tags + Funding)
+------------------------------------------------ */
 
-.startup-tag {
-  display: inline-block;
-  margin-top: 10px;
+.startup-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: -0.3rem;  /* increased spacing */
+}
+
+.tag-chip {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 16px;
+  font-weight: 500;
+}
+
+.tag-chip.category {
   background: #eef2ff;
   color: #4338ca;
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 500;     /* ↓ restrained */
 }
 
-/* LOCATION ---------------------------------------------------*/
+.tag-chip.funded {
+  background: #e9fde8;
+  color: #22c55e;
+}
+
+/* -----------------------------------------------
+   Location
+------------------------------------------------ */
 
 .location {
-  margin-top: 12px;
+  font-size: 14px;
   display: flex;
-  align-items: center;
   gap: 6px;
+  align-items: center;
   color: #6b7280;
-  font-size: 13px;
-  font-weight: 400;
+  margin-top: 6px;
 }
 
-/* BUTTON -----------------------------------------------------*/
+/* -----------------------------------------------
+   CTA Button — Always bottom inside height
+------------------------------------------------ */
 
 .profile-btn {
-  margin-top: 18px;
+  margin-top: auto;        /* ⭐ Locks button to card bottom */
   width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  background: transparent;
-  border: 1.8px solid #2563eb;
-  color: #2563eb;
-  font-weight: 600;      /* ↓ lighter */
+  padding: 14px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1.8px solid #d1d5db;
+  color: #111827;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 14px;
-  transition: 0.2s ease;
+  font-size: 15px;
+  transition: 0.25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
 .profile-btn:hover {
   background: #2563eb;
+  border-color: #2563eb;
   color: white;
+}
+
+
+/* -----------------------------------------------
+   GRID LAYOUT — 3 equal columns
+------------------------------------------------ */
+
+.startups-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  align-items: stretch;
+  transform: scale(0.8);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .startups-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .startups-grid {
+    grid-template-columns: 1fr;
+  }
 }

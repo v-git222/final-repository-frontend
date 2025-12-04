@@ -7,7 +7,8 @@ import TrendingCategory from "./TrendingCategory";
 import LearnFromBest from "./LearnFromBest";
 import TipsArticles from "./TipsAndArticles";
 import MomentsThatInspire from "./MomentsThatInspire";
-import Footer from "../Footer";
+import Footer from "../about/Footer";
+
 
 export default function EventsPage() {
 
@@ -77,11 +78,14 @@ export default function EventsPage() {
           <div style={{ marginTop: "3rem" }}><MomentsThatInspire /></div>
 
           {/* ====================== SPACER BEFORE FOOTER ====================== */}
-          <div style={{ height: "20rem" }} />
+     
 
           {/* ====================== FOOTER ====================== */}
-          <Footer />
-
+          
+          <div style={{ width: "100%", marginTop: "-5rem" }}>
+                 <Footer />
+               </div>
+            
         </div>
       </div>
     </div>

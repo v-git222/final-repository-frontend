@@ -14,6 +14,8 @@
   transform: scale(1);
   font-family: "URWGeometric", "DM Sans", system-ui, sans-serif;
   color: #0a0a0a;
+  position: relative;
+  left: -10rem;
 }
 
 /* LEFT SIDEBAR */
@@ -111,21 +113,94 @@
   min-height: 100vh;
   padding-bottom: 80px;
 }
+/* Search Row */
+.search-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 32px;
+  width: 100%;
+}
 
 /* Search Row */
 .search-row {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
   margin-bottom: 32px;
+  width: 100%;
 }
 
+/* Modern Search Input with Yellow Border */
 .search-input {
   flex: 1;
-  padding: 18px 22px;
+  padding: 16px 22px;
+
   border-radius: 14px;
-  border: 1px solid #dfe3ea;
-  font-size: 18px;
+  border: 2px solid #F8D64E; /* Soft premium yellow border */
+
+  background: #ffffff;
+  
+  font-size: 16px;
+  color: #1e1e2f;
+  outline: none;
+
+  transition: all 0.25s ease;
+  
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* Placeholder matching UI tone */
+.search-input::placeholder {
+  color: #9ba4b4;
+  font-weight: 400;
+}
+
+/* Focus State — subtle premium effect */
+.search-input:focus {
+  border-color: #FFC800; /* brighter yellow for emphasis */
+  box-shadow: 0px 0px 0px 4px rgba(255, 200, 0, 0.18); /* soft glow */
+}
+
+/* Hover — very subtle refinement */
+.search-input:hover {
+  border-color: #FFD857; /* slightly brighter tone */
+}
+
+
+
+/* ---- Buttons (unchanged, refined slight polish) ---- */
+
+.btn-primary {
+  padding: 14px 26px;
+  background: #2467ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-size: 15px;
+}
+
+.btn-primary:hover {
+  background: #1f56d8;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  padding: 14px 22px;
+  background: #f7f8fb;
+  border-radius: 12px;
+  border: 1px solid #e1e4ec;
+  font-size: 15px;
+  color: #384056;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn-ghost:hover {
+  background: #eef2fa;
 }
 
 /* Buttons */
@@ -183,10 +258,13 @@
   grid-template-columns: 1fr 1fr !important; /* 🔥 Hard-lock 2 columns */
   gap: 40px;
   margin-top: 24px;
+  width: 45rem;
+  height: 75rem;
 }
 
 /* CARD */
 .card {
+
   background: #ffffff;
   border-radius: 14px;
   border: 1px solid rgba(15, 23, 42, 0.06);
